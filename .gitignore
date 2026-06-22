@@ -1,0 +1,28 @@
+# Mac OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V7
+.Trashes
+ehthumbs.db
+Thumbs.db
+.thumbnail
+
+# Descartes y experimentos — no van al repo
+scraps/
+
+# Uploads de referencia — documentos temporales
+uploads/
+
+# Resultados finales — van a tu carpeta local, no al repo
+templates/carrusel-ig/exports/
+
+# Fuentes comerciales — licencia no permite distribución pública
+assets/fonts/BookAntiqua/
+assets/fonts/LetterGothic/
+assets/fonts/*Gothic*
+assets/fonts/*Antiqua*
+
+# Archivos técnicos temporales
+*.napkin
+marks-b64.json

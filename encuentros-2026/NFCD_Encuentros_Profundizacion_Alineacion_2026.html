@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Encuentros de Profundización en Alineación · 2026 — NFCD</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--paper-200);
+    display: flex; flex-direction: column; align-items: center;
+    gap: 28px; padding: 32px 0 48px;
+  }
+
+  .page {
+    width: 794px; height: 1123px; background: var(--paper-000);
+    box-shadow: var(--shadow-lg);
+    padding: 64px 68px 52px; position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+
+  /* ---- shared atoms ---- */
+  .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--wine-600); }
+  .tick { width: 48px; height: 2px; background: var(--wine-600); }
+  .mono { font-family: var(--font-mono); }
+  .dot { color: var(--ink-300); padding: 0 0.4em; }
+
+  /* ============ PAGE 1 · COVER ============ */
+  .cover .motif {
+    position: absolute; top: -64px; right: -210px; width: 650px;
+    mix-blend-mode: multiply; opacity: 0.9; pointer-events: none; z-index: 0;
+  }
+  .cover > * { position: relative; z-index: 1; }
+
+  .cover .top img.logo { height: 84px; display: block; }
+  .cover .doc-id {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--text-muted); line-height: 1.9; margin-top: 20px;
+  }
+
+  .cover .hero { margin-top: auto; }
+  .cover .hero .eyebrow { margin-bottom: 16px; }
+  .cover .hero .tick { margin: 0 0 26px; }
+  .cover h1 {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 96px; line-height: 0.84; letter-spacing: 0.02em;
+    text-transform: uppercase; color: var(--ink-900); margin: 0;
+  }
+  .cover .lead {
+    font-family: var(--font-serif); font-size: 19px; line-height: 1.62;
+    color: var(--text-body); margin: 28px 0 0; max-width: 50ch;
+  }
+
+  .meta {
+    display: grid; grid-template-columns: 0.9fr 1.6fr 0.9fr;
+    border: 1px solid var(--border-soft); margin-top: 40px;
+  }
+  .meta .cell { padding: 18px 20px; border-right: 1px solid var(--border-soft); }
+  .meta .cell:last-child { border-right: 0; }
+  .meta .k { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-faint); }
+  .meta .v { font-family: var(--font-serif); font-size: 16px; line-height: 1.4; color: var(--ink-900); margin-top: 8px; }
+
+  .cover .foot {
+    margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--rule-ink);
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-muted);
+  }
+  .cover .foot .web { color: var(--wine-600); }
+
+  /* ============ PAGE 2 · CONTENT ============ */
+  .masthead {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 18px; border-bottom: 1px solid var(--rule-ink);
+  }
+  .masthead .title { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-900); }
+  .masthead .sub { font-family: var(--font-serif); font-style: italic; font-size: 14px; color: var(--text-muted); margin-top: 7px; }
+  .masthead img { height: 40px; }
+
+  .doc .intro {
+    font-family: var(--font-serif); font-size: 16px; line-height: 1.55;
+    color: var(--text-body); margin: 20px 0 0; max-width: 62ch;
+  }
+
+  .grid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 44px; margin-top: 24px; flex: 1; }
+
+  h2.sec {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--wine-600); margin: 0 0 11px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  h2.sec::after { content: ""; flex: 1; height: 1px; background: var(--border-hair); }
+  .block { margin-bottom: 22px; }
+  .block p {
+    font-family: var(--font-serif); font-size: 14px; line-height: 1.55;
+    color: var(--text-body); margin: 0 0 10px;
+  }
+
+  .reqs { list-style: none; padding: 0; margin: 6px 0 14px; }
+  .reqs li {
+    font-family: var(--font-serif); font-size: 14px; line-height: 1.4;
+    color: var(--text-body); padding: 8px 0; border-bottom: 1px solid var(--border-hair);
+    display: flex; gap: 14px;
+  }
+  .reqs .n { font-family: var(--font-mono); font-size: 12px; color: var(--wine-600); flex: none; padding-top: 2px; }
+  .cond {
+    font-family: var(--font-serif); font-size: 14px; line-height: 1.5; color: var(--text-body);
+    background: var(--surface-sunk); border-left: 2px solid var(--wine-600);
+    padding: 12px 16px; margin-top: 6px;
+  }
+  .cond strong { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--wine-700); display: block; margin-bottom: 4px; }
+
+  /* right rail */
+  .cal {
+    background: var(--surface-card); border: 1px solid var(--border-soft);
+    border-top: 3px solid var(--brand); padding: 22px 22px 8px;
+  }
+  .cal .cal-h { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-900); margin-bottom: 4px; }
+  .cal .grp { margin: 18px 0 14px; }
+  .cal .grp:first-of-type { margin-top: 14px; }
+  .cal .grp-k { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--wine-600); }
+  .cal .place { font-family: var(--font-serif); font-style: italic; font-size: 12.5px; line-height: 1.45; color: var(--text-muted); margin: 7px 0 10px; }
+  .cal .row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border-hair); }
+  .cal .row:last-child { border-bottom: 0; }
+  .cal .row .label { font-family: var(--font-serif); font-size: 13px; color: var(--ink-800); }
+  .cal .row .date { font-family: var(--font-mono); font-size: 12px; color: var(--ink-900); letter-spacing: 0.02em; white-space: nowrap; }
+  .cal .virt { font-family: var(--font-mono); font-size: 13px; line-height: 2; color: var(--ink-900); letter-spacing: 0.02em; }
+
+  .contact {
+    margin-top: 22px; border: 1px solid var(--border-soft); padding: 20px 22px;
+    background: var(--surface-raised);
+  }
+  .contact .ck { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 10px; }
+  .contact .name { font-family: var(--font-serif); font-size: 15px; color: var(--ink-900); margin-bottom: 12px; }
+  .contact .crow { font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-800); padding: 5px 0; letter-spacing: 0.02em; }
+  .contact .crow.web { color: var(--wine-600); }
+
+  .doc .foot {
+    margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--rule-ink);
+    display: flex; justify-content: space-between;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-muted);
+  }
+
+  /* ============ PAGE 3 · INVITACIÓN ============ */
+  .invite .hero-block { margin-top: 26px; }
+  .invite .hero-block .tick { margin: 14px 0 24px; }
+  .invite h1 {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 92px; line-height: 0.84; letter-spacing: 0.02em;
+    text-transform: uppercase; color: var(--ink-900); margin: 0;
+  }
+  .invite .lead {
+    font-family: var(--font-serif); font-size: 17px; line-height: 1.6;
+    color: var(--text-body); margin: 22px 0 0; max-width: 58ch;
+  }
+
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
+  .ph {
+    position: relative; height: 320px; border: 1px solid var(--border-soft);
+    background-color: var(--paper-100);
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 9px, rgba(26,22,20,0.05) 9px, rgba(26,22,20,0.05) 10px);
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .ph img { width: 100%; height: 100%; object-fit: cover; }
+  .ph .tag {
+    position: absolute; top: 12px; left: 12px;
+    font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--text-faint);
+    background: var(--paper-000); padding: 3px 7px; border: 1px solid var(--border-hair);
+  }
+  .ph .hint {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em;
+    color: var(--text-muted); text-align: center; padding: 0 18px; line-height: 1.7;
+  }
+  .gcap {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ink-800); margin-top: 12px;
+  }
+  .gcap .sub { display: block; font-family: var(--font-serif); font-style: italic; text-transform: none; letter-spacing: 0; font-size: 12.5px; color: var(--text-muted); margin-top: 4px; }
+
+  .invite .cta {
+    margin-top: auto; background: var(--surface-ink); color: var(--text-on-ink);
+    padding: 28px 34px; display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  }
+  .invite .cta .ct-k { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--wine-300); }
+  .invite .cta .ct-v { font-family: var(--font-display); font-size: 46px; line-height: 0.9; letter-spacing: 0.02em; text-transform: uppercase; margin-top: 6px; }
+  .invite .cta .ct-r { text-align: right; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; line-height: 1.9; color: var(--paper-200); }
+  .invite .cta .ct-r .web { color: var(--wine-300); }
+
+  /* ============ PÁGINAS DE VALORES ============ */
+  .valores .v-head { margin-top: 26px; }
+  .valores .v-head .tick { margin: 14px 0 16px; }
+  .valores h1 {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 60px; line-height: 0.86; letter-spacing: 0.02em;
+    text-transform: uppercase; color: var(--ink-900); margin: 0;
+  }
+  .valores .v-when {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--text-muted); margin-top: 14px;
+  }
+  .valores .v-when .acc { color: var(--wine-600); }
+  .valores .vlead {
+    font-family: var(--font-serif); font-size: 15px; line-height: 1.6;
+    color: var(--text-body); margin: 16px 0 0; max-width: 64ch;
+  }
+  .valores .vlead b { color: var(--ink-900); }
+
+  .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+  .tier {
+    position: relative; border: 1px solid var(--border-soft);
+    background: var(--surface-card); padding: 22px 18px 18px;
+  }
+  .tier::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; }
+  .tier.min::before { background: var(--ink-400); }
+  .tier.base::before { background: var(--wine-600); }
+  .tier.col::before { background: var(--sage-500); }
+  .tier .t-tag {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em;
+    text-transform: uppercase; display: block; margin-bottom: 14px;
+  }
+  .tier.min .t-tag { color: var(--ink-500); }
+  .tier.base .t-tag { color: var(--wine-700); }
+  .tier.col .t-tag { color: var(--sage-700); }
+  .tier .t-amt {
+    font-family: var(--font-mono); font-size: 27px; color: var(--ink-900);
+    letter-spacing: -0.01em; line-height: 1;
+  }
+  .tier .t-amt .cur { font-size: 13px; color: var(--text-faint); letter-spacing: 0.04em; }
+  .tier .t-alt {
+    font-family: var(--font-mono); font-size: 12px; color: var(--text-muted);
+    letter-spacing: 0.06em; margin-top: 8px;
+  }
+  .tier .t-desc {
+    font-family: var(--font-serif); font-size: 13px; line-height: 1.5;
+    color: var(--text-body); margin: 12px 0 0;
+  }
+
+  .vcallout {
+    border: 1px solid var(--border-soft); border-left: 3px solid var(--wine-600);
+    background: var(--wine-050); padding: 14px 18px; margin-top: 18px;
+    font-family: var(--font-serif); font-size: 13.5px; line-height: 1.6; color: var(--text-body);
+  }
+  .vcallout .em { color: var(--wine-700); font-weight: 700; }
+
+  .vcols { display: grid; grid-template-columns: 1.25fr 1fr; gap: 36px; margin-top: 26px; }
+  .incl { list-style: none; padding: 0; margin: 4px 0 0; }
+  .incl li {
+    font-family: var(--font-serif); font-size: 13.5px; line-height: 1.45;
+    color: var(--text-body); padding: 9px 0; border-bottom: 1px solid var(--border-hair);
+    display: flex; gap: 11px;
+  }
+  .incl li::before { content: "\00B7"; font-family: var(--font-mono); color: var(--wine-600); flex: none; }
+  .incl strong { color: var(--ink-900); }
+
+  .hosp { border: 1px solid var(--border-soft); background: var(--surface-raised); padding: 16px 18px; }
+  .hosp b { font-family: var(--font-serif); font-size: 14px; color: var(--ink-900); display: block; margin-bottom: 6px; }
+  .hosp p { font-family: var(--font-serif); font-size: 12.5px; line-height: 1.5; color: var(--text-muted); margin: 0 0 12px; }
+  .hosp a {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--wine-700); text-decoration: none; border: 1px solid var(--wine-200);
+    padding: 8px 14px; display: inline-block;
+  }
+  .vnote { font-family: var(--font-serif); font-size: 13px; line-height: 1.55; color: var(--text-body); margin-top: 16px; }
+  .vnote b { color: var(--ink-900); }
+
+  .vfechas { display: flex; border: 1px solid var(--border-soft); margin-top: 8px; }
+  .vfechas span {
+    flex: 1; text-align: center; padding: 14px 8px;
+    font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.04em; color: var(--ink-900);
+    border-right: 1px solid var(--border-soft);
+  }
+  .vfechas span:last-child { border-right: 0; }
+
+  /* ============ CONTRAPORTADA ============ */
+  .backcover { background: var(--wine-600); justify-content: flex-end; overflow: hidden; }
+  .backcover .bc-logo { width: 232px; height: auto; margin-bottom: 30px; display: block; }
+  .backcover .bc-contact {
+    font-family: var(--font-serif); font-size: 15px; line-height: 1.95;
+    color: var(--paper-000); position: relative; z-index: 1;
+  }
+  .backcover .bc-contact a { color: var(--paper-000); text-decoration: none; }
+
+  /* ---- print ---- */
+  @page { size: A4; margin: 0; }
+  @media print {
+    body { background: #fff; gap: 0; padding: 0; }
+    .page { box-shadow: none; break-after: page; page-break-after: always; }
+    .page:last-child { break-after: auto; page-break-after: auto; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============ PAGE 1 · COVER ============ -->
+  <section class="page cover" data-screen-label="01 · Portada">
+    <img class="motif" src="../assets/logos/nfcd_logo_alpha_light.png" alt="Costillar y mariposa — dibujo a grafito">
+
+    <div class="top">
+      <img class="logo" src="../assets/logos/nfcd_isologov2_color_fondotrasparente.png" alt="Naturaleza de la Fuerza en el Cuerpo y la Danza" style="width: 200px; padding: 0px; height: 104px">
+      <div class="doc-id">Programa 2026 · Alineación<br>Bariloche · Patagonia</div>
+    </div>
+
+    <div class="hero">
+      <div class="eyebrow">Encuentros 2026 · Alineación</div>
+      <div class="tick"></div>
+      <h1 style="font-size: 74px">Encuentros de<br>profundización<br>en alineación</h1>
+      <p class="lead">En 2026, la práctica de Alineación para estudiantes avanzados o con experiencia se realizará en formato de Encuentros de Profundización, con instancias presenciales y virtuales de práctica y reflexión.</p>
+    </div>
+
+    <div class="meta">
+      <div class="cell"><div class="k" style="border-width: 7px; border-style: solid; letter-spacing: 2px">Modalidad</div><div class="v">Presencial <span class="dot">·</span> Virtual</div></div>
+      <div class="cell"><div class="k">Lugar</div><div class="v">Nuestro Hogar · Campo Arroyo del Medio · San Carlos de Bariloche · Patagonia · Argentina</div></div>
+      <div class="cell"><div class="k">DOCENTE</div><div class="v">Roxana Galand</div></div>
+    </div>
+
+    <div class="foot">
+      <span>Naturaleza de la Fuerza en el Cuerpo y la Danza</span>
+      <span class="web">naturalezadelafuerza.org</span>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 2 · CONTENT ============ -->
+  <section class="page doc" data-screen-label="02 · Contenido">
+    <div class="masthead">
+      <div>
+        <div class="title">Encuentros de Profundización en Alineación · 2026</div>
+        <div class="sub">Naturaleza de la Fuerza en el Cuerpo y la Danza</div>
+      </div>
+      <img src="../assets/logos/nfcd_isologov2_color_fondotrasparente.png" alt="NFCD" style="object-fit: cover; width: 156px; height: 55px">
+    </div>
+
+    <p class="intro">Cada encuentro estará diseñado a partir de los asuntos de interés o preguntas de lxs estudiantes con trayectoria en la rama de Alineación. Durante los encuentros, lxs estudiantes estarán en un modo investigativo, exponiendo sus preguntas, pruebas y hallazgos que procesan en esta época en torno al asunto presentado.</p>
+
+    <div class="grid">
+      <!-- left column -->
+      <div>
+        <div class="block">
+          <h2 class="sec">Dinámica de los encuentros</h2>
+          <p>Al inscribirse, cada estudiante rellena un formulario con esta información, a partir de la cual Roxana Galand diseña los encuentros.</p>
+        </div>
+
+        <div class="block">
+          <h2 class="sec">Requisitos</h2>
+          <p>Haber realizado al menos uno de los siguientes trayectos:</p>
+          <ul class="reqs">
+            <li><span class="n">01</span><span>Un año de Práctica Continua.</span></li>
+            <li><span class="n">02</span><span>El curso de Práctica Continua <em>Asuntos 2025</em>.</span></li>
+            <li><span class="n">03</span><span>Dos seminarios de Alineación.</span></li>
+          </ul>
+          <div class="cond"><strong>Condición</strong>Estar activas en la práctica de Alineación en la actualidad.</div>
+        </div>
+
+        <div class="block" style="margin-bottom:0">
+          <h2 class="sec">Inscripción</h2>
+          <p>Cada estudiante rellena un formulario donde se reúnen sus datos de inscripción y, sobre todo, el asunto o pregunta de Alineación que quiere investigar este año. Con lo que cada quien comparta sobre su trayectoria y su proceso actual, Roxana Galand diseña el enfoque de cada Encuentro de Profundización.</p>
+          <p>Podés inscribirte a encuentros presenciales y/o virtuales. Si participás como oyente, podés indicarlo en la sección de consultas.</p>
+        </div>
+      </div>
+
+      <!-- right rail -->
+      <div>
+        <div class="cal">
+          <div class="cal-h">Calendario</div>
+          <div class="grp">
+            <div class="grp-k">Presenciales</div>
+            <div class="place">Nuestro Hogar · Campo Arroyo del Medio · San Carlos de Bariloche · Patagonia</div>
+            <div class="row"><span class="label">Semana Santa</span><span class="date">2 — 5 abr</span></div>
+            <div class="row"><span class="label">Vacaciones de invierno</span><span class="date">13 — 18 jul</span></div>
+            <div class="row"><span class="label">Primavera–verano</span><span class="date">A confirmar</span></div>
+          </div>
+          <div class="grp">
+            <div class="grp-k" style="text-align: right">Virtuales</div>
+            <div class="place" style="text-align:right">En vivo o en diferido · 4 h cada uno</div>
+            <div class="virt" style="text-align: right">23 mayo<br>13 junio<br>22 agosto<br>31 octubre</div>
+          </div>
+        </div>
+
+        <div class="contact">
+          <div class="ck">Secretaría NFCD</div>
+          <div class="name">Secretaria: Guillermina &amp; Facundo</div>
+          <div class="crow">+54 2944 201136</div>
+          <div class="crow">coordinacion@naturalezadelafuerza.org</div>
+          <div class="crow web">www.naturalezadelafuerza.org</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span>NATURALEZA DE LA FUERZA EN EL CUERPO Y LA DANZA</span>
+      <span>PATAGONIA / ARGENTINA</span>
+      <span>2026</span>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 3 · VALORES · ENCUENTRO DE INVIERNO ============ -->
+  <section class="page valores" data-screen-label="03 · Valores · Invierno">
+    <div class="masthead">
+      <div>
+        <div class="title">Valores · Encuentro de Invierno</div>
+        <div class="sub">Naturaleza de la Fuerza en el Cuerpo y la Danza</div>
+      </div>
+      <img src="../assets/logos/nfcd_isologov2_color_fondotrasparente.png" alt="NFCD" style="height:40px">
+    </div>
+
+    <div class="v-head">
+      <div class="eyebrow">Aporte según tu posibilidad</div>
+      <div class="tick"></div>
+      <h1>Elegí tu aporte</h1>
+      <div class="v-when"><span class="acc">13 — 18 julio</span> · Residencial en Nuestro Hogar · Bariloche</div>
+    </div>
+
+    <p class="vlead">Una semana intensiva de trabajo somático en la sede de NFCD, en las afueras de Bariloche. Cada estudiante <b>elige su valor según su posibilidad real</b>: los tres niveles sostienen el encuentro de formas diferentes y ninguno excluye la participación.</p>
+
+    <div class="tiers">
+      <div class="tier min">
+        <span class="t-tag">Mínimo viable</span>
+        <div class="t-amt">$400.000 <span class="cur">ARS</span></div>
+        <p class="t-desc">Habilita la participación sosteniendo lo básico del encuentro.</p>
+      </div>
+      <div class="tier base">
+        <span class="t-tag">Valor base</span>
+        <div class="t-amt">$520.000 <span class="cur">ARS</span></div>
+        <p class="t-desc">Permite la realización del encuentro, cubriendo los gastos de funcionamiento y el honorario docente.</p>
+      </div>
+      <div class="tier col">
+        <span class="t-tag">Colaboración</span>
+        <div class="t-amt">$650.000 <span class="cur">ARS</span></div>
+        <p class="t-desc">Impulsa el crecimiento de NFCD y sostiene a quienes eligen el valor mínimo.</p>
+      </div>
+    </div>
+
+    <div class="vcallout">Estos valores son una referencia, pero <span class="em">no son excluyentes</span>. Si en este momento no te es posible abonar el valor propuesto, escribinos y conversamos alternativas de forma recíproca y cuidada.</div>
+
+    <div class="vcols">
+      <div>
+        <h2 class="sec">Qué incluye la inscripción</h2>
+        <ul class="incl">
+          <li><span><strong>10 sesiones de trabajo</strong> — apertura el 13, cierre el 18, y dos sesiones diarias (mañana y tarde) los días 14, 15, 16 y 17.</span></li>
+          <li><span><strong>Alojamiento</strong> en habitaciones compartidas.</span></li>
+          <li><span><strong>Alimentación</strong> durante todo el encuentro.</span></li>
+          <li><span><strong>Transporte</strong> desde Bariloche a Nuestro Hogar.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="sec">La estadía</h2>
+        <div class="hosp">
+          <b>¿Querés llegar antes o quedarte después?</b>
+          <p>Es posible hospedarse en el Hogar de Naturaleza de la Fuerza. Consultá disponibilidad y valores.</p>
+          <a href="mailto:coordinacion@naturalezadelafuerza.org">Consultar</a>
+        </div>
+        <div class="vnote"><b>Lugar — Hogar de NFCD · Arroyo del Medio.</b> A 20 km del centro cívico de Bariloche, en las afueras de la ciudad. Patagonia, Argentina.</div>
+      </div>
+    </div>
+
+    <div class="foot" style="margin-top:auto;padding-top:16px;border-top:1px solid var(--rule-ink);display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);">
+      <span>Naturaleza de la Fuerza</span>
+      <span>Encuentro de Invierno · 2026</span>
+      <span>nfcd · 2026</span>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 4 · VALORES · ENCUENTROS VIRTUALES ============ -->
+  <section class="page valores" data-screen-label="04 · Valores · Virtuales">
+    <div class="masthead">
+      <div>
+        <div class="title">Valores · Encuentros virtuales</div>
+        <div class="sub">Naturaleza de la Fuerza en el Cuerpo y la Danza</div>
+      </div>
+      <img src="../assets/logos/nfcd_isologov2_color_fondotrasparente.png" alt="NFCD" style="height:40px">
+    </div>
+
+    <div class="v-head">
+      <div class="eyebrow">Aporte según tu posibilidad</div>
+      <div class="tick"></div>
+      <h1>Encuentros virtuales</h1>
+      <div class="v-when"><span class="acc">En vivo o en diferido</span> · 4 horas cada encuentro</div>
+    </div>
+
+    <p class="vlead">Podés participar de los encuentros virtuales <b>en vivo</b> o inscribirte para verlos <b>en diferido</b>, a tu propio tiempo. Cada encuentro dura cuatro horas. El valor es el mismo en ambas modalidades; elegí tu aporte según tu posibilidad real.</p>
+
+    <div class="tiers">
+      <div class="tier min">
+        <span class="t-tag">Mínimo viable</span>
+        <div class="t-amt">$22.000 <span class="cur">ARS</span></div>
+        <div class="t-alt">USD 20 · EUR 16</div>
+        <p class="t-desc">Habilita la participación sosteniendo lo básico.</p>
+      </div>
+      <div class="tier base">
+        <span class="t-tag">Valor base</span>
+        <div class="t-amt">$33.000 <span class="cur">ARS</span></div>
+        <div class="t-alt">USD 30 · EUR 24</div>
+        <p class="t-desc">Permite la realización del encuentro virtual, cubriendo los gastos de funcionamiento y el honorario docente.</p>
+      </div>
+      <div class="tier col">
+        <span class="t-tag">Colaboración–Desarrollo</span>
+        <div class="t-amt">$45.000 <span class="cur">ARS</span></div>
+        <div class="t-alt">USD 40 · EUR 35</div>
+        <p class="t-desc">Impulsa el crecimiento de NFCD: incluye contribución al Fondo de Becas y al Fondo de Desarrollo Institucional.</p>
+      </div>
+    </div>
+
+    <div class="vcallout">Estos valores son una referencia, pero <span class="em">no son excluyentes</span>. Si en este momento no te es posible abonar el valor propuesto, escribinos y conversamos alternativas de forma recíproca y cuidada.</div>
+
+    <div style="margin-top:26px">
+      <h2 class="sec">Fechas de los encuentros virtuales</h2>
+      <div class="vfechas">
+        <span>23 mayo</span>
+        <span>13 junio</span>
+        <span>22 agosto</span>
+        <span>31 octubre</span>
+      </div>
+      <div class="vnote">Quienes se inscriban <b>en diferido</b> reciben el acceso a la grabación de cada encuentro para verlo a su propio tiempo.</div>
+    </div>
+
+    <div class="foot" style="margin-top:auto;padding-top:16px;border-top:1px solid var(--rule-ink);display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);">
+      <span>Naturaleza de la Fuerza</span>
+      <span>Encuentros virtuales · 2026</span>
+      <span>nfcd · 2026</span>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 3 · INVITACIÓN ============ -->
+  <section class="page invite" data-screen-label="05 · Invitación">
+    <div class="masthead">
+      <div>
+        <div class="title">Una invitación · Encuentros 2026</div>
+        <div class="sub">Naturaleza de la Fuerza en el Cuerpo y la Danza</div>
+      </div>
+      <img src="../assets/logos/nfcd_isologov2_color_fondotrasparente.png" alt="NFCD" style="height:40px">
+    </div>
+
+    <div class="hero-block">
+      <div class="eyebrow">El campo te espera</div>
+      <div class="tick"></div>
+      <h1 style="font-size: 66px">NUESTRO HOGAR</h1>
+      <p class="lead">En Campo, ubicado en Arroyo del Medio, entre el bosque, el agua y la montaña, se encuentra el hogar y escuela de NFCD, donde realizamos convivencias, seminarios y encuentros de práctica y estudio.</p>
+    </div>
+
+    <div class="gallery">
+      <div>
+        <div class="ph">
+          <span class="tag">Foto 01</span>
+          <span class="hint">paisaje del Campo<br>· arroyo / montaña ·</span>
+        </div>
+        <div class="gcap">El paisaje<span class="sub">Campo Arroyo del Medio</span></div>
+      </div>
+      <div>
+        <div class="ph">
+          <span class="tag">Foto 02</span>
+          <span class="hint">práctica en sala<br>· danza / alineación ·</span>
+        </div>
+        <div class="gcap">La práctica<span class="sub">El cuerpo que escucha</span></div>
+      </div>
+      <div>
+        <div class="ph">
+          <span class="tag">Foto 03</span>
+          <span class="hint">la casa / la mesa<br>· convivencia ·</span>
+        </div>
+        <div class="gcap">Nuestro Hogar<span class="sub">Vida compartida</span></div>
+      </div>
+    </div>
+
+    <div class="cta" style="display:none">
+      <div>
+        <div class="ct-k">Inscripción abierta</div>
+        <div class="ct-v">TE ESPERAMOS
+</div>
+      </div>
+      <div class="ct-r">
+        coordinacion@naturalezadelafuerza.org<br>
+        +54 2944 201136<br>
+        <span class="web">www.naturalezadelafuerza.org</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 6 · CONTRAPORTADA ============ -->
+  <section class="page backcover" data-screen-label="06 · Contraportada">
+    <img class="bc-logo" src="../assets/logos/nfcd_isologov2_blanco_fondotrasparente.png" alt="Naturaleza de la Fuerza en el Cuerpo y la Danza" style="width: 392px">
+    <div class="bc-contact" style="padding: 0px; margin: 0px; border-width: 0px; border-style: solid; border-radius: 0px; line-height: 2.05">
+      <a href="mailto:secretaria@naturalezadelafuerza.org">secretaria@naturalezadelafuerza.org</a><br>
+      <a href="https://www.naturalezadelafuerza.org">www.naturalezadelafuerza.org</a><br>
+      +54 2944 201136<br>
+      Arroyo del Medio, Patagonia
+    </div>
+  </section>
+
+</body>
+</html>

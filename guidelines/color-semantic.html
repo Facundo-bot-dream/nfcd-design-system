@@ -1,0 +1,38 @@
+<!-- @dsCard group="Colors" viewport="700x170" name="Semantic roles" subtitle="How the palette maps to surfaces, text and lines in practice." -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--paper-000); font-family: var(--font-mono); padding: 22px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .tile { border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+  .tile.ink { background: var(--surface-ink); }
+  .tile.card { background: var(--surface-card); }
+  .name { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+  .tile.ink .name { color: var(--ink-400); }
+  .demo { font-family: var(--font-serif); font-size: 15px; }
+  .strong { color: var(--text-strong); }
+  .muted { color: var(--text-muted); }
+  .accent { color: var(--text-accent); }
+  .on-ink { color: var(--text-on-ink); }
+  .chip { display: inline-block; padding: 3px 10px; border-radius: var(--radius-pill); background: var(--brand); color: var(--text-on-wine); font-size: 11px; letter-spacing: 0.08em; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="tile card">
+      <div class="name">surface-card · light</div>
+      <div class="demo strong">Texto fuerte sobre papel</div>
+      <div class="demo muted">Texto atenuado — secundario</div>
+      <div class="demo accent">Enlace / acento en vino</div>
+    </div>
+    <div class="tile ink">
+      <div class="name">surface-ink · inverse</div>
+      <div class="demo on-ink">Texto claro sobre tinta</div>
+      <div><span class="chip">acento</span></div>
+    </div>
+  </div>
+</body>
+</html>

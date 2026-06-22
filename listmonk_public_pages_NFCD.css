@@ -1,0 +1,134 @@
+/* ============================================================
+   NFCD · Listmonk — CSS para PÁGINAS PÚBLICAS
+   (baja, gestión de suscripción, confirmación)
+   Pegar en:  Settings → Appearance → Custom CSS (public)
+   Luego: Save.
+   ============================================================ */
+
+/* Tipografía display de la marca (Amatic SC está en Google Fonts).
+   Book Antiqua / Letter Gothic no son webfonts libres → se usan
+   sustitutos seguros (Palatino / Georgia y Courier), igual que el email. */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+:root {
+  --nf-wine: #a7274c;
+  --nf-wine-700: #871f41;
+  --nf-ink: #1a1614;
+  --nf-ink-soft: #5c534c;
+  --nf-paper: #fbf9f5;
+  --nf-paper-card: #ffffff;
+  --nf-border: #e0d8c9;
+}
+
+/* ---- Fondo papel cálido ---- */
+body,
+html {
+  background: var(--nf-paper) !important;
+  color: var(--nf-ink) !important;
+  font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif !important;
+}
+
+/* ---- Logo centrado y con aire ---- */
+.logo,
+.navbar-brand,
+header .logo img,
+img.logo {
+  max-width: 240px !important;
+  margin: 8px auto 4px !important;
+  display: block !important;
+}
+
+/* ---- Tarjeta central ---- */
+.box,
+.wrap,
+.container .content,
+section .box {
+  background: var(--nf-paper-card) !important;
+  border: 1px solid var(--nf-border) !important;
+  border-top: 3px solid var(--nf-wine) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 8px 28px rgba(26, 22, 20, 0.08) !important;
+  padding: 32px 34px !important;
+}
+
+/* ---- Títulos ---- */
+h1, h2, .title {
+  font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.3px !important;
+  color: var(--nf-ink) !important;
+}
+.title.is-1, h1.title {
+  font-family: 'Amatic SC', cursive !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  font-size: 3rem !important;
+}
+
+/* ---- Texto y enlaces ---- */
+p, label, .subtitle, .content {
+  color: var(--nf-ink-soft) !important;
+  line-height: 1.6 !important;
+}
+a { color: var(--nf-wine-700) !important; }
+a:hover { color: var(--nf-wine) !important; }
+
+/* ---- Etiquetas tipo "mono" ---- */
+label, .label, .help {
+  font-family: "Courier New", Courier, monospace !important;
+  letter-spacing: 0.06em !important;
+}
+
+/* ---- Botones ---- */
+.button.is-primary,
+button.is-primary,
+.button {
+  background: var(--nf-wine) !important;
+  border: 1.5px solid var(--nf-wine) !important;
+  color: var(--nf-paper) !important;
+  border-radius: 4px !important;
+  font-family: "Courier New", Courier, monospace !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  transition: background 0.24s ease, border-color 0.24s ease !important;
+}
+.button.is-primary:hover,
+button.is-primary:hover,
+.button:hover {
+  background: var(--nf-wine-700) !important;
+  border-color: var(--nf-wine-700) !important;
+}
+
+/* botón secundario / cancelar */
+.button.is-light,
+.button.is-outlined {
+  background: transparent !important;
+  color: var(--nf-ink) !important;
+  border: 1.5px solid var(--nf-ink) !important;
+}
+.button.is-light:hover,
+.button.is-outlined:hover {
+  background: var(--nf-ink) !important;
+  color: var(--nf-paper) !important;
+}
+
+/* ---- Inputs / checkboxes ---- */
+input, .input, select, .select select {
+  border: 1px solid var(--nf-border) !important;
+  border-radius: 4px !important;
+  font-family: Palatino, Georgia, serif !important;
+}
+input:focus, .input:focus {
+  border-color: var(--nf-wine) !important;
+  box-shadow: 0 0 0 3px rgba(167, 39, 76, 0.12) !important;
+}
+
+/* ---- Footer público ---- */
+.footer, footer {
+  background: transparent !important;
+  color: var(--nf-ink-soft) !important;
+  font-family: "Courier New", Courier, monospace !important;
+  font-size: 12px !important;
+  letter-spacing: 0.04em !important;
+}

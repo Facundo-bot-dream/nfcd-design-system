@@ -1,0 +1,93 @@
+<!-- @dsCard group="Editorial / PDF" viewport="794x1010" name="Ficha de curso — PDF A4" subtitle="Material institucional: programa de un encuentro, listo para imprimir." -->
+<!-- @startingPoint section="Editorial" subtitle="A4 course sheet / programme PDF" viewport="794x1123" -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ficha de curso — NFCD</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper-200); display: flex; justify-content: center; padding: 32px 0; }
+  .page {
+    width: 794px; min-height: 1123px; background: var(--paper-000);
+    box-shadow: var(--shadow-lg); padding: 64px 68px 56px; position: relative;
+    display: flex; flex-direction: column;
+  }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .top img { height: 78px; }
+  .doc-id { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); text-align: right; line-height: 1.7; }
+  .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--wine-600); }
+  .tick { width: 48px; height: 2px; background: var(--wine-600); margin: 14px 0; }
+  h1 { font-family: var(--font-display); font-weight: 700; font-size: 72px; line-height: 0.9; letter-spacing: 0.03em; text-transform: uppercase; color: var(--ink-900); margin: 28px 0 0; }
+  .lead { font-family: var(--font-serif); font-size: 19px; line-height: 1.55; color: var(--text-body); margin: 18px 0 0; max-width: 52ch; }
+  .meta { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; border: 1px solid var(--border-soft); margin: 34px 0; }
+  .meta .cell { padding: 16px 18px; border-right: 1px solid var(--border-soft); }
+  .meta .cell:last-child { border-right: 0; }
+  .meta .k { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-faint); }
+  .meta .v { font-family: var(--font-serif); font-size: 17px; color: var(--ink-900); margin-top: 6px; }
+  .body { display: grid; grid-template-columns: 1.6fr 1fr; gap: 40px; }
+  .body h2 { font-family: var(--font-serif); font-weight: 700; font-size: 20px; color: var(--ink-900); margin: 0 0 8px; }
+  .body p { font-family: var(--font-serif); font-size: 15px; line-height: 1.62; color: var(--text-body); margin: 0 0 16px; }
+  .prog { list-style: none; padding: 0; margin: 0; }
+  .prog li { font-family: var(--font-serif); font-size: 15px; line-height: 1.5; color: var(--text-body); padding: 10px 0; border-bottom: 1px solid var(--border-hair); display: flex; gap: 12px; }
+  .prog .n { font-family: var(--font-mono); font-size: 12px; color: var(--wine-600); letter-spacing: 0.06em; flex: none; padding-top: 2px; }
+  .side { background: var(--surface-card); border: 1px solid var(--border-soft); border-top: 3px solid var(--brand); padding: 20px; height: fit-content; }
+  .side .label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-faint); }
+  .side .row { display: flex; justify-content: space-between; align-items: baseline; padding: 9px 0; border-bottom: 1px solid var(--border-hair); font-family: var(--font-mono); font-size: 13px; color: var(--ink-800); }
+  .side .row:last-child { border: 0; }
+  .badge { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; background: var(--wine-050); color: var(--wine-700); border: 1px solid var(--wine-200); }
+  .foot { margin-top: auto; padding-top: 28px; border-top: 1px solid var(--rule-ink); display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="top">
+      <img src="../../assets/logos/nfcd_isologov2_color_fondotrasparente.png" alt="NFCD">
+      <div class="doc-id">Ficha de curso<br>Programa 2026 · 01<br>Bariloche</div>
+    </div>
+
+    <div style="margin-top:40px">
+      <div class="eyebrow">Encuentro · Otoño 2026</div>
+      <div class="tick"></div>
+      <h1>El cuerpo<br>que escucha</h1>
+      <p class="lead">Tres encuentros de práctica somática y danza en contacto con el paisaje del Campo Arroyo del Medio. Hueso y vuelo, estructura y transformación.</p>
+    </div>
+
+    <div class="meta">
+      <div class="cell"><div class="k">Sede</div><div class="v">Campo Arroyo del Medio</div></div>
+      <div class="cell"><div class="k">Duración</div><div class="v">3 encuentros · 12 h</div></div>
+      <div class="cell"><div class="k">Fechas</div><div class="v">12 · 19 · 26 abril</div></div>
+    </div>
+
+    <div class="body">
+      <div>
+        <h2>Sobre la práctica</h2>
+        <p>La danza no ilustra una idea: la produce. Cada encuentro abre el cuerpo a las fuerzas que lo atraviesan, y en ese suceso aparece un saber que no pasa primero por las palabras. Trabajamos desde el registro anatómico —el peso, el hueso, el aliento— hacia el gesto y el vuelo.</p>
+        <h2>Programa</h2>
+        <ul class="prog">
+          <li><span class="n">01</span><span><strong>Hueso y peso.</strong> Reconocer la estructura; dejar caer, sostener, ceder.</span></li>
+          <li><span class="n">02</span><span><strong>Fuerzas.</strong> Impulso, dirección y transformación del gesto.</span></li>
+          <li><span class="n">03</span><span><strong>Vuelo.</strong> Composición e improvisación en contacto con el paisaje.</span></li>
+        </ul>
+      </div>
+      <aside class="side">
+        <div class="label" style="margin-bottom:12px">Detalle</div>
+        <div class="row"><span>Formato</span><span class="badge">Presencial</span></div>
+        <div class="row"><span>Cupos</span><span>16</span></div>
+        <div class="row"><span>Nivel</span><span>Abierto</span></div>
+        <div class="row"><span>Arancel</span><span>Consultar</span></div>
+        <div class="row"><span>Inscripción</span><span>Hasta 5/4</span></div>
+        <div style="margin-top:16px; font-family:var(--font-serif); font-size:13px; line-height:1.5; color:var(--text-muted)">Dirección general:<br><strong style="color:var(--ink-900)">Roxana Galand</strong></div>
+      </aside>
+    </div>
+
+    <div class="foot">
+      <span>Naturaleza de la Fuerza</span>
+      <span>Bariloche · Patagonia</span>
+      <span>nfcd · 2026</span>
+    </div>
+  </div>
+</body>
+</html>

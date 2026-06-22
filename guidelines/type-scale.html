@@ -1,0 +1,21 @@
+<!-- @dsCard group="Type" viewport="700x300" name="Type scale" subtitle="Display in Amatic, body in Book Antiqua, labels in Letter Gothic." -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--paper-000); padding: 20px 26px; color: var(--ink-900); }
+  .line { display: flex; align-items: baseline; gap: 16px; border-bottom: 1px solid var(--border-hair); padding: 7px 0; }
+  .tok { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); width: 130px; flex: none; letter-spacing: 0.06em; }
+  .spec { font-family: var(--font-display); letter-spacing: 0.03em; line-height: 1; }
+</style>
+</head>
+<body>
+  <div class="line"><span class="tok">--text-5xl / display</span><span class="spec" style="font-size:56px">Naturaleza</span></div>
+  <div class="line"><span class="tok">--text-4xl / display</span><span class="spec" style="font-size:44px">de la Fuerza</span></div>
+  <div class="line"><span class="tok">--text-2xl / serif</span><span class="spec" style="font-family:var(--font-serif);font-weight:700;font-size:30px;letter-spacing:0">Cuerpo y danza</span></div>
+  <div class="line"><span class="tok">--text-md / serif body</span><span class="spec" style="font-family:var(--font-serif);font-size:16px;letter-spacing:0">El suceso del cuerpo como saber.</span></div>
+  <div class="line" style="border:0"><span class="tok">--text-xs / mono label</span><span class="spec" style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase">Encuentro · Bariloche</span></div>
+</body>
+</html>

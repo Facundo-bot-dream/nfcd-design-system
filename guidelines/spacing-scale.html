@@ -1,0 +1,30 @@
+<!-- @dsCard group="Spacing" viewport="700x170" name="Spacing scale" subtitle="4px base. Generous, paper-margin rhythm." -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--paper-000); padding: 22px 26px; font-family: var(--font-mono); }
+  .row { display: flex; align-items: flex-end; gap: 14px; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .bar { background: var(--wine-600); width: 100%; border-radius: var(--radius-xs); }
+  .item span { font-size: 10px; color: var(--text-muted); letter-spacing: 0.04em; }
+  .wrap { display: flex; align-items: flex-end; gap: 12px; }
+  .cell { display: flex; flex-direction: column-reverse; align-items: center; gap: 6px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="cell"><span>1·4</span><div class="bar" style="height:4px;width:24px"></div></div>
+    <div class="cell"><span>2·8</span><div class="bar" style="height:8px;width:24px"></div></div>
+    <div class="cell"><span>3·12</span><div class="bar" style="height:12px;width:24px"></div></div>
+    <div class="cell"><span>4·16</span><div class="bar" style="height:16px;width:24px"></div></div>
+    <div class="cell"><span>5·24</span><div class="bar" style="height:24px;width:24px"></div></div>
+    <div class="cell"><span>6·32</span><div class="bar" style="height:32px;width:24px"></div></div>
+    <div class="cell"><span>7·48</span><div class="bar" style="height:48px;width:24px"></div></div>
+    <div class="cell"><span>8·64</span><div class="bar" style="height:64px;width:24px"></div></div>
+    <div class="cell"><span>9·96</span><div class="bar" style="height:80px;width:24px"></div></div>
+  </div>
+</body>
+</html>

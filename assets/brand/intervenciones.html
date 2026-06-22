@@ -1,0 +1,69 @@
+<!-- @dsCard group="Brand" viewport="900x620" name="Intervenciones — Roxana Galand" subtitle="Manchones de pincel y acrílico extraídos sin fondo · PNG transparente para edición gráfica" -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper-100);
+    font-family: var(--font-mono);
+    color: var(--ink-900); padding: 28px;
+  }
+  .head { margin-bottom: 22px; }
+  .eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--wine-600); }
+  h1 { font-family: var(--font-serif); font-weight: 400; font-size: 24px; margin: 8px 0 6px; }
+  .note { font-family: var(--font-serif); font-size: 13px; line-height: 1.5; color: var(--text-muted); max-width: 64ch; margin: 0; }
+  .full {
+    margin: 22px 0; border: 1px solid var(--border-soft);
+    background-color: #fff;
+    background-image:
+      linear-gradient(45deg, #ececec 25%, transparent 25%),
+      linear-gradient(-45deg, #ececec 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #ececec 75%),
+      linear-gradient(-45deg, transparent 75%, #ececec 75%);
+    background-size: 22px 22px;
+    background-position: 0 0, 0 11px, 11px -11px, -11px 0;
+    padding: 18px;
+  }
+  .full img { width: 100%; height: auto; display: block; }
+  .grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .cell {
+    border: 1px solid var(--border-soft);
+    background-color: #fff;
+    background-image:
+      linear-gradient(45deg, #ececec 25%, transparent 25%),
+      linear-gradient(-45deg, #ececec 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #ececec 75%),
+      linear-gradient(-45deg, transparent 75%, #ececec 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+    padding: 12px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .cell .thumb { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 120px; }
+  .cell img { max-width: 100%; max-height: 150px; height: auto; display: block; }
+  .cell .lbl { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-700); text-align: center; }
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="eyebrow">Brand · Intervenciones</div>
+    <h1>Manchones de pincel y acrílico</h1>
+    <p class="note">Pieza original de Roxana Galand (acrílico y acuarela sobre papel). Se extrajo la intervención pictórica y se eliminó el fondo —papel, cinta y mesa—. PNG transparente en alta resolución, listo para componer en piezas futuras del sistema.</p>
+  </div>
+
+  <div class="full">
+    <img src="roxana-acrylic-marks.png" alt="Intervención completa sin fondo">
+  </div>
+
+  <div class="grid">
+    <div class="cell"><div class="thumb"><img src="marks/red-swirl.png" alt="Remolino rojo"></div><div class="lbl">Remolino rojo</div></div>
+    <div class="cell"><div class="thumb"><img src="marks/red-drop.png" alt="Gota roja"></div><div class="lbl">Gota</div></div>
+    <div class="cell"><div class="thumb"><img src="marks/yellow-splash.png" alt="Manchón amarillo"></div><div class="lbl">Amarillo</div></div>
+    <div class="cell"><div class="thumb"><img src="marks/grey-waves.png" alt="Olas grises"></div><div class="lbl">Olas grises</div></div>
+    <div class="cell"><div class="thumb"><img src="marks/orange-strokes.png" alt="Trazos naranjas"></div><div class="lbl">Trazos naranjas</div></div>
+  </div>
+</body>
+</html>

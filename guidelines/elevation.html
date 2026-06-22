@@ -1,0 +1,23 @@
+<!-- @dsCard group="Spacing" viewport="700x180" name="Elevation" subtitle="Faint, warm shadows — paper lifting off paper. Used rarely." -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--paper-100); padding: 30px 26px; font-family: var(--font-mono); }
+  .row { display: flex; gap: 28px; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .box { width: 110px; height: 72px; background: var(--paper-pure); border-radius: var(--radius-sm); border: 1px solid var(--border-hair); }
+  .item span { font-size: 10px; color: var(--text-muted); letter-spacing: 0.06em; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-none);border:1px solid var(--border-soft)"></div><span>none</span></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-sm)"></div><span>sm</span></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-md)"></div><span>md</span></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-lg)"></div><span>lg</span></div>
+  </div>
+</body>
+</html>

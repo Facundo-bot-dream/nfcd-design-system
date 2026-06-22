@@ -1,0 +1,146 @@
+<style>
+/* ============================================================
+   NFCD · Novedad "¿En qué estamos?" — bloque para Beaver Builder
+   Todo el CSS scopeado bajo #nfcd-novedad. Sin reglas globales,
+   sin reset de body/html. Tokens y tipografías del Design System NFCD.
+   Amatic SC se trae por @import (OFL/Google). Book Antiqua y Letter
+   Gothic Std se heredan del theme (ya cargadas igual que el sistema).
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+#nfcd-novedad{
+  /* ---- tokens NFCD (scopeados, prefijo nf- para no chocar con el theme) ---- */
+  --nf-wine:#a7274c; --nf-wine-700:#871f41; --nf-wine-200:#eec3d0; --nf-wine-100:#f7e3e9; --nf-wine-050:#fcf2f5;
+  --nf-ink-900:#1a1614; --nf-ink-800:#2c2724; --nf-ink-700:#423b36; --nf-ink-500:#786d64; --nf-ink-200:#d6cdc3; --nf-ink-100:#e9e2da;
+  --nf-paper-100:#f5f1ea;
+  --nf-display:"Amatic SC","Comic Sans MS",cursive;
+  --nf-serif:"Book Antiqua","Palatino Linotype",Palatino,Georgia,serif;
+  --nf-mono:"Letter Gothic Std","Courier New",ui-monospace,monospace;
+
+  box-sizing:border-box;
+  max-width:920px; margin:0 auto; padding:clamp(1.5rem,4vw,3rem) clamp(1.1rem,4vw,2rem);
+  background:transparent;
+  font-family:var(--nf-serif);
+  color:var(--nf-ink-800);
+  font-size:clamp(1.08rem,0.9rem + 0.6vw,1.22rem);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+#nfcd-novedad *{ box-sizing:border-box; }
+#nfcd-novedad ::selection{ background:var(--nf-wine-100); color:var(--nf-ink-900); }
+
+/* ---- cabecera de la novedad ---- */
+#nfcd-novedad .nf-kicker{
+  font-family:var(--nf-mono); font-size:.8rem; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--nf-wine); margin:0;
+}
+#nfcd-novedad .nf-title{
+  font-family:var(--nf-display); font-weight:700;
+  font-size:clamp(3rem,2rem + 6vw,5rem); line-height:.92; letter-spacing:.02em;
+  color:var(--nf-ink-900); margin:.4rem 0 0;
+}
+#nfcd-novedad .nf-tick{ width:56px; height:3px; background:var(--nf-wine); margin:1.4rem 0 0; }
+#nfcd-novedad .nf-q{ font-family:var(--nf-serif); font-weight:400; font-size:.74em; }
+#nfcd-novedad .nf-intro{
+  font-family:var(--nf-mono); font-size:.82rem; letter-spacing:.04em; color:var(--nf-ink-500);
+  margin:1.4rem 0 0; text-transform:uppercase;
+}
+
+/* ---- movimiento (cada respiración del tríptico) ---- */
+#nfcd-novedad .nf-mov{
+  display:grid; grid-template-columns:160px minmax(0,1fr); gap:clamp(1.5rem,4vw,3rem);
+  margin-top:clamp(2.5rem,6vw,4.5rem); padding-top:clamp(1.8rem,4vw,2.6rem);
+  border-top:1px solid var(--nf-ink-100);
+}
+#nfcd-novedad .nf-rail{ position:relative; }
+#nfcd-novedad .nf-num{
+  font-family:var(--nf-display); font-weight:700;
+  font-size:clamp(3.5rem,3rem + 5vw,6rem); line-height:.8; color:var(--nf-ink-200);
+  letter-spacing:.02em; display:block;
+}
+#nfcd-novedad .nf-verb{
+  font-family:var(--nf-mono); font-size:.85rem; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--nf-wine); margin:1rem 0 0; display:block;
+}
+#nfcd-novedad .nf-verb::before{
+  content:""; display:block; width:32px; height:2px; background:var(--nf-wine); margin-bottom:.7rem;
+}
+#nfcd-novedad .nf-body{ max-width:64ch; }
+#nfcd-novedad .nf-head{
+  font-family:var(--nf-display); font-weight:700;
+  font-size:clamp(2rem,1.4rem + 2.6vw,2.9rem); line-height:.95; letter-spacing:.02em;
+  color:var(--nf-ink-900); margin:0 0 1.2rem;
+}
+#nfcd-novedad .nf-body p{ margin:0 0 1.25rem; }
+#nfcd-novedad .nf-body p:last-child{ margin-bottom:0; }
+#nfcd-novedad .nf-body .nf-lead{
+  font-size:1.12em; line-height:1.62; color:var(--nf-ink-900);
+}
+#nfcd-novedad .nf-body em{ font-style:italic; color:var(--nf-ink-900); }
+
+/* ---- responsive: apilar rail sobre prosa ---- */
+@media (max-width:760px){
+  #nfcd-novedad .nf-mov{ grid-template-columns:1fr; gap:1.1rem; }
+  #nfcd-novedad .nf-rail{
+    display:flex; align-items:baseline; gap:1.1rem;
+  }
+  #nfcd-novedad .nf-num{ font-size:3.2rem; }
+  #nfcd-novedad .nf-verb{ margin-top:0; }
+  #nfcd-novedad .nf-verb::before{ display:none; }
+}
+</style>
+
+<div id="nfcd-novedad">
+  <header>
+    <p class="nf-kicker">Novedades · NFCD</p>
+    <h2 class="nf-title"><span class="nf-q">¿</span>En qué estamos<span class="nf-q">?</span></h2>
+    <div class="nf-tick"></div>
+    <p class="nf-intro">Tres movimientos · un mismo cuerpo</p>
+  </header>
+
+  <!-- ─────────── Movimiento I ─────────── -->
+  <section class="nf-mov">
+    <div class="nf-rail">
+      <span class="nf-num">I</span>
+      <span class="nf-verb">Venimos de</span>
+    </div>
+    <div class="nf-body">
+      <h3 class="nf-head">De dónde venimos</h3>
+      <p class="nf-lead">Venimos de miles de años de historia. Venimos de libros, encuentros, poesías y mil danzas. Venimos de años de recopilación y sistematización de Naturaleza de la Fuerza en el Cuerpo y la Danza; venimos de centros culturales, encuentros, festivales, ciclos formativos y festejos. Venimos de un apoyo del Fondo Metropolitano para las Ciencias y las Artes para imprimir la primera tirada de 2.000 libros, que hoy reposan en diversas bibliotecas y altares.</p>
+      <p>Venimos, desde 2023, de la ardua labor de armar el proceso de certificación para docentes e investigadores del sistema NFCD; venimos de intentos, de laboratorios, de preguntarnos en grupo por nuestra participación a nivel individual, social y planetario. Venimos de saber que la danza salvará el mundo, y de descubrir la militancia de la mariposa: una rebelión blandita pero persistente contra los modos colonizadores establecidos.</p>
+      <p>Venimos de construir CasaMadre, que funciona como hogar y escuela para la comunidad de estudiantes de NFCD, y como hogar de una comunidad en emergencia en el Territorio del Campo, Arroyo del Medio. Venimos de inaugurar la sala-templo —la <em>Crisálida</em>— para realizar procesos de transformación y aprendizaje con la curaduría de NFCD. Venimos de un año en el que nos arriesgamos a sostener cuatro clases por semana con cuatro docentes del sistema.</p>
+      <p>Venimos de filmar cursos en alta calidad —aún en producción— para difundir la práctica medular del sistema NFCD, la Alineación, entrenamiento interior de las fuerzas: un espacio que NFCD gesta y habita, con la perspectiva y la infraestructura de una sede virtual donde el conocimiento colectivo circula y se difunde a nivel global.</p>
+      <p>Venimos de trabajar arduo en el armado inteligente de la gestión y el desarrollo institucional, incorporando herramientas digitales; venimos de sostener un sistema de diseño, comunicación e identidad, con secretaría y administración. Venimos de una gran comunidad de estudiantes que participan con mayor o menor frecuencia, pero a la que se siente presente. Venimos de compartir nuestras íntimas vivencias para el desarrollo del documental <em>Lo inédito que brota</em>, que se viene filmando hace varios años aquí, en nuestro hogar y escuela en la Patagonia Argentina.</p>
+      <p>Venimos de muchos festejos, encuentros y preguntas; y de la labor de construir la asociación bajo la reglamentación de la IGPJ en Argentina, con el propósito de coordinar nuevos horizontes de acción y tejer alianzas entre personas, entidades, disciplinas y artes. La asociación civil se llama <em>El Retorno del Mundo</em>, y parte del equipo de Naturaleza de la Fuerza es cofundadora. Venimos de danzar y de preguntarnos cómo colaborar, con nuestra participación, en un devenir vital y alegre del ser humano y de las generaciones que siguen.</p>
+    </div>
+  </section>
+
+  <!-- ─────────── Movimiento II ─────────── -->
+  <section class="nf-mov">
+    <div class="nf-rail">
+      <span class="nf-num">II</span>
+      <span class="nf-verb">Estamos</span>
+    </div>
+    <div class="nf-body">
+      <h3 class="nf-head">Dónde estamos hoy</h3>
+      <p class="nf-lead">Estamos trabajando para que NFCD pueda organizar su estructura institucional, como resultado de muchos años de crecimiento; y para eso se necesita ayuda. Pero todavía estamos en una etapa previa a invertir en un equipo interno contratado: aún no terminamos de construir la estructura mínima que nos permita coordinar, delegar y repartir tareas —es decir, incorporar personas de manera sostenible para proyectos de mediano y largo plazo—. Eso es justamente lo que estamos trabajando ahora: armando las bases para abrir el equipo más adelante. Vamos en ese rumbo.</p>
+      <p>Estamos terminando de filmar el curso de <em>Alineación, Asuntos</em>; llevamos un aproximado de 50 horas de clase filmadas, que ahora entran en su proceso de edición. Estamos configurando la página web para mejorar los procesos de inscripción y de administración de la institución. Estamos armando los flujos de trabajo en secretaría, administración, comunicación y manejo de plataformas virtuales y sociales para, llegado el momento, ampliar el equipo interno.</p>
+      <p>A la par, estamos por realizar la primera asamblea de socios de la asociación <em>El Retorno del Mundo</em>: venimos de varios años tejiéndola, despacio pero con pasos firmes en su propósito y en su grupo interno.</p>
+    </div>
+  </section>
+
+  <!-- ─────────── Movimiento III ─────────── -->
+  <section class="nf-mov">
+    <div class="nf-rail">
+      <span class="nf-num">III</span>
+      <span class="nf-verb">Se viene</span>
+    </div>
+    <div class="nf-body">
+      <h3 class="nf-head">Hacia dónde vamos</h3>
+      <p class="nf-lead">Buscamos tener bien organizada la institución de NFCD para sumar personas, tanto en las áreas de desarrollo institucional como en la formación y difusión pedagógica y en el desarrollo de la <em>grieta</em> de la compañía artística del sistema.</p>
+      <p>Se viene más producción de materiales de texto y editorial: cuadernillos para estudiantes, para procesos de formación docente, para difusión abierta al público, y la recopilación de testimonios. Se viene la línea de salud de NFCD, para trabajar específicamente los asuntos de la vitalidad, la alegría y la postura del vivir. Se viene la implementación de la nueva modalidad de certificación, con la intención de iniciar en 2028 los seminarios formativos. Se viene la consolidación del equipo de diseño gráfico y audiovisual, con planes anuales de difusión y una estética artística para mostrar la práctica, las ramas de NFCD y sus eventos, abrir el acceso a los materiales y fomentar la inscripción de estudiantes y la promulgación de la práctica.</p>
+      <p>En paralelo, en rumbo hacia la asociación y el Campo como territorio del colectivo transdisciplinario, se busca abrir el ingreso de nuevos socios que quieran sumarse a la comunidad: a colaborar con el desarrollo, a estudiar NFCD, a convivir y/o a presentar proyectos pensados desde lo transdisciplinario, donde NFCD participa como parte del paisaje, brindando cobijo. Se viene también expandir la convivencia en comunidad en el Campo, con otros proyectos y otras formas de arte, expresión, investigación, trabajo y generación de recursos que los socios deseen traer y desarrollar. Deseamos unir fuerzas para potenciar —desde el arte, la ciencia y la espiritualidad— el vivir pleno, feliz y natural del ser humano, y recrear entornos vitales.</p>
+    </div>
+  </section>
+</div>
