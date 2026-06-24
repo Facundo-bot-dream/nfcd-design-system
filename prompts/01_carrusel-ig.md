@@ -76,10 +76,18 @@ Generá el artifact HTML completo con los [N_SLIDES] slides.
 
 ## Export PNG (después de generar)
 
-Por cada slide:
+Pegá este prompt exacto — evita que Design itere buscando el método correcto:
+
 ```
-Exportá el slide [N] como imagen PNG de 1080×1350px
+Exportá todos los slides del carrusel como PNG de exactamente 1080×1350px.
+Método requerido:
+1. Generá un HTML standalone por slide con rutas de assets corregidas (prefijo ../ si es necesario)
+2. Inline todas las fuentes y logos como base64
+3. Rasterizá cada slide vía SVG foreignObject al tamaño exacto 1080×1350px
+4. Exportá un PNG por slide, uno por vez
+
+Nombrarlos: 01-Portada.png, 02-[titulo].png, 03-[titulo].png ... hasta el último.
+No modificar el diseño — exportar tal cual está.
 ```
 
-Nombrar al descargar: `01-[Titulo].png`, `02-[Titulo].png`, etc.
 Destino local: `design/ig/exports/png/`
