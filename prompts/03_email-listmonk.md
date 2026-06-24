@@ -1,12 +1,17 @@
 # Prompt master — Email / Newsletter Listmonk NFCD
-> Superficie: HTML email · ancho 600px · generar en Cowork (no en Claude Design)
+> Superficie: HTML email · ancho 600px · diseñar en Claude Design · exportar raw HTML para Listmonk
 
 ---
 
-## Importante antes de empezar
+## Flujo de dos outputs — siempre
 
-Los emails para Listmonk se generan en **Cowork** (este espacio), no en Claude Design.
-El HTML resultante se importa directamente en Listmonk como template o campaña.
+| Output | Dónde | Para qué |
+|---|---|---|
+| `.dc.html` | Claude Design | Editar visualmente, iterar, archivar |
+| `.html` raw | Listmonk → Format = Raw HTML | Enviar la campaña |
+
+**Diseño:** abrí el template `Email NFCD · Newsletter` en Claude Design → editá contenido → pedí "dame el raw HTML para Listmonk".
+**No** generar el email desde cero en Cowork — usar siempre el template de Design como base.
 
 ---
 

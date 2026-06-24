@@ -36,11 +36,16 @@ If the user invokes this skill without any other guidance, ask them what they wa
 - **Convención de nombre:** `A4_[descripcion]_[AAAA-MM].dc.html`
 
 ### Email / Newsletter Listmonk (`templates/email-listmonk/`)
-- **Formato:** HTML standalone (no .dc.html) — se importa directamente en Listmonk
-- **Ancho máximo:** 600 px, inline styles, sin web fonts externas (usar font-family stack seguro)
-- **Archivo modelo:** `Email_NFCD_modelo.html` — usar como base para nuevas campañas
-- **Archivo ejemplo:** `Email_encuentros-profundizacion_2026-07.html`
-- **Convención de nombre:** `Email_[descripcion]_[AAAA-MM].html`
+- **Dos outputs distintos — siempre:**
+  - `.dc.html` → template editable en Claude Design (usa Book Antiqua + Letter Gothic reales del DS)
+  - `.html` raw → el que va a Listmonk (usa Palatino/Courier como fallback, inline styles, 600px)
+- **Diseño:** en Claude Design usando el template `Email NFCD · Newsletter`
+- **Export para Listmonk:** pedirle a Design "dame el raw HTML para Listmonk" → pegar en Listmonk con Format = Raw HTML
+- **Ancho máximo:** 600 px, inline styles obligatorios, sin web fonts externas
+- **Variable baja:** `{{ UnsubscribeURL }}` — preservar siempre
+- **Archivo template Design:** `email-nfcd-newsletter/EmailNFCDNewsletter.dc.html`
+- **Archivo modelo HTML:** `Email_NFCD_modelo.html`
+- **Convención de nombre:** `Email_[descripcion]_[AAAA-MM].html` (raw para Listmonk)
 
 ### Post IG suelto (`templates/post-ig-encuentros/`)
 - **Dimensión:** 1080 × 1080 px (cuadrado)
