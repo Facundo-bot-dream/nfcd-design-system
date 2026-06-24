@@ -1,167 +1,176 @@
 # NFCD — Naturaleza de la Fuerza · Design System
 
-**Naturaleza de la Fuerza en el Cuerpo y la Danza (NFCD)** is a system of practice and
-research that engages the events of the body, forces, and dance as fields of access to
-knowledge — toward a planetary consciousness for human development. Directed by **Roxana
-Galand**, with its first home in **Campo Arroyo del Medio, Bariloche, Patagonia
-(Argentina)**.
+**Naturaleza de la Fuerza en el Cuerpo y la Danza (NFCD)** es un sistema de práctica e
+investigación que trabaja los eventos del cuerpo, las fuerzas y la danza como campos de
+acceso al conocimiento — hacia una conciencia planetaria para el desarrollo humano.
+Dirigido por **Roxana Galand**, con sede en **Campo Arroyo del Medio, Bariloche,
+Patagonia (Argentina)**.
 
-NFCD produces:
-- **Institutional PDFs** — programmes for encuentros, course sheets (*fichas de curso*), calendars.
-- **Social-media material** — posts and posters in various formats.
-- **Pedagogical material** — books, ebooks, a blog.
-- **Website** — in HTML.
+NFCD produce:
+- **PDFs institucionales** — programas de encuentros, fichas de curso, calendarios.
+- **Material para redes sociales** — posts, flyers y carruseles en distintos formatos.
+- **Material pedagógico** — libros, ebooks, blog.
+- **Sitio web** — en HTML.
 
-This design system gives those surfaces one coherent voice: the hand-drawn graphite
-imagery of the logo, a restrained ink-and-paper palette with a single wine accent, and a
-three-typeface system (hand-drawn display · classical serif · typewriter mono).
+Este design system le da a todas esas superficies una voz coherente: la imagen de grafito
+del logo, una paleta austera de tinta sobre papel con un único acento wine, y un sistema de
+tres tipografías (display manuscrita · serif clásica · mono de máquina).
 
-## Sources provided
-- **Local codebase:** `design system NFCD/` (mounted, read-only) — contained brand
-  **logos** (`nfcd_logos/`) and **fonts** only (Amatic SC, Book Antiqua, Letter Gothic
-  Std). No product screens, website code, or written brand guide were included.
-- All logos and fonts have been copied into `assets/`. No Figma or GitHub source was given.
+## Fuentes provistas
 
-> Because there were **no existing product designs** to recreate, the website and editorial
-> UI kits are built directly from the brand foundations (logo, type, colour), not copied
-> from prior screens.
+- **Base local:** `design system NFCD/` (montada, solo lectura) — incluye **logos**
+  (`nfcd_logos/`) y **fuentes** únicamente (Amatic SC, Book Antiqua, Letter Gothic Std).
+  No se incluyeron pantallas de producto, código del sitio ni guía de marca escrita.
+- Todos los logos y fuentes fueron copiados a `assets/`. No se proveyó fuente en Figma ni GitHub.
+
+> Dado que **no existían diseños de producto previos** que recrear, los UI kits web y
+> editorial se construyeron directamente desde las bases de marca (logo, tipografía, color),
+> no copiados de pantallas anteriores.
 
 ---
 
-## CONTENT FUNDAMENTALS
+## FUNDAMENTOS DE CONTENIDO
 
-**Language.** Primary language is **Spanish (Río de la Plata / Argentine)**. Voseo is
-natural for direct address ("contanos", "inscribite"), though most institutional copy is
-descriptive rather than imperative.
+**Idioma.** El idioma principal es el **español del Río de la Plata / argentino**. El voseo
+es natural para el trato directo ("contanos", "inscribite"), aunque la mayoría de la copia
+institucional es descriptiva antes que imperativa.
 
-**Voice.** Poetic-essayistic and embodied, not corporate. Copy treats the body as a site
-of knowledge: it states ideas as events ("La danza no ilustra una idea: *la produce*").
-Sentences are unhurried, often with a colon or em-dash turning the thought. It favours
-concrete somatic nouns — *hueso, peso, aliento, gesto, vuelo, fuerza, paisaje* — over
-abstractions.
+**Voz.** Poético-ensayística y encarnada, no corporativa. La copia trata al cuerpo como
+sitio de conocimiento: enuncia ideas como eventos ("La danza no ilustra una idea: *la
+produce*"). Las frases son pausadas, a menudo con dos puntos o raya que giran el
+pensamiento. Favorece sustantivos somáticos concretos — *hueso, peso, aliento, gesto,
+vuelo, fuerza, paisaje* — por sobre abstracciones.
 
-**Person.** Mostly third-person / impersonal for institutional text ("el sistema",
-"la práctica"); first-person plural ("trabajamos", "abrimos") for invitations. Avoid
-second-person marketing ("you'll love…"). The director is named: *Roxana Galand*.
+**Persona.** Mayormente tercera persona / impersonal para el texto institucional ("el
+sistema", "la práctica"); primera persona del plural ("trabajamos", "abrimos") para las
+invitaciones. Evitar segunda persona de marketing ("vas a amar…"). La directora se nombra:
+*Roxana Galand*.
 
-**Casing.** Display titles and the wordmark are **UPPERCASE**, widely letter-spaced.
-Eyebrows / labels / metadata are **UPPERCASE mono**, even more tracked. Body prose is
-sentence case. Avoid Title Case.
+**Casing.** Los títulos display y el wordmark van en **MAYÚSCULAS**, con espaciado amplio.
+Las cejas / labels / metadatos van en **MONO MAYÚSCULAS**, aún más trackeadas. La prosa de
+cuerpo va en minúsculas con mayúscula inicial. Evitar Title Case.
 
-**Punctuation & rhythm.** Em-dashes and colons carry the rhythm. Mid-sentence emphasis is
-set in *italic serif* (Letter Gothic italic for mono). Metadata uses ` · ` (middle dot)
-as a separator: "12 · 19 · 26 abril", "Bariloche · Patagonia".
+**Puntuación y ritmo.** Las rayas y los dos puntos marcan el ritmo. El énfasis en mitad de
+frase se da en *itálica serif* (Letter Gothic italic para mono). Los metadatos usan ` · `
+(punto medio) como separador: "12 · 19 · 26 abril", "Bariloche · Patagonia".
 
-**Emoji.** **None.** The brand never uses emoji. No exclamation-heavy hype.
+**Emoji.** **Ninguno.** La marca nunca usa emoji. Sin hype de exclamaciones.
 
-**Vibe.** Quiet, grave, organic, scholarly-artistic. Think anatomical plate + dance studio
-+ Patagonian field notebook. Examples in use:
-- Eyebrow: `ENCUENTRO · OTOÑO 2026`
-- Title: `EL CUERPO QUE ESCUCHA`
-- Lead: "Tres encuentros de práctica somática y danza en contacto con el paisaje del Campo."
+**Tono.** Quieto, grave, orgánico, académico-artístico. Pensar en lámina anatómica +
+estudio de danza + cuaderno de campo patagónico. Ejemplos en uso:
+- Ceja: `ENCUENTRO · OTOÑO 2026`
+- Título: `EL CUERPO QUE ESCUCHA`
+- Copete: "Tres encuentros de práctica somática y danza en contacto con el paisaje del Campo."
 - Label: `SEDE · Campo Arroyo del Medio` / `DURACIÓN · 3 encuentros · 12 h`
 
 ---
 
-## VISUAL FOUNDATIONS
+## FUNDAMENTOS VISUALES
 
-**Logo / motif.** The isologo is a **graphite (pencil) drawing of a human ribcage that
-transforms into a butterfly wing** — bone and flight, structure and metamorphosis. It is
-rendered in **black & white** with soft smudged shading on a white ground. This drawing is
-the brand's single most important visual asset; all imagery derives from this register.
-Three lockups exist: v1 vertical (mark above wordmark), v2 horizontal (mark left of
-wordmark), v3 portrait. Each in colour-on-white, black, and white variants. The wordmark
-sets `NATURALEZA DE LA FUERZA / EN EL CUERPO Y LA DANZA` in a thin, very wide-tracked
-uppercase, in the brand wine.
+**Logo / motivo.** El isologo es un **dibujo a grafito (lápiz) de una caja torácica humana
+que se transforma en ala de mariposa** — hueso y vuelo, estructura y metamorfosis. Se
+renderiza en **blanco y negro** con sombreado suave sobre fondo blanco. Este dibujo es el
+activo visual más importante de la marca; toda la imaginería deriva de este registro.
+Existen tres versiones: v1 vertical (motivo sobre wordmark), v2 horizontal (motivo a la
+izquierda del wordmark), v3 retrato. Cada una en variante color-sobre-blanco, negro y
+blanco. El wordmark compone `NATURALEZA DE LA FUERZA / EN EL CUERPO Y LA DANZA` en una
+familia fina, muy trackeada, en mayúsculas, en wine.
 
-**Colour.** Restrained and warm. One signature accent — **wine `#a7274c`** (sampled from
-the wordmark) — over a **warm graphite ink** scale (near-black `#1a1614`, never pure
-black) and a **warm paper** scale (bone white `#fbf9f5`, not stark white). A muted
-**sage** is available, harmonised in oklch, reserved for *naturaleza* / planetary
-contexts. Colour is used sparingly: most surfaces are ink on paper, with wine as a single
-deliberate stroke. Imagery is **monochrome graphite** — never tinted.
+**Color.** Austero y cálido. Un único acento de firma — **wine `#a7274c`** (muestreado del
+wordmark) — sobre una escala de **grafito-tinta cálido** (near-black `#1a1614`, nunca negro
+puro) y una escala de **papel cálido** (blanco hueso `#fbf9f5`, no blanco frío). Un
+**sage-teal** de soporte, harmonizado en oklch (anclaje `#1a9496`), reservado para
+contextos de *naturaleza* / planeta / agua. El color se usa con economía: la mayoría de las
+superficies son tinta sobre papel, con wine como única pincelada deliberada. La imaginería
+es **grafito monocromático** — nunca teñida.
 
-**Type.** Three provided typefaces, each with a clear role:
-- **Amatic SC** (`--font-display`) — hand-drawn, tall, condensed; echoes the pencil logo.
-  Posters, hero titles, expressive social. Always uppercase, lightly tracked.
-- **Book Antiqua** (`--font-serif`) — humanist Palatino-lineage serif for **reading**:
-  books, ebooks, blog, programme prose. Sentence case, line-height ~1.55.
-- **Letter Gothic Std** (`--font-mono`) — typewriter monospace for **labels, metadata,
-  captions** and the institutional voice. Uppercase, tracked 0.16–0.22em.
+**Tipografía.** Tres familias, cada una con rol claro:
+- **Amatic SC** (`--font-display`) — manuscrita, alta, condensada; hace eco con el logo a
+  lápiz. Posters, títulos hero, social expresivo. Siempre mayúsculas, levemente trackeada.
+- **Book Antiqua** (`--font-serif`) — serif humanista (linaje Palatino) para **lectura**:
+  libros, ebooks, blog, prosa de programa. Minúsculas con mayúscula inicial, interlineado ~1.55.
+- **Letter Gothic Std** (`--font-mono`) — mono de máquina de escribir para **labels,
+  metadatos, epígrafes** y la voz institucional. Mayúsculas, tracking 0.16–0.22em.
 
-**Spacing & layout.** 4px base scale, generous paper margins. Reading column ~68ch;
-containers max ~1200px. Layouts are calm and grid-based; documents read like printed
-matter (mastheads, meta strips, footers with an ink rule).
+**Espaciado y layout.** Escala base de 4px, márgenes de papel generosos. Columna de
+lectura ~68ch; contenedores máx ~1200px. Los layouts son calmos y en grilla; los documentos
+se leen como material impreso (mastheads, franjas de meta, pies con regla de tinta).
 
-**Backgrounds.** Warm paper, occasionally an ink (`#1a1614`) ground for footers / inverse
-panels. **No gradients.** Imagery sits on paper via `mix-blend-mode: multiply` so the
-pencil tone melts into the ground. No repeating patterns or textures beyond the drawings.
+**Fondos.** Papel cálido; ocasionalmente fondo tinta (`#1a1614`) para footers / paneles
+inversos. **Sin gradientes.** Las imágenes se apoyan sobre papel vía `mix-blend-mode:
+multiply` para que el tono a lápiz se funda con el fondo. Sin patrones repetidos ni
+texturas más allá de los dibujos.
 
-**Corners & borders.** Near-square — radii are 0–6px; **pills (`999px`) are reserved for
-tags only**. Borders are hairline ink (`--border-hair/soft`); section breaks use a 1–2px
-ink rule. The signature divider is a short 48px "tick" (often wine) echoing the rule under
-the wordmark.
+**Esquinas y bordes.** Near-square — radios 0–6px; **las pills (`999px`) son solo para
+tags**. Los bordes son hairline tinta (`--border-hair/soft`); los quiebres de sección usan
+una regla de tinta de 1–2px. El separador de firma es un "tick" de 48px (a menudo en wine)
+que hace eco con la regla bajo el wordmark.
 
-**Shadows / elevation.** Faint and warm — "paper lifting off paper" (`0 2px 8px rgba(26,
-22,20,.08)`). Most surfaces are flat with a hairline border; shadow is rare.
+**Sombras / elevación.** Leves y cálidas — "papel levantándose del papel" (`0 2px 8px
+rgba(26,22,20,.08)`). La mayoría de las superficies son planas con borde hairline; la
+sombra es excepcional.
 
-**Cards.** Warm paper (`--surface-card`), hairline border, near-square corner, usually no
-shadow. Optional **3px wine top-accent** for emphasis. No coloured-left-border cards.
+**Cards.** Papel cálido (`--surface-card`), borde hairline, esquina near-square,
+generalmente sin sombra. **Acento top de 3px en wine** opcional para énfasis. Sin cards de
+borde izquierdo coloreado.
 
-**Hover / press.** Quiet. Solid buttons darken wine (`600→700`); outline buttons **invert**
-to ink ground; links deepen and gain an underline. No scaling, no bounce. Press deepens
-one more step (`→800`). Focus shows a soft wine ring (`0 0 0 3px --wine-050`).
+**Hover / press.** Quietos. Los botones sólidos oscurecen el wine (`600→700`); los botones
+outline **invierten** a fondo tinta; los links se profundizan y ganan subrayado. Sin
+escala, sin rebote. El press baja un paso más (`→800`). El foco muestra un anillo suave
+wine (`0 0 0 3px --wine-050`).
 
-**Motion.** Slow and organic — `--dur-base 240ms`, `--ease-quiet`. Fades and gentle
-position shifts; **never** bounce or spring. Decorative loops are avoided.
+**Movimiento.** Lento y orgánico — `--dur-base 240ms`, `--ease-quiet`. Fundidos y
+desplazamientos leves; **nunca** rebote ni spring. Se evitan los loops decorativos.
 
-**Transparency / blur.** Minimal. Transparency appears only as logo PNG alpha and the
-multiply blend of imagery on paper. No glassmorphism / backdrop blur.
+**Transparencia / blur.** Mínima. La transparencia aparece solo como alpha del PNG del logo
+y el blend multiply de la imaginería sobre papel. Sin glassmorphism / backdrop blur.
 
-**Imagery vibe.** Monochrome graphite, warm, hand-made, anatomical & botanical. Bone,
-breath, wing, body, Patagonian field. Never glossy, never colour-graded, never stock-photo.
-
----
-
-## ICONOGRAPHY
-
-The brand ships **no icon set, icon font, or SVG sprite** — none was present in the source
-material, and the visual language is hand-drawn rather than iconographic. Accordingly:
-
-- **Primary "iconography" is typographic & drawn.** The graphite ribcage-butterfly motif
-  and the short wine **tick rule** do the symbolic work. Numbered programme items use mono
-  numerals (`01 · 02 · 03`) rather than bullets/icons.
-- **Separators** use the middle dot `·` (U+00B7) in mono — the brand's one consistent
-  "glyph".
-- **Emoji are never used.**
-- **If a UI genuinely needs line icons** (e.g. a future web app), use a **thin, single-
-  weight, rounded-join stroke set that matches the pencil line** — **[Lucide](https://lucide.dev)**
-  (1.5–2px stroke) is the recommended CDN substitute. ⚠️ *This is a substitution, not a
-  brand asset — confirm before relying on it.* Keep icons ink-coloured and sparse; never
-  fill them with wine except for a single active state.
-
-Logos live in `assets/logos/` (PNG). The editable vector source is
-`design system NFCD/nfcd_logos/nfcd_brand_logos.ai` (Illustrator, in the mounted folder —
-not copied in).
+**Vibe de imaginería.** Grafito monocromático, cálido, hecho a mano, anatómico y botánico.
+Hueso, aliento, ala, cuerpo, campo patagónico. Nunca brilloso, nunca con color grade,
+nunca stock photo.
 
 ---
 
-## INDEX / MANIFEST
+## ICONOGRAFÍA
 
-**Root**
-- `styles.css` — global entry (consumers link this); `@import`s the token layers.
-- `readme.md` — this guide.
-- `SKILL.md` — Agent-Skills wrapper for download/Claude Code.
+La marca **no incluye set de íconos, fuente de íconos ni sprite SVG** — no había nada de
+eso en el material fuente, y el lenguaje visual es dibujado, no icónico. Por lo tanto:
 
-**`tokens/`** — `fonts.css` (3 `@font-face` families), `colors.css` (wine / ink / paper /
-sage + semantic aliases), `typography.css` (families, scale, tracking), `spacing.css`
-(spacing, radii, borders, shadows, motion).
+- **La "iconografía" primaria es tipográfica y dibujada.** El motivo de grafito
+  costilla-mariposa y la **regla tick** wine hacen el trabajo simbólico. Los ítems de
+  programa numerados usan numerales mono (`01 · 02 · 03`) en lugar de bullets/íconos.
+- **Los separadores** usan el punto medio `·` (U+00B7) en mono — el único "glifo"
+  consistente de la marca.
+- **Los emoji nunca se usan.**
+- **Si una UI genuinamente necesita íconos de línea** (p. ej. una futura app web), usar un
+  **set de trazo fino, peso único, unión redondeada que coincida con la línea a lápiz** —
+  **[Lucide](https://lucide.dev)** (trazo 1.5–2px) es el sustituto CDN recomendado.
+  ⚠️ *Esto es una sustitución, no un activo de marca — confirmar antes de usarlo.* Mantener
+  los íconos en color tinta y escasos; nunca rellenarlos en wine salvo para un único estado
+  activo.
 
-**`assets/`** — `logos/` (isologo v1–v3 in colour/black/white + alpha motif renders),
-`fonts/` (Amatic SC, Book Antiqua, Letter Gothic Std).
+Los logos están en `assets/logos/` (PNG). La fuente vectorial editable es
+`design system NFCD/nfcd_logos/nfcd_brand_logos.ai` (Illustrator, en la carpeta montada —
+no copiada).
 
-**`guidelines/`** — foundation specimen cards (Colors, Type, Spacing, Brand) shown in the
-Design System tab.
+---
+
+## ÍNDICE / MANIFIESTO
+
+**Raíz**
+- `styles.css` — entrada global (los consumidores enlazan esto); `@import`a las capas de tokens.
+- `readme.md` — esta guía.
+- `SKILL.md` — wrapper para Claude Code / pipeline de producción.
+
+**`tokens/`** — `fonts.css` (3 familias `@font-face`), `colors.css` (wine / ink / paper /
+sage-teal + alias semánticos), `typography.css` (familias, escala, tracking), `spacing.css`
+(espaciado, radios, bordes, sombras, movimiento).
+
+**`assets/`** — `logos/` (isologo v1–v3 en color/negro/blanco + renders del motivo con
+alpha), `fonts/` (Amatic SC, Book Antiqua, Letter Gothic Std).
+
+**`guidelines/`** — tarjetas especimen de fundamentos (Colores, Tipografía, Espaciado,
+Marca) mostradas en la pestaña Design System.
 
 **`components/`** (namespace `window.NFCDDesignSystem_1d3b67`)
 - `core/` — **Button**, **Eyebrow**, **Rule**
@@ -169,15 +178,16 @@ Design System tab.
 - `forms/` — **Field**
 
 **`ui_kits/`**
-- `website/` — institutional home page (header, hero, encuentros, about, footer).
-- `editorial/` — A4 *ficha de curso* / programme PDF.
+- `website/` — página institucional (header, hero, encuentros, about, footer).
+- `editorial/` — ficha de curso / programa A4.
 
-**`templates/`**
-- `carrusel-ig/` — carruseles 1080×1350 para Instagram. Archivos `.dc.html` editables + `exports/PNG/` con imágenes listas para subir.
-- `a4-ficha/` — fichas de curso y programas en A4. Archivos `.dc.html` + exports PDF.
-- `email-listmonk/` — newsletters HTML para Listmonk (table-based, estilo de marca). Copiar y editar zonas marcadas.
-- `post-ig/` — posts sueltos IG (no carrusel).
-- `social-poster/` — posters sociales 1080×1080.
+**`templates/`** — todos los archivos son `.dc.html` (editables inline en Design)
+- `carrusel-ig/` — carruseles 1080×1350 para Instagram. `.dc.html` editable + `exports/PNG/`.
+- `a4-ficha/` — fichas de curso y programas A4. `.dc.html` + exports PDF.
+- `email-nfcd-newsletter/` — newsletter HTML para Listmonk. `.dc.html` + export `.html` raw.
+- `flyer-ig/` — flyer único 1080×1350 para WhatsApp y Stories. `.dc.html` + export PNG.
+- `web-pagina/` — página de encuentro para WordPress. HTML + CSS para Gutenberg.
+- `web-carrusel/` — slider de encuentros para la home. HTML + Swiper.js.
 
 **`encuentros-2026/`** — piezas de comunicación Encuentros de Profundización 2026.
 
@@ -197,6 +207,7 @@ Design System tab.
 ig_carrusel-encuentros-invierno_2026-07.dc.html
 email_encuentros-profundizacion_2026-07.html
 a4_ficha-profundizacion_2026-07.dc.html
+flyer_encuentros-invierno_2026-07.dc.html
 ```
 
 ## Archivos del sistema — no mover ni renombrar
@@ -207,9 +218,9 @@ a4_ficha-profundizacion_2026-07.dc.html
 - `listmonk_public_pages_NFCD.css` — estilo de marca para las páginas de baja/suscripción.
 - `listmonk_public_es.js` — traducción al español de esas páginas.
 
-### Substitutions & caveats
-- **Fonts:** Amatic SC is OFL (open). **Book Antiqua** and **Letter Gothic Std** are
-  commercial fonts supplied by the brand — included here for fidelity; confirm web-embedding
-  licensing before public deployment.
-- The wordmark uses a thin geometric face that is **not** one of the three working fonts;
-  in HTML, always use the **logo image** for the wordmark rather than setting it as type.
+### Sustituciones y aclaraciones
+- **Fuentes:** Amatic SC es OFL (abierta). **Book Antiqua** y **Letter Gothic Std** son
+  fuentes comerciales provistas por la marca — incluidas por fidelidad; confirmar licencia
+  de embedding web antes del despliegue público.
+- El wordmark usa una familia geométrica fina que **no** es ninguna de las tres fuentes de
+  trabajo; en HTML, usar siempre la **imagen del logo** para el wordmark, nunca tipografiado.

@@ -1,18 +1,44 @@
-# Prompts NFCD — Índice
+# Prompts NFCD — Pipeline de comunicación
 
-Prompts master por superficie. Completar las variables `[ENTRE_CORCHETES]` y pegar en el espacio correspondiente.
+Un encuentro → seis outputs coherentes desde una sola fuente.
 
-| Archivo | Superficie | Dónde usarlo |
-|---|---|---|
-| `01_carrusel-ig.md` | Instagram carousel 1080×1350 | Claude Design |
-| `02_a4-ficha.md` | Ficha editorial A4 / PDF | Claude Design |
-| `03_email-listmonk.md` | Newsletter HTML para Listmonk | Cowork |
-| `04_web-componente.md` | Componente web o bloque Gutenberg | Cowork |
+## Flujo
 
-## Flujo rápido
+```
+00_brief-encuentro.md   ← completar UNA VEZ por encuentro
+        │
+        ├── 01_carrusel-ig.md    → N PNG 1080×1350   → Instagram (carrusel)
+        ├── 02_a4-ficha.md       → PDF A4             → imprimir / compartir
+        ├── 03_email-listmonk.md → HTML raw           → Listmonk
+        ├── 04_web-pagina.md     → HTML + CSS         → WordPress (página)
+        ├── 05_web-carrusel.md   → HTML + Swiper.js   → WordPress (slider home)
+        └── 06_flyer-ig.md       → PNG 1080×1350      → WhatsApp / Stories / Feed
+```
 
-1. Elegir superficie → abrir el `.md` correspondiente
-2. Completar variables `[ ]`
-3. Pegar el bloque `PROMPT` en Claude Design o Cowork
-4. Iterar, exportar, guardar en `design/[superficie]/`
-5. Si es template reutilizable → copiar a `templates/[superficie]/` y commitear en GitHub Desktop
+## Archivos
+
+| Archivo | Superficie | Dónde generarlo | Output |
+|---|---|---|---|
+| `00_brief-encuentro.md` | — fuente de variables — | completar a mano | — |
+| `01_carrusel-ig.md` | Carrusel IG 1080×1350 | Claude Design | N PNG |
+| `02_a4-ficha.md` | Ficha editorial A4 | Claude Design | PDF |
+| `03_email-listmonk.md` | Newsletter | Claude Design | HTML raw |
+| `04_web-pagina.md` | Página WordPress | Cowork | HTML + CSS |
+| `05_web-carrusel.md` | Slider home WordPress | Cowork | HTML + Swiper.js |
+| `06_flyer-ig.md` | Flyer único WhatsApp/IG | Claude Design | PNG |
+
+## Uso rápido
+
+Con el brief completado, pegá en Design o Cowork:
+
+```
+Leé prompts/00_brief-encuentro.md y generá [superficie] siguiendo prompts/0X_[superficie].md
+```
+
+Design y Cowork leen ambos archivos del repo y producen el output directamente.
+
+## Todos los templates son .dc.html
+
+Cada superficie genera un `.dc.html` guardado en `templates/[superficie]/`.
+Para editar después: Design → File → Open → seleccionar el `.dc.html` → modificar → re-exportar.
+No hay que regenerar desde cero — los cambios se hacen inline.

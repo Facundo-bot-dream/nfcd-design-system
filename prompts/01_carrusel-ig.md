@@ -43,9 +43,19 @@ Inscripción: [LINK_INSCRIPCION]
 
 <specs>
 - Dimensión por slide: 1080 × 1350 px
-- Formato de salida: artifact HTML con todos los slides en columna vertical, separados, listos para screenshot individual
-- Cada slide es un div independiente de exactamente 1080×1350px
+- Formato de salida: artifact HTML con todos los slides en FILA HORIZONTAL (flex-direction: row), con scroll lateral, separados por 24px de gap
+- El contenedor usa: display:flex; flex-direction:row; overflow-x:auto; gap:24px; padding:24px; background:#111;
+- Cada slide es un div independiente de exactamente 1080×1350px con flex-shrink:0
+- Layout horizontal permite ver la continuidad de fondos panorámicos entre slides
+- Para exportar PNG: capturar cada slide individualmente (el layout horizontal es solo la vista de trabajo)
 </specs>
+
+<fondo_panoramico>
+Técnica opcional: si el encuentro lo justifica, podés usar un fondo panorámico continuo.
+En ese caso, indicá: "El fondo es una imagen única de [N×1080] × 1350px que se divide entre los [N] slides."
+Cada slide recibe su porción via background-position: calc(slide_index * -1080px) 0;
+Efecto: al deslizar en Instagram, el fondo fluye como una sola imagen.
+</fondo_panoramico>
 
 <estructura_slides>
 01 — Portada: título grande, fecha, logo NFCD

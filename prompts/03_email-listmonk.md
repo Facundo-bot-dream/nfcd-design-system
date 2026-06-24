@@ -72,7 +72,7 @@ Firma: [FIRMA]
 - Voz: español rioplatense, poético-ensayístico, no corporativo
 - Paleta: papel #faf8f3 · tinta #1a1410 · wine #a7274c solo para CTA y énfasis
 - Sin emoji. Sin gradientes.
-- Usar como referencia: templates/email-listmonk/Email_NFCD_modelo.html
+- Usar como referencia: templates/email-nfcd-newsletter/EmailNFCDNewsletter.dc.html
 </brand>
 
 Generá el HTML completo del email, listo para pegar en Listmonk.
@@ -85,7 +85,7 @@ Generá el HTML completo del email, listo para pegar en Listmonk.
 1. Copiar el HTML generado
 2. En Listmonk: **Campaigns → Templates → New** (para reusar) o directamente en la campaña
 3. Guardar archivo como `Email_[descripcion]_[AAAA-MM].html` en `design/newsletter/`
-4. Si el template es reutilizable → copiar también a `templates/email-listmonk/`
+4. Si el template es reutilizable → guardar `.dc.html` en `templates/email-nfcd-newsletter/`
 
 ---
 
