@@ -13,13 +13,81 @@ If the user invokes this skill without any other guidance, ask them what they wa
 - `styles.css` — link this one file to get all fonts + tokens. It `@import`s `tokens/`.
 - `tokens/` — colors (wine `#a7274c`, warm ink, warm paper, sage), typography, spacing, fonts.
 - `assets/logos/` — the graphite ribcage→butterfly isologo (v1–v3, colour/black/white) + motif renders.
-- `assets/fonts/` — Amatic SC (display), Book Antiqua (serif body), Letter Gothic Std (mono labels).
+- `assets/fonts/` — Amatic SC (display; open source). Book Antiqua + Letter Gothic Std are licensed — load via system or CSS @font-face in production.
+- `assets/brand/marks/` — Roxana's acrylic mark crops (grey-waves, orange-strokes, red-drop, red-swirl, yellow-splash). Use as monochrome graphite overlays only.
 - `components/` — React primitives (Button, Eyebrow, Rule, Card, Tag, Badge, Field).
-- `ui_kits/website/` and `ui_kits/editorial/` — full surfaces to copy from.
-- `templates/social-poster/` — square social announcement.
+- `ui_kits/website/` — Hero, SiteHeader, SiteFooter, EncuentrosGrid, AboutBlock (React + index.html).
+- `ui_kits/editorial/` — A4 editorial layout base (index.html).
+- `templates/` — master working files per surface (see below).
+
+## Templates — surfaces disponibles
+
+### Carrusel IG (`templates/carrusel-ig/`)
+- **Dimensión canvas:** 1080 × 1350 px por slide
+- **Archivo master:** `CarruselIG_encuentros-invierno_2026-07.dc.html` (editable en Claude Design)
+- **Versión print:** `CarruselIG_encuentros-invierno-print_2026-07.html` (standalone para Canva/impresión)
+- **Export PNG:** solicitar slide a slide como HTML screenshot a 1080×1350. Nombrar: `01-Titulo.png`, `02-Subtitulo.png`, etc.
+- **Convención de nombre:** `CarruselIG_[descripcion]_[AAAA-MM].dc.html`
+
+### A4 / Ficha editorial (`templates/a4-ficha/`)
+- **Dimensión canvas:** A4 (794 × 1123 px @ 96dpi, o 210 × 297 mm para print)
+- **Archivo master:** `A4_encuentro-profundizacion_2026-07.dc.html`
+- **Export:** descargar como PDF desde Claude Design (File → Download → PDF)
+- **Convención de nombre:** `A4_[descripcion]_[AAAA-MM].dc.html`
+
+### Email / Newsletter Listmonk (`templates/email-listmonk/`)
+- **Formato:** HTML standalone (no .dc.html) — se importa directamente en Listmonk
+- **Ancho máximo:** 600 px, inline styles, sin web fonts externas (usar font-family stack seguro)
+- **Archivo modelo:** `Email_NFCD_modelo.html` — usar como base para nuevas campañas
+- **Archivo ejemplo:** `Email_encuentros-profundizacion_2026-07.html`
+- **Convención de nombre:** `Email_[descripcion]_[AAAA-MM].html`
+
+### Post IG suelto (`templates/post-ig-encuentros/`)
+- **Dimensión:** 1080 × 1080 px (cuadrado)
+- **Archivo:** `PostIgEncuentros.dc.html`
+
+### Web — componentes y páginas (`ui_kits/website/`)
+- **Stack:** HTML standalone o React JSX para Gutenberg (WordPress)
+- **Ancho máximo contenido:** 1200 px, responsive mobile-first
+- **Componentes disponibles:** `Hero.jsx`, `SiteHeader.jsx`, `SiteFooter.jsx`, `EncuentrosGrid.jsx`, `AboutBlock.jsx` + `index.html` como página de referencia
+- **Fuentes en web:** cargar Amatic SC vía Google Fonts; Book Antiqua + Letter Gothic via `@font-face` con los archivos de `assets/fonts/`
+- **Flujo:**
+  1. Diseñar componente o página en Claude Design (`.dc.html`) → ver cómo queda
+  2. Pedir a Cowork (este espacio) que genere el HTML/JSX limpio para WordPress
+  3. Guardar `.dc.html` en `design/web/` (local), el `.html` o `.jsx` final en `ui_kits/website/`
+- **Para WordPress + Gutenberg:** el output es un bloque PHP con `register_block_type` + `style.css` que importa los tokens. Pedir explícitamente "bloque Gutenberg" o "HTML para tema a mano".
+- **Convención de nombre:** `web_[descripcion]_[AAAA-MM].dc.html` (archivo Design) / `[ComponentName].jsx` (producción)
+
+### Social poster (`templates/social-poster/`)
+- **Dimensión:** 1080 × 1080 px
+- **Archivo:** `SocialPoster.dc.html`
+
+## Convención de nombres — siempre aplicar
+```
+[superficie]_[descripcion-kebab]_[AAAA-MM].[ext]
+
+Ejemplos:
+CarruselIG_encuentros-invierno_2026-07.dc.html
+A4_ficha-profundizacion_2026-07.dc.html
+Email_encuentros-julio_2026-07.html
+PostIG_charla-abierta_2026-08.dc.html
+```
+
+## Flujo de export PNG (carrusel IG)
+1. Abrir el `.dc.html` en Claude Design
+2. Por cada slide: solicitar "exportá el slide N como PNG 1080×1350"
+3. Claude Design genera la imagen — descargar y nombrar `NN-Titulo.png`
+4. Los PNG van a `templates/carrusel-ig/exports/PNG/` (carpeta local, no sube a GitHub)
+
+## Workflow GitHub
+- `DS-NFCD-GitHub/` → lo que sube al repo (tokens, components, guidelines, templates master, ui_kits)
+- `DS-NFCD-local/` → DS completo con scraps y uploads (solo local)
+- `design/` → archivos de trabajo y exports por sesión (solo local)
+- Cuando hay cambios listos: copiar archivos modificados a `DS-NFCD-GitHub/` → commit → push en GitHub Desktop
 
 ## Non-negotiables
-- Three fonts, three roles: Amatic SC = uppercase display; Book Antiqua = serif reading; Letter Gothic Std = tracked uppercase mono labels.
-- Palette is ink-on-paper with **one** wine accent. Imagery is monochrome graphite. No gradients, no emoji.
-- Near-square corners (pills only for tags). Hairline ink borders. Faint shadows. Quiet motion, no bounce.
-- For the wordmark, use the logo image — do not set it as type.
+- Tres fuentes, tres roles: Amatic SC = display uppercase; Book Antiqua = cuerpo serif; Letter Gothic Std = mono uppercase tracked para labels.
+- Paleta tinta-sobre-papel con **un solo** acento wine `#a7274c`. Imágenes en grafito monocromático. Sin gradientes. Sin emoji.
+- Esquinas near-square (pills solo para tags). Bordes hairline. Sombras suaves. Movimiento quieto, sin bounce.
+- El wordmark siempre como imagen logo — nunca como texto tipografiado.
+- Idioma: español rioplatense (voseo). Voz poético-ensayística, no corporativa.
