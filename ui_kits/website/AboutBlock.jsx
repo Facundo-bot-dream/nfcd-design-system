@@ -11,7 +11,7 @@ function AboutBlock() {
         <Eyebrow>La práctica</Eyebrow>
         <div style={{ height: 12 }} />
         <Rule tone="wine" />
-        <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 34, lineHeight: 1.2, color: "var(--ink-900)", margin: "20px 0 0" }}>
+        <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 34, lineHeight: 1.2, color: "var(--text-strong)", margin: "20px 0 0" }}>
           Hueso y vuelo: el cuerpo como campo de conocimiento
         </h2>
         <p style={{ fontFamily: "var(--font-serif)", fontSize: 17, lineHeight: 1.65, color: "var(--text-body)", margin: "18px 0 0", maxWidth: "58ch" }}>

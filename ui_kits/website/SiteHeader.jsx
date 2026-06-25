@@ -15,7 +15,7 @@ function SiteHeader({ onNav }) {
         {links.map((l) => (
           <a key={l} href="#" onClick={(e)=>e.preventDefault()} style={{
             fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.14em",
-            textTransform: "uppercase", color: "var(--ink-700)", textDecoration: "none",
+            textTransform: "uppercase", color: "var(--text-body)", textDecoration: "none",
           }}>{l}</a>
         ))}
         <Button size="sm" variant="solid">Inscribirme</Button>

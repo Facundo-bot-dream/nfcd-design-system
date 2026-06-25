@@ -5,7 +5,7 @@ import React from "react";
  * or full-width hairline. Vertical option for inline separation.
  */
 export function Rule({ variant = "tick", vertical = false, tone = "ink", style, ...rest }) {
-  const color = tone === "wine" ? "var(--wine-600)" : tone === "faint" ? "var(--border-hair)" : "var(--rule-ink)";
+  const color = tone === "wine" ? "var(--brand)" : tone === "faint" ? "var(--border-hair)" : "var(--rule-ink)";
 
   if (vertical) {
     return <span role="separator" style={{ display: "inline-block", width: "1px", alignSelf: "stretch", background: "var(--border-soft)", ...style }} {...rest} />;

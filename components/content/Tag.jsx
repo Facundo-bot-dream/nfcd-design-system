@@ -5,9 +5,9 @@ import React from "react";
  */
 export function Tag({ children, tone = "wine", style, ...rest }) {
   const tones = {
-    wine: { background: "var(--wine-050)", color: "var(--wine-700)", border: "1px solid var(--wine-200)" },
-    ink: { background: "var(--surface-sunk)", color: "var(--ink-700)", border: "1px solid var(--border-soft)" },
-    sage: { background: "var(--sage-100)", color: "var(--sage-700)", border: "1px solid var(--sage-300)" },
+    wine: { background: "var(--chip-wine-bg)", color: "var(--chip-wine-text)", border: "1px solid var(--chip-wine-line)" },
+    ink: { background: "var(--chip-ink-bg)", color: "var(--chip-ink-text)", border: "1px solid var(--chip-ink-line)" },
+    sage: { background: "var(--chip-sage-bg)", color: "var(--chip-sage-text)", border: "1px solid var(--chip-sage-line)" },
   };
   return (
     <span

@@ -1,0 +1,91 @@
+/* ============================================================
+   NFCD — Tema oscuro
+   Reasigna SOLO alias semánticos bajo [data-theme="dark"].
+   Primitivos y componentes no se tocan: heredan por indirección
+   (ley de no-salto). Importar DESPUÉS de colors.css en styles.css.
+
+   No cambia nada en modo claro: el bloque solo aplica cuando el
+   atributo data-theme="dark" está presente en <html>.
+   ============================================================ */
+
+:root[data-theme="dark"] {
+
+  /* ---- Superficies (papel → tinta; lo elevado aclara, lo hundido oscurece) ---- */
+  --surface-page:   var(--ink-900);
+  --surface-card:   var(--ink-800);
+  --surface-raised: var(--ink-800);
+  --surface-sunk:   var(--ink-950);
+  /* --surface-ink NO se reasigna: panel "tinta permanente" (footer/CTA),
+     oscuro en ambos temas. */
+
+  /* ---- Texto (tinta → papel) ---- */
+  --text-strong:    var(--paper-000);
+  --text-body:      var(--ink-100);
+  --text-muted:     var(--ink-300);
+  --text-faint:     var(--ink-400);
+  --text-on-wine:   var(--paper-000);
+  --text-accent:    var(--wine-400);    /* wine legible sobre tinta */
+
+  /* ---- Líneas y bordes (visibles sobre oscuro = inks más claros) ---- */
+  --border-hair:    var(--ink-700);
+  --border-soft:    var(--ink-700);
+  --border-strong:  var(--ink-300);
+  --rule-ink:       var(--ink-200);
+
+  /* ---- Marca / interactivo (el acento sube para contraste) ---- */
+  --brand:          var(--wine-500);
+  --brand-hover:    var(--wine-400);
+  --brand-press:    var(--wine-600);
+  --brand-tint:     var(--wine-900);
+  --focus-ring:     var(--wine-400);
+  --selection-bg:   var(--wine-800);
+
+  /* ---- Chips (Tag / Badge) en oscuro ----
+     Patrón "Claude Desktop": tinte oscuro del color de fondo,
+     texto en versión brillante del mismo color, borde sutil. */
+  --chip-wine-bg:    var(--wine-900);
+  --chip-wine-text:  var(--wine-300);
+  --chip-wine-line:  var(--wine-700);
+  --chip-wine-solid: var(--wine-500);
+
+  --chip-ink-bg:     var(--ink-800);
+  --chip-ink-text:   var(--ink-200);
+  --chip-ink-line:   var(--ink-700);
+  --chip-ink-solid:  var(--ink-600);
+
+  --chip-sage-bg:    var(--sage-700);
+  --chip-sage-text:  var(--sage-300);
+  --chip-sage-line:  var(--sage-500);
+  --chip-sage-solid: var(--sage-500);
+
+  --chip-on-solid:   var(--paper-000);
+
+  /* ---- Sombras (cálidas → negras densas; el oscuro se apoya más en bordes) ---- */
+  --shadow-sm: 0 1px 2px  rgba(0,0,0,0.40);
+  --shadow-md: 0 2px 8px  rgba(0,0,0,0.45);
+  --shadow-lg: 0 8px 28px rgba(0,0,0,0.55);
+
+  /* Imaginería de grafito: multiply funde en papel, screen en tinta */
+  --img-graphite-blend: screen;
+
+  color-scheme: dark;
+}
+
+/* ::selection en oscuro */
+:root[data-theme="dark"] ::selection { background: var(--selection-bg); color: var(--paper-000); }
+
+/* ============================================================
+   NOTAS DE ACOPLAMIENTO
+   Tus ui_kits usan estilos inline (no clases CSS), así que el blend
+   y el swap de logo se manejan en el JSX, no acá:
+   · Blend de imágenes → token --img-graphite-blend (ya aplicado en Hero).
+   · Swap de logo claro/oscuro → PENDIENTE: header y about usan el logo
+     "color" sobre fondo de página; en oscuro necesitan la variante clara.
+     El footer ya usa el logo blanco (panel tinta permanente, OK).
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   AUTO (opcional): seguir la preferencia del SO cuando el usuario
+   no eligió tema. Para activarlo, duplicar el bloque de arriba en:
+     @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { … } }
+   ------------------------------------------------------------ */

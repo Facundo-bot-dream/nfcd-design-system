@@ -7,8 +7,8 @@ import React from "react";
  */
 export function Eyebrow({ children, tone = "wine", as = "div", style, ...rest }) {
   const tones = {
-    wine: "var(--wine-600)",
-    ink: "var(--ink-700)",
+    wine: "var(--text-accent)",
+    ink: "var(--text-body)",
     muted: "var(--text-muted)",
     onInk: "var(--ink-400)",
   };

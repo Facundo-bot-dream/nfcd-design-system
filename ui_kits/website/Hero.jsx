@@ -13,7 +13,7 @@ function Hero() {
         <h1 style={{
           fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 92,
           lineHeight: 0.92, letterSpacing: "0.03em", textTransform: "uppercase",
-          color: "var(--ink-900)", margin: "22px 0 0",
+          color: "var(--text-strong)", margin: "22px 0 0",
         }}>
           Naturaleza<br />de la fuerza
         </h1>
@@ -31,7 +31,7 @@ function Hero() {
       </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <img src="../../assets/logos/nfcd_logo_alpha_light.png" alt="Costillar y mariposa"
-          style={{ maxWidth: "100%", maxHeight: 460, mixBlendMode: "multiply" }} />
+          style={{ maxWidth: "100%", maxHeight: 460, mixBlendMode: "var(--img-graphite-blend)" }} />
       </div>
     </section>
   );

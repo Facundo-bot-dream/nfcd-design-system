@@ -44,24 +44,24 @@ export function Button({
 
   const variants = {
     solid: { background: "var(--brand)", color: "var(--text-on-wine)", borderColor: "var(--brand)" },
-    outline: { background: "transparent", color: "var(--ink-900)", borderColor: "var(--ink-800)" },
-    ghost: { background: "transparent", color: "var(--ink-800)", borderColor: "transparent" },
+    outline: { background: "transparent", color: "var(--text-strong)", borderColor: "var(--border-strong)" },
+    ghost: { background: "transparent", color: "var(--text-body)", borderColor: "transparent" },
     link: {
       background: "transparent",
-      color: "var(--wine-700)",
+      color: "var(--text-accent)",
       borderColor: "transparent",
       borderRadius: 0,
       padding: "2px 0",
-      borderBottom: "1.5px solid var(--wine-300)",
+      borderBottom: "1.5px solid var(--text-accent)",
     },
   };
 
   const [hover, setHover] = React.useState(false);
   const hoverStyles = !disabled && hover ? {
     solid: { background: "var(--brand-hover)", borderColor: "var(--brand-hover)" },
-    outline: { background: "var(--ink-900)", color: "var(--paper-000)" },
+    outline: { background: "var(--text-strong)", color: "var(--surface-page)" },
     ghost: { background: "var(--surface-sunk)" },
-    link: { color: "var(--wine-900)", borderColor: "var(--wine-700)" },
+    link: { color: "var(--brand-press)", borderColor: "var(--brand)" },
   }[variant] : {};
 
   const Tag = href ? "a" : "button";

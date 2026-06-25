@@ -5,14 +5,14 @@ import React from "react";
  */
 export function Badge({ children, variant = "soft", tone = "wine", style, ...rest }) {
   const palette = {
-    wine: { strong: "var(--wine-600)", soft: "var(--wine-050)", softText: "var(--wine-700)", line: "var(--wine-300)" },
-    ink: { strong: "var(--ink-900)", soft: "var(--surface-sunk)", softText: "var(--ink-800)", line: "var(--border-soft)" },
-    sage: { strong: "var(--sage-700)", soft: "var(--sage-100)", softText: "var(--sage-700)", line: "var(--sage-300)" },
+    wine: { strong: "var(--chip-wine-solid)", soft: "var(--chip-wine-bg)", softText: "var(--chip-wine-text)", line: "var(--chip-wine-line)" },
+    ink: { strong: "var(--chip-ink-solid)", soft: "var(--chip-ink-bg)", softText: "var(--chip-ink-text)", line: "var(--chip-ink-line)" },
+    sage: { strong: "var(--chip-sage-solid)", soft: "var(--chip-sage-bg)", softText: "var(--chip-sage-text)", line: "var(--chip-sage-line)" },
   }[tone];
 
   const styles =
     variant === "solid"
-      ? { background: palette.strong, color: "var(--paper-000)", border: "1px solid " + palette.strong }
+      ? { background: palette.strong, color: "var(--chip-on-solid)", border: "1px solid " + palette.strong }
       : { background: palette.soft, color: palette.softText, border: "1px solid " + palette.line };
 
   return (

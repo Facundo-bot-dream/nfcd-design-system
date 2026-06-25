@@ -19,6 +19,7 @@
   --wine-050: #fcf2f5;
 
   /* ---- Ink · grafito cálido (carbón de dibujo, no negro puro) ---- */
+  --ink-950: #100d0c;   /* profundidad de fondo en modo oscuro */
   --ink-900: #1a1614;   /* near-black, warm */
   --ink-800: #2c2724;
   --ink-700: #423b36;
@@ -54,7 +55,10 @@
   --surface-card:    var(--paper-pure);
   --surface-raised:  var(--paper-100);
   --surface-sunk:    var(--paper-200);
-  --surface-ink:     var(--ink-900);   /* dark / inverse ground */
+  --surface-ink:     var(--ink-900);   /* panel tinta permanente (footer/CTA) */
+
+  /* Imaginería de grafito: blend según el tema (vira en colors.dark.css) */
+  --img-graphite-blend: multiply;
 
   /* Texto */
   --text-strong:     var(--ink-900);
@@ -77,6 +81,24 @@
   --brand-press:     var(--wine-800);
   --brand-tint:      var(--wine-050);
   --focus-ring:      var(--wine-500);
+
+  /* Chips (Tag / Badge) — semánticos de propósito. Viran en colors.dark.css */
+  --chip-wine-bg:    var(--wine-050);
+  --chip-wine-text:  var(--wine-700);
+  --chip-wine-line:  var(--wine-200);
+  --chip-wine-solid: var(--wine-600);
+
+  --chip-ink-bg:     var(--surface-sunk);
+  --chip-ink-text:   var(--ink-700);
+  --chip-ink-line:   var(--border-soft);
+  --chip-ink-solid:  var(--ink-900);
+
+  --chip-sage-bg:    var(--sage-100);
+  --chip-sage-text:  var(--sage-700);
+  --chip-sage-line:  var(--sage-300);
+  --chip-sage-solid: var(--sage-700);
+
+  --chip-on-solid:   var(--paper-000);   /* texto sobre chip sólido */
 
   /* Selección */
   --selection-bg:    var(--wine-100);
