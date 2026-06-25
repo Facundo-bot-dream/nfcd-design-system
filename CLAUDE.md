@@ -1,5 +1,16 @@
 # CLAUDE.md
 
+## FUENTE ÚNICA
+
+El design system vive **únicamente** acá:
+`/Users/facundo/ATANANAHANNA/Projects · Durga Bartolina/Desyn System NFCD/`
+
+- Repo: `DS-NFCD-GitHub/` → remoto `github.com/Facundo-bot-dream/nfcd-design-system`.
+- **NO** hay copia activa en `~/Documents/Claude/Projects/` (quedó atrás tras la mudanza a ATANANAHANNA el 24/06/2026).
+- Toda mano (Code, Cowork, Design, Chat) trabaja desde esta ruta. No clonar ni editar en otro lado.
+
+---
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Recompilar el design system
