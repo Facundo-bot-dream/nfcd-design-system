@@ -17,7 +17,7 @@ Esto regenera:
 
 **No editar esos tres archivos a mano** — se sobreescriben en cada compilación.
 
-`_compile.js` usa esbuild desde `../../Software Administrativo - Milenau/node_modules/esbuild`.
+`_compile.js` resuelve esbuild con fallbacks: `require("esbuild")` normal → rutas relativas a `Software Administrativo - Milenau/node_modules/esbuild` → `~/ATANANAHANNA/Software Administrativo - Milenau/node_modules/esbuild`.
 
 ## Arquitectura
 
