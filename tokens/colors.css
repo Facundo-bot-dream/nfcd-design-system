@@ -58,7 +58,7 @@
   --surface-ink:     var(--ink-900);   /* panel tinta permanente (footer/CTA) */
 
   /* Imaginería de grafito: blend según el tema (vira en colors.dark.css) */
-  --img-graphite-blend: multiply;
+  --img-graphite-blend: multiply; /* @kind other */
 
   /* Texto */
   --text-strong:     var(--ink-900);

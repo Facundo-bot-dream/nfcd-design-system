@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrusel Móvil · NFCD Design System</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: var(--font-serif);
+      background: var(--paper-000);
+      color: var(--text-body);
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .page__header {
+      margin-bottom: 48px;
+      border-bottom: 1px solid var(--border-soft);
+      padding-bottom: 24px;
+    }
+
+    .page__title {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 12px 0;
+      color: var(--text-primary);
+    }
+
+    .page__subtitle {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Section */
+    .section {
+      margin-bottom: 64px;
+    }
+
+    .section__title {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0 0 24px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    /* Mobile viewport simulator */
+    .viewport-toggle {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 32px;
+      align-items: center;
+    }
+
+    .viewport-toggle__label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .viewport-toggle__button {
+      padding: 6px 12px;
+      border: 1px solid var(--border-soft);
+      background: var(--paper-000);
+      color: var(--text-body);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: all 240ms var(--ease-quiet);
+      border-radius: 0;
+    }
+
+    .viewport-toggle__button:hover {
+      background: var(--surface-hover);
+      border-color: var(--border-default);
+    }
+
+    .viewport-toggle__button.active {
+      background: var(--brand);
+      color: var(--paper-000);
+      border-color: var(--brand);
+    }
+
+    /* Frame container */
+    .frame {
+      position: relative;
+      margin: 0 auto;
+      border: 1px solid var(--border-soft);
+      overflow: hidden;
+    }
+
+    .frame.frame--desktop {
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .frame.frame--mobile {
+      width: 390px;
+      height: 844px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 8px 32px rgba(26, 22, 20, 0.12);
+    }
+
+    .frame__content {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    /* MobileCarousel styles */
+    .mobile-carousel {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1080 / 1350;
+      background: var(--paper-000);
+    }
+
+    .mobile-carousel__viewport {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      scroll-snap-type: x mandatory;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      /* Hide scrollbar */
+      scrollbar-width: none;
+    }
+
+    .mobile-carousel__viewport::-webkit-scrollbar {
+      display: none;
+    }
+
+    .mobile-carousel__slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      scroll-snap-align: start;
+      display: contents;
+    }
+
+    .mobile-carousel__slide > * {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Arrow buttons */
+    .mobile-carousel__arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      background: rgba(26, 22, 20, 0.7);
+      border: none;
+      color: var(--paper-000);
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background-color 240ms var(--ease-quiet);
+    }
+
+    .mobile-carousel__arrow:hover {
+      background: rgba(26, 22, 20, 0.9);
+    }
+
+    .mobile-carousel__arrow svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .mobile-carousel__arrow--prev {
+      left: -16px;
+      animation: pulse-invite 1.8s ease-in-out infinite;
+    }
+
+    .mobile-carousel__arrow--next {
+      right: -16px;
+      animation: pulse-invite 1.8s ease-in-out infinite;
+    }
+
+    @keyframes pulse-invite {
+      0% {
+        opacity: 0.6;
+        transform: translateY(-50%) scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.1);
+      }
+      100% {
+        opacity: 0.6;
+        transform: translateY(-50%) scale(1);
+      }
+    }
+
+    /* Progress dots */
+    .mobile-carousel__dots {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+      justify-content: center;
+    }
+
+    .mobile-carousel__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(26, 22, 20, 0.3);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background-color 240ms var(--ease-quiet);
+    }
+
+    .mobile-carousel__dot:hover {
+      background: rgba(26, 22, 20, 0.5);
+    }
+
+    .mobile-carousel__dot--active {
+      background: var(--brand);
+      animation: ripple-expand 1.2s ease-out infinite;
+    }
+
+    @keyframes ripple-expand {
+      0% {
+        box-shadow: 0 0 0 0 rgba(167, 39, 76, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 6px rgba(167, 39, 76, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 6px rgba(167, 39, 76, 0);
+      }
+    }
+
+    /* Example slides */
+    .slide {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      gap: 16px;
+    }
+
+    .slide--wine {
+      background: var(--wine-600);
+      color: var(--paper-000);
+    }
+
+    .slide--ink {
+      background: var(--ink-900);
+      color: var(--paper-000);
+    }
+
+    .slide--sage {
+      background: var(--sage-500);
+      color: var(--paper-000);
+    }
+
+    .slide__number {
+      font-family: var(--font-mono);
+      font-size: 48px;
+      font-weight: bold;
+      letter-spacing: 0.04em;
+    }
+
+    .slide__title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .slide__body {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 0;
+      max-width: 320px;
+    }
+
+    /* Mobile media query simulation */
+    body.viewport-mobile {
+      background: var(--surface-page-dark);
+      padding: 0;
+    }
+
+    body.viewport-mobile .page {
+      display: none;
+    }
+
+    body.viewport-desktop .frame--mobile {
+      display: none;
+    }
+
+    body.viewport-desktop .frame--desktop {
+      display: block;
+    }
+
+    /* Default: show desktop */
+    .frame--mobile {
+      display: none;
+    }
+
+    .frame--desktop {
+      display: block;
+    }
+  </style>
+</head>
+<body class="viewport-desktop">
+  <div class="page">
+    <div class="page__header">
+      <h1 class="page__title">Carrusel Móvil</h1>
+      <p class="page__subtitle">Patrón de scroll-snap reutilizable · IG 4:5 aspect ratio</p>
+    </div>
+
+    <!-- Viewport toggle -->
+    <div class="section">
+      <div class="viewport-toggle">
+        <span class="viewport-toggle__label">Viewport:</span>
+        <button class="viewport-toggle__button active" data-viewport="desktop">Desktop</button>
+        <button class="viewport-toggle__button" data-viewport="mobile">Mobile (390px)</button>
+      </div>
+    </div>
+
+    <!-- Desktop view -->
+    <div class="section">
+      <h2 class="section__title">Ejemplo · Carrusel simple</h2>
+      <div class="frame frame--desktop">
+        <div class="frame__content">
+          <div class="mobile-carousel">
+            <div class="mobile-carousel__viewport">
+              <div class="mobile-carousel__slide">
+                <div class="slide slide--wine">
+                  <div class="slide__number">01</div>
+                  <h3 class="slide__title">Encuentro</h3>
+                  <p class="slide__body">El cuerpo que escucha</p>
+                </div>
+              </div>
+              <div class="mobile-carousel__slide">
+                <div class="slide slide--ink">
+                  <div class="slide__number">02</div>
+                  <h3 class="slide__title">Profundización</h3>
+                  <p class="slide__body">Práctica somática en contacto</p>
+                </div>
+              </div>
+              <div class="mobile-carousel__slide">
+                <div class="slide slide--sage">
+                  <div class="slide__number">03</div>
+                  <h3 class="slide__title">Retiro</h3>
+                  <p class="slide__body">Danza y paisaje</p>
+                </div>
+              </div>
+            </div>
+            <button class="mobile-carousel__arrow mobile-carousel__arrow--prev" aria-label="Slide anterior">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <button class="mobile-carousel__arrow mobile-carousel__arrow--next" aria-label="Siguiente slide">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            <div class="mobile-carousel__dots" role="tablist">
+              <button class="mobile-carousel__dot mobile-carousel__dot--active" role="tab" />
+              <button class="mobile-carousel__dot" role="tab" />
+              <button class="mobile-carousel__dot" role="tab" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notes -->
+    <div class="section">
+      <h2 class="section__title">Técnica</h2>
+      <p style="font-family: var(--font-serif); line-height: 1.6; color: var(--text-secondary); max-width: 720px;">
+        <strong>Scroll-snap:</strong> El viewport usa <code>scroll-snap-type: x mandatory</code> con <code>scroll-snap-align: start</code> en cada slide.
+        Los slides tienen <code>flex: 0 0 100%</code> para ocupar el ancho completo sin distorsión.
+      </p>
+      <p style="font-family: var(--font-serif); line-height: 1.6; color: var(--text-secondary); max-width: 720px;">
+        <strong>Flechas:</strong> Posicionadas con <code>position: absolute</code>, <code>-16px</code> del borde, con animación <code>pulse-invite</code> infinita (~1.8s).
+      </p>
+      <p style="font-family: var(--font-serif); line-height: 1.6; color: var(--text-secondary); max-width: 720px;">
+        <strong>Dots:</strong> El dot activo emite <code>ripple-expand</code> (~3x su tamaño original), duración/escala levemente aleatoria en JS para evitar efecto mecánico.
+      </p>
+      <p style="font-family: var(--font-serif); line-height: 1.6; color: var(--text-secondary); max-width: 720px;">
+        <strong>Tipografía mobile:</strong> Título 28px, cuerpo 18px, meta 14px (distinto a specs de export IG 1080px).
+      </p>
+    </div>
+  </div>
+
+  <!-- Mobile frame (hidden by default) -->
+  <div class="frame frame--mobile">
+    <div class="frame__content">
+      <div class="mobile-carousel">
+        <div class="mobile-carousel__viewport">
+          <div class="mobile-carousel__slide">
+            <div class="slide slide--wine">
+              <div class="slide__number">01</div>
+              <h3 class="slide__title">Encuentro</h3>
+              <p class="slide__body">El cuerpo que escucha</p>
+            </div>
+          </div>
+          <div class="mobile-carousel__slide">
+            <div class="slide slide--ink">
+              <div class="slide__number">02</div>
+              <h3 class="slide__title">Profundización</h3>
+              <p class="slide__body">Práctica somática</p>
+            </div>
+          </div>
+          <div class="mobile-carousel__slide">
+            <div class="slide slide--sage">
+              <div class="slide__number">03</div>
+              <h3 class="slide__title">Retiro</h3>
+              <p class="slide__body">Danza y paisaje</p>
+            </div>
+          </div>
+        </div>
+        <button class="mobile-carousel__arrow mobile-carousel__arrow--prev" aria-label="Slide anterior">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <button class="mobile-carousel__arrow mobile-carousel__arrow--next" aria-label="Siguiente slide">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+        <div class="mobile-carousel__dots" role="tablist">
+          <button class="mobile-carousel__dot mobile-carousel__dot--active" role="tab" />
+          <button class="mobile-carousel__dot" role="tab" />
+          <button class="mobile-carousel__dot" role="tab" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Viewport toggle
+    document.querySelectorAll('[data-viewport]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const viewport = e.target.dataset.viewport;
+        document.querySelectorAll('[data-viewport]').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        document.body.className = `viewport-${viewport}`;
+      });
+    });
+
+    // Carrusel: scroll detection
+    const carousels = document.querySelectorAll('.mobile-carousel');
+    carousels.forEach(carousel => {
+      const viewport = carousel.querySelector('.mobile-carousel__viewport');
+      const dots = carousel.querySelectorAll('.mobile-carousel__dot');
+      const prevBtn = carousel.querySelector('.mobile-carousel__arrow--prev');
+      const nextBtn = carousel.querySelector('.mobile-carousel__arrow--next');
+
+      let currentIndex = 0;
+
+      const updateDots = idx => {
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('mobile-carousel__dot--active', i === idx);
+        });
+      };
+
+      const handleScroll = () => {
+        if (!viewport.children[0]) return;
+        const slideWidth = viewport.children[0].offsetWidth;
+        const newIndex = Math.round(viewport.scrollLeft / slideWidth);
+        if (newIndex !== currentIndex && newIndex < dots.length) {
+          currentIndex = newIndex;
+          updateDots(currentIndex);
+        }
+      };
+
+      const scrollToIndex = idx => {
+        if (!viewport.children[0]) return;
+        const slideWidth = viewport.children[0].offsetWidth;
+        viewport.scrollLeft = slideWidth * idx;
+        currentIndex = idx;
+        updateDots(currentIndex);
+      };
+
+      viewport.addEventListener('scroll', handleScroll);
+
+      prevBtn?.addEventListener('click', () => {
+        const newIdx = (currentIndex - 1 + dots.length) % dots.length;
+        scrollToIndex(newIdx);
+      });
+
+      nextBtn?.addEventListener('click', () => {
+        const newIdx = (currentIndex + 1) % dots.length;
+        scrollToIndex(newIdx);
+      });
+
+      dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => scrollToIndex(idx));
+      });
+    });
+  </script>
+</body>
+</html>

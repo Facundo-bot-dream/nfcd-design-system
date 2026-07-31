@@ -66,7 +66,7 @@
   --shadow-lg: 0 8px 28px rgba(0,0,0,0.55);
 
   /* Imaginería de grafito: multiply funde en papel, screen en tinta */
-  --img-graphite-blend: screen;
+  --img-graphite-blend: screen; /* @kind other */
 
   color-scheme: dark;
 }
