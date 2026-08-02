@@ -14,7 +14,7 @@ Este design system le da a todas esas superficies una voz coherente: la imagen d
 ## Fuentes provistas
 
 - **Base local:** `design system NFCD/` (montada, solo lectura) — incluye **logos** (`nfcd_logos/`) y **fuentes** únicamente (Amatic SC, Book Antiqua, Letter Gothic Std). No se incluyeron pantallas de producto, código del sitio ni guía de marca escrita.
-- Todos los logos y fuentes fueron copiados a `assets/`. No se proveyó fuente en Figma ni GitHub.
+- Todos los logos y fuentes fueron copiados a `recursos/`. No se proveyó fuente en Figma ni GitHub.
 
 > Dado que **no existían diseños de producto previos** que recrear, los UI kits web y editorial se construyeron directamente desde las bases de marca (logo, tipografía, color), no copiados de pantallas anteriores.
 
@@ -84,7 +84,7 @@ La marca **no incluye set de íconos, fuente de íconos ni sprite SVG** — no h
 - **Los emoji nunca se usan.**
 - **Si una UI genuinamente necesita íconos de línea** (p. ej. una futura app web), usar un **set de trazo fino, peso único, unión redondeada que coincida con la línea a lápiz** — **[Lucide](https://lucide.dev)** (trazo 1.5–2px) es el sustituto CDN recomendado. ⚠️ *Esto es una sustitución, no un activo de marca — confirmar antes de usarlo.* Mantener los íconos en color tinta y escasos; nunca rellenarlos en wine salvo para un único estado activo.
 
-Los logos están en `assets/logos/` (PNG). La fuente vectorial editable es `design system NFCD/nfcd_logos/nfcd_brand_logos.ai` (Illustrator, en la carpeta montada — no copiada).
+Los logos están en `recursos/logos/` (PNG). La fuente vectorial editable es `design system NFCD/nfcd_logos/nfcd_brand_logos.ai` (Illustrator, en la carpeta montada — no copiada).
 
 ---
 
@@ -93,42 +93,50 @@ Los logos están en `assets/logos/` (PNG). La fuente vectorial editable es `desi
 **Raíz**
 
 - `styles.css` — entrada global (los consumidores enlazan esto); `@import`a las capas de tokens.
-- `readme.md` — esta guía.
+- `README.md` — esta guía.
 - `SKILL.md` — wrapper para Claude Code / pipeline de producción.
+- `CLAUDE.md` · `PATTERNS.md` · `BACKLOG.md` · `github.md` — operación y estado.
+- `_compile.js` → genera `_ds_bundle.js`, `_ds_manifest.json`, `_adherence.oxlintrc.json` (no editar a mano).
+- `support.js` · `thumbnail.html` — andamiaje de Claude Design.
 
-**`tokens/`** — `fonts.css` (3 familias `@font-face`), `colors.css` (wine / ink / paper / sage-teal + alias semánticos), `typography.css` (familias, escala, tracking), `spacing.css` (espaciado, radios, bordes, sombras, movimiento).
+**`tokens/`** — fuente de verdad visual: `fonts.css` (3 familias `@font-face`), `colors.css` (wine / ink / paper / sage-teal + alias semánticos + chips), `colors.dark.css` (**tema oscuro**: reasigna solo alias bajo `[data-theme="dark"]`), `typography.css` (familias, escala `--font-size-*`, tracking), `spacing.css` (espaciado, radios, bordes, sombras, movimiento).
 
-**`assets/`** — `logos/` (isologo v1–v3 en color/negro/blanco + renders del motivo con alpha), `fonts/` (Amatic SC, Book Antiqua, Letter Gothic Std).
+**`recursos/`** — `logos/` (isologo v1–v3 en color/negro/blanco + renders del motivo con alpha), `fonts/` (Amatic SC; Book Antiqua y Letter Gothic Std solo en disco, excluidas del repo por licencia), `brand/` (manchones e intervenciones de Roxana).
 
-**`guidelines/`** — tarjetas especimen de fundamentos (Colores, Tipografía, Espaciado, Marca) mostradas en la pestaña Design System.
+**`lineamientos/`** — tarjetas especimen mostradas en la pestaña Design System (grupos Brand, Colors —incluye **Tema oscuro**—, Type, Spacing, Components, Guidelines) + demos de chips.
 
-**`components/`** (namespace `window.NFCDDesignSystem_1d3b67`)
+**`componentes/`** (namespace `window.NFCDDesignSystem_1d3b67`)
 
 - `core/` — **Button**, **Eyebrow**, **Rule**
-- `content/` — **Card**, **Tag**, **Badge**
+- `content/` — **Card**, **Tag**, **Badge**, **Accordion**, **MobileCarousel**
 - `forms/` — **Field**
 
-**`ui_kits/`**
+**`kits-ui/`**
 
-- `website/` — página institucional (header, hero, encuentros, about, footer).
+- `website/` — página institucional (header, hero, encuentros, about, footer). Trae el patrón de activación del tema (toggle + `prefers-color-scheme`).
 - `editorial/` — ficha de curso / programa A4.
 
-**`templates/`** — todos los archivos son `.dc.html` (editables inline en Design)
+**`plantillas/`** — carpetas con un `.dc.html` anotado `@template` (editables inline en Design)
 
-- `carrusel-ig/` — carruseles 1080×1350 para Instagram. `.dc.html` editable + `exports/PNG/`.
-- `a4-ficha/` — fichas de curso y programas A4. `.dc.html` + exports PDF.
-- `email-nfcd-newsletter/` — newsletter HTML para Listmonk. `.dc.html` + export `.html` raw.
-- `flyer-ig/` — flyer único 1080×1350 para WhatsApp y Stories. `.dc.html` + export PNG.
-- `web-pagina/` — página de encuentro para WordPress. HTML + CSS para Gutenberg.
-- `web-carrusel/` — slider de encuentros para la home. HTML + Swiper.js.
+- `carrusel-ig/` — carrusel 1080×1350 para Instagram (9 piezas).
+- `a4-ficha/` — fichas de curso y programas A4.
+- `email-nfcd-newsletter/` — newsletter HTML para Listmonk (+ `referencia-listmonk-raw.html`).
+- `social-poster/` — poster cuadrado 1080×1080 para anuncios.
+- *Pendientes (documentadas en prompts/, aún sin plantilla):* `flyer-ig/`, `web-pagina/`, `web-carrusel/`.
 
-**`encuentros-2026/`** — piezas de comunicación Encuentros de Profundización 2026.
+**`producciones/`** — piezas terminadas, fuera de la matriz: `encuentros-2026/`, `novedades/`, `carrusel-ig-encuentros/` (HTML + exports PNG), `emails/`.
 
-**`novedades/`** — templates de novedades institucionales (editorial, email, wordpress, base).
+**`listmonk/`** — `listmonk_public_pages_nfcd.css` (estilo de marca para páginas de baja/suscripción) y `listmonk_public_es.js` (traducción al español; se inyecta verbatim al bundle).
 
-**`scraps/`** — experimentos y descartes. No usar como referencia.
+**`prompts/`** — pipeline de comunicación (1 brief → N superficies). **`conocimiento/`** — saberes destilados del sistema.
 
-**`uploads/`** — documentos de referencia subidos (PDFs, capturas). Solo lectura.
+**`scraps/`** (descartes) y **`uploads/`** (referencia) — solo disco local, excluidos del repo.
+
+---
+
+## Tema oscuro
+
+El sistema tiene tema claro (default, `:root`) y oscuro (`tokens/colors.dark.css`, activado con `data-theme="dark"` en `<html>`). La ley de no-salto hace que los componentes viren solos. Activación canónica (elección guardada > preferencia del SO): ver **PATTERNS.md § Activación del tema oscuro**. Las piezas de lienzo fijo (carruseles, A4, posters) se exportan siempre en claro.
 
 ---
 
@@ -145,12 +153,9 @@ flyer_encuentros-invierno_2026-07.dc.html
 
 ## Archivos del sistema — no mover ni renombrar
 
-`styles.css` · `SKILL.md` · `_ds_bundle.js` · `_ds_manifest.json` · `_adherence.oxlintrc.json` · `support.js` · `listmonk_public_pages_NFCD.css` · `listmonk_public_es.js`
+`styles.css` · `SKILL.md` · `_ds_bundle.js` · `_ds_manifest.json` · `_adherence.oxlintrc.json` · `support.js` · `listmonk/`
 
-**Listmonk · páginas públicas** (raíz)
-
-- `listmonk_public_pages_NFCD.css` — estilo de marca para las páginas de baja/suscripción.
-- `listmonk_public_es.js` — traducción al español de esas páginas.
+Cada carpeta de `plantillas/` lleva su copia de `support.js` y `ds-base.js` (runtime de Claude Design). Existen dos versiones divergentes de cada uno entre plantillas — los gestiona Claude Design, no unificarlos a mano.
 
 ### Sustituciones y aclaraciones
 

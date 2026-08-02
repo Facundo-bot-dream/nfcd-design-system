@@ -9,37 +9,41 @@ If creating visual artifacts (slides, mocks, throwaway prototypes, etc), copy as
 If the user invokes this skill without any other guidance, ask them what they want to build or design, ask some questions, and act as an expert designer who outputs HTML artifacts _or_ production code, depending on the need.
 
 ## Quick orientation
-- `readme.md` — full brand guide: content fundamentals, visual foundations, iconography, manifest.
+- `README.md` — full brand guide: content fundamentals, visual foundations, iconography, manifest.
 - `styles.css` — link this one file to get all fonts + tokens. It `@import`s `tokens/`.
-- `tokens/` — colores (wine `#a7274c`, ink cálido, paper cálido, sage-teal `#1a9496`), tipografía, espaciado, fuentes.
-- `assets/logos/` — el isologo grafito costilla→mariposa (v1–v3, color/negro/blanco) + renders del motivo.
-- `assets/fonts/` — Amatic SC (display; open source). Book Antiqua + Letter Gothic Std are licensed — load via system or CSS @font-face in production.
-- `assets/brand/marks/` — Roxana's acrylic mark crops (grey-waves, orange-strokes, red-drop, red-swirl, yellow-splash). Use as monochrome graphite overlays only.
-- `components/` — React primitives (Button, Eyebrow, Rule, Card, Tag, Badge, Field).
-- `ui_kits/website/` — Hero, SiteHeader, SiteFooter, EncuentrosGrid, AboutBlock (React + index.html).
-- `ui_kits/editorial/` — A4 editorial layout base (index.html).
-- `templates/` — master working files per surface (see below).
+- `tokens/` — colores (wine `#a7274c`, ink cálido, paper cálido, sage-teal `#1a9496`), tipografía, espaciado, fuentes. `colors.dark.css` = tema oscuro (`data-theme="dark"`; activación en PATTERNS.md).
+- `recursos/logos/` — el isologo grafito costilla→mariposa (v1–v3, color/negro/blanco) + renders del motivo.
+- `recursos/fonts/` — Amatic SC (display; open source). Book Antiqua + Letter Gothic Std are licensed — load via system or CSS @font-face in production.
+- `recursos/brand/marks/` — Roxana's acrylic mark crops (grey-waves, orange-strokes, red-drop, red-swirl, yellow-splash). Use as monochrome graphite overlays only.
+- `componentes/` — React primitives (Button, Eyebrow, Rule, Card, Tag, Badge, Accordion, MobileCarousel, Field).
+- `kits-ui/website/` — Hero, SiteHeader, SiteFooter, EncuentrosGrid, AboutBlock (React + index.html, con toggle de tema).
+- `kits-ui/editorial/` — A4 editorial layout base (index.html).
+- `plantillas/` — master working files per surface (see below).
+- `producciones/` — piezas terminadas (solo consulta, no editar como base de trabajo).
 
-## Templates — 6 superficies del pipeline
+## Plantillas — superficies del pipeline
+
+**Existen hoy:** carrusel-ig · email-nfcd-newsletter · a4-ficha · social-poster.
+**Pendientes** (prompt escrito, plantilla sin empaquetar): flyer-ig · web-pagina · web-carrusel.
 
 **Principio clave:** todos los templates son `.dc.html` — editables inline en Claude Design.
 Para editar: abrir Design → File → Open → seleccionar el `.dc.html` → modificar → re-exportar.
 
-### 01 · Flyer IG (`templates/flyer-ig/`)
+### 01 · Flyer IG (`plantillas/flyer-ig/`) — ⚠ PENDIENTE de empaquetar
 - **Dimensión:** 1080 × 1350 px · una sola imagen
 - **Uso:** WhatsApp, Stories, difusión rápida
 - **Archivo:** `flyer-ig/Flyer_[descripcion]_[AAAA-MM].dc.html`
 - **Export:** PNG vía SVG foreignObject + base64 (ver flujo export PNG abajo)
 - **Diseño en:** Claude Design
 
-### 02 · Carrusel IG (`templates/carrusel-ig/`)
+### 02 · Carrusel IG (`plantillas/carrusel-ig/`)
 - **Dimensión:** 1080 × 1350 px · N slides (variable según el proyecto)
 - **Vista de trabajo:** slides en FILA HORIZONTAL con scroll lateral (ver conexión de fondos panorámicos)
 - **Export PNG:** slide a slide. Nombrar: `01-Titulo.png`, `02-[tema].png`, etc.
 - **Archivo master:** `carrusel-ig/CarruselIG_[descripcion]_[AAAA-MM].dc.html`
 - **Convención de nombre:** `CarruselIG_[descripcion]_[AAAA-MM].dc.html`
 
-### 03 · Email Newsletter (`templates/email-nfcd-newsletter/`)
+### 03 · Email Newsletter (`plantillas/email-nfcd-newsletter/`)
 - **Dos outputs — siempre:**
   - `.dc.html` → editable en Claude Design (fuentes reales del DS)
   - `.html` raw → el que va a Listmonk (Palatino/Courier fallback, inline styles, 600px)
@@ -48,13 +52,13 @@ Para editar: abrir Design → File → Open → seleccionar el `.dc.html` → mo
 - **Variable baja:** `{{ UnsubscribeURL }}` — preservar siempre
 - **Archivo template:** `email-nfcd-newsletter/EmailNFCDNewsletter.dc.html`
 
-### 04 · A4 Ficha editorial (`templates/a4-ficha/`)
+### 04 · A4 Ficha editorial (`plantillas/a4-ficha/`)
 - **Dimensión:** A4 (794 × 1123 px @ 96dpi / 210 × 297 mm print)
 - **Uso:** fichas de curso, programas, documentos institucionales imprimibles
 - **Export:** PDF desde Claude Design (File → Download → PDF)
 - **Archivo:** `a4-ficha/A4_[descripcion]_[AAAA-MM].dc.html`
 
-### 05 · Web · Página encuentro (`templates/web-pagina/`)
+### 05 · Web · Página encuentro (`plantillas/web-pagina/`) — ⚠ PENDIENTE de empaquetar
 - **Output:** HTML para bloque Gutenberg "HTML personalizado" + CSS separado para tema
 - **Responsive:** mobile-first 375 / 768 / 1200 px
 - **Clases:** prefijo `.nfcd-` para no pisar estilos del tema
@@ -72,11 +76,17 @@ Para editar: abrir Design → File → Open → seleccionar el `.dc.html` → mo
   Las secciones internas mantienen su propio `max-width` + `padding` centrado como margen normal. Requiere plantilla WP "ancho completo / sin sidebar" — si no, el contenedor del theme igual limita.
 - **No trabajar sobre el HTML aplanado.** Editar siempre el `.dc.html` (editor visual); generar el HTML plano de WordPress solo como paso final de exportación — un archivo estático aplanado pierde la edición en vivo.
 
-### 06 · Web · Slider home (`templates/web-carrusel/`)
+### 06 · Web · Slider home (`plantillas/web-carrusel/`) — ⚠ PENDIENTE de empaquetar
 - **Output:** HTML + Swiper.js para el homepage de WordPress
 - **Muestra:** encuentros disponibles en carrusel horizontal responsive
 - **Sin plugins pesados** — código limpio con tokens del DS
 - **Diseño en:** Claude Design → Cowork para código producción
+
+### 07 · Social poster (`plantillas/social-poster/`)
+- **Dimensión:** 1080 × 1080 px · pieza única cuadrada
+- **Uso:** anuncio de encuentro para feed
+- **Archivo:** `social-poster/SocialPoster.dc.html` (tokenizado — usar variables del DS)
+- **Export:** PNG desde Claude Design
 
 ## Convención de nombres — siempre aplicar
 ```
@@ -93,13 +103,13 @@ PostIG_charla-abierta_2026-08.dc.html
 1. Abrir el `.dc.html` en Claude Design
 2. Por cada slide: solicitar "exportá el slide N como PNG 1080×1350"
 3. Claude Design genera la imagen — descargar y nombrar `NN-Titulo.png`
-4. Los PNG van a `templates/carrusel-ig/exports/PNG/` (carpeta local, no sube a GitHub)
+4. Los PNG van a `plantillas/carrusel-ig/exports/PNG/` (carpeta local, no sube a GitHub)
 
 ## Workflow GitHub
-- `DS-NFCD-GitHub/` → lo que sube al repo (tokens, components, guidelines, templates master, ui_kits)
-- `DS-NFCD-local/` → DS completo con scraps y uploads (solo local)
-- `design/` → archivos de trabajo y exports por sesión (solo local)
-- Cuando hay cambios listos: copiar archivos modificados a `DS-NFCD-GitHub/` → commit → push en GitHub Desktop
+- **Fuente única:** este repo (`~/Documents/Claude/Projects/Desyn System NFCD/nfcd-design-system/nfcd-design-system`), remote `Facundo-bot-dream/nfcd-design-system`.
+- `scraps/` y `uploads/` viven en la misma carpeta pero están gitignorados.
+- Cambios de sistema: editar → `node _compile.js` → commit (aplicar-y-commitear en el mismo gesto).
+- Claude Design NO se actualiza con el push: correr `/design-sync` desde Claude Code después de mergear.
 
 ## Non-negotiables
 - Tres fuentes, tres roles: Amatic SC = display uppercase; Book Antiqua = cuerpo serif; Letter Gothic Std = mono uppercase tracked para labels.
