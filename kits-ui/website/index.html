@@ -7,9 +7,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NFCD — Naturaleza de la Fuerza</title>
 <script>
-  /* Tema: elección guardada > preferencia del SO. Inline y antes del CSS para evitar FOUC. */
+  /* Tema: ?theme= (preview) > elección guardada > preferencia del SO.
+     Inline y antes del CSS para evitar FOUC. */
   (function () {
-    var t = localStorage.getItem("nfcd-theme");
+    var t = new URLSearchParams(location.search).get("theme") ||
+            localStorage.getItem("nfcd-theme");
     if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     document.documentElement.dataset.theme = t;
   })();
