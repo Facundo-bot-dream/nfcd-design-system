@@ -1,14 +1,23 @@
-<!-- @dsCard group="Website" viewport="1280x820" name="Website — oscuro" subtitle="Home institucional en tema oscuro (forzado con ?theme=dark)." -->
+<!-- @dsCard group="Website" viewport="1280x820" name="Website — oscuro" subtitle="Home institucional en tema oscuro (forzado por el wrapper)." -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <style>
-  html, body { margin: 0; height: 100%; overflow: hidden; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #1a1614; }
   iframe { border: 0; width: 100%; height: 100%; }
 </style>
 </head>
 <body>
   <iframe src="../kits-ui/website/index.html?theme=dark" title="Website NFCD — tema oscuro"></iframe>
+  <script>
+    /* Refuerzo: si el entorno pela el query string, forzamos el tema
+       directamente en el documento del iframe (mismo origen). */
+    var f = document.querySelector("iframe");
+    function force() {
+      try { f.contentDocument.documentElement.dataset.theme = "dark"; } catch (e) {}
+    }
+    f.addEventListener("load", function () { force(); setTimeout(force, 300); });
+  </script>
 </body>
 </html>
