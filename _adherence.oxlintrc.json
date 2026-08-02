@@ -5,19 +5,19 @@
   ],
   "rules": {
     "react/forbid-elements": [
-      "warn",
+      "error",
       {
         "forbid": []
       }
     ],
     "no-restricted-imports": [
-      "warn",
+      "error",
       {
         "patterns": [
           {
             "group": [
-              "components/content/**",
               "components/core/**",
+              "components/content/**",
               "components/forms/**",
               "listmonk_public_es.js",
               "ui_kits/website/**"
@@ -28,7 +28,7 @@
       }
     ],
     "no-restricted-syntax": [
-      "warn",
+      "error",
       {
         "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
         "message": "Raw hex color — use a design-system color token via var()."
