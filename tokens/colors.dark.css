@@ -13,8 +13,10 @@
   /* ---- Superficies (papel → tinta; lo elevado aclara, lo hundido oscurece) ---- */
   --surface-page:   var(--ink-900);
   --surface-card:   var(--ink-800);
-  --surface-raised: var(--ink-800);
+  --surface-raised: var(--ink-750);
   --surface-sunk:   var(--ink-950);
+  --surface-desk:   var(--ink-950);
+  /* --text-on-ink-* y --text-on-wine-* NO se reasignan: sus paneles son fijos. */
   /* --surface-ink NO se reasigna: panel "tinta permanente" (footer/CTA),
      oscuro en ambos temas. */
 
@@ -25,9 +27,10 @@
   --text-faint:     var(--ink-400);
   --text-on-wine:   var(--paper-000);
   --text-accent:    var(--wine-400);    /* wine legible sobre tinta */
+  --text-accent-hover: var(--wine-300); /* el hover ACLARA en oscuro */
 
   /* ---- Líneas y bordes (visibles sobre oscuro = inks más claros) ---- */
-  --border-hair:    var(--ink-700);
+  --border-hair:    var(--ink-800);
   --border-soft:    var(--ink-700);
   --border-strong:  var(--ink-300);
   --rule-ink:       var(--ink-200);
@@ -48,15 +51,15 @@
   --chip-wine-line:  var(--wine-700);
   --chip-wine-solid: var(--wine-500);
 
-  --chip-ink-bg:     var(--ink-800);
+  --chip-ink-bg:     var(--ink-700);   /* distinto de --surface-card: el chip no desaparece */
   --chip-ink-text:   var(--ink-200);
-  --chip-ink-line:   var(--ink-700);
+  --chip-ink-line:   var(--ink-600);
   --chip-ink-solid:  var(--ink-600);
 
   --chip-sage-bg:    var(--sage-700);
   --chip-sage-text:  var(--sage-300);
   --chip-sage-line:  var(--sage-500);
-  --chip-sage-solid: var(--sage-500);
+  --chip-sage-solid: var(--sage-700);  /* sage-500 dejaba el texto claro en 3.5:1 */
 
   --chip-on-solid:   var(--paper-000);
 
@@ -82,7 +85,7 @@ img.nfcd-logo-dark { display: none; }
 
 /* ============================================================
    NOTAS DE ACOPLAMIENTO
-   Tus ui_kits usan estilos inline (no clases CSS), así que el blend
+   Tus kits-ui usan estilos inline (no clases CSS), así que el blend
    y el swap de logo se manejan en el JSX, no acá:
    · Blend de imágenes → token --img-graphite-blend (ya aplicado en Hero).
    · Swap de logo claro/oscuro → PENDIENTE: header y about usan el logo

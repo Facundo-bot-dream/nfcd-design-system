@@ -1,68 +1,63 @@
 # BACKLOG — Design System NFCD
 
 > Lo que está pendiente. Una sola lista. Si no está acá, no existe como pendiente.
-> Actualizado: 2026-06-25 (madrugada)
+> Actualizado: 2026-08-02 (saneamiento integral: legibilidad + escala tipográfica + reorganización)
 
 ---
 
-## 🔴 LO GRANDE (lo único que falta para que el trabajo de hoy "se note")
+## 🔴 LO GRANDE
 
 **1 · Sincronizar Claude Design (la nube) con el estado actual.**
-Todo el sistema en disco y en GitHub está al día (chips, oscuro, sage teal, castellano, prompts). Pero el **proyecto de Claude Design quedó viejo** — cuando vas a *generar* una pieza, usa lo anterior.
-- Se hace con `/design-sync` **real** desde **Claude Code** (no es comando de terminal, no está en la web de Design).
-- Requiere autorización: correr `/design-login` antes (cuenta claude.ai, scope design-system).
-- ⚠️ El sync de Design **saltea la carpeta `templates/`** — hay que pedirle explícitamente que la incluya.
-- Dirección: EMPUJAR local → Design. Nunca dejar que baje y pise lo local (GitHub es la red).
+El disco quedó saneado el 2026-08-02 (tema oscuro usable, escala adoptada, carpetas en español). El **proyecto de Claude Design quedó viejo** — cuando vas a *generar* una pieza, usa lo anterior.
+- Se hace con `/design-sync` **real** desde **Claude Code** (requiere `/design-login` antes).
+- ⚠️ El sync saltea `plantillas/` — pedir explícitamente que la incluya.
+- Dirección: EMPUJAR local → Design. Nunca dejar que baje y pise lo local.
+- ⚠️ Tras el renombre de carpetas (componentes/, plantillas/, lineamientos/, recursos/, kits-ui/), verificar que Design no conserve las carpetas viejas duplicadas.
 
 ---
 
 ## 🟡 PENDIENTES DE PRODUCCIÓN
 
-**2 · Carrusel IG horizontal.** El cambio de mesa vertical → horizontal (`column` → `row`) se *documentó en el prompt* pero **nunca se aplicó al `.dc.html`** ni se commiteó. Aplicarlo al archivo real y commitear en el mismo gesto.
-
-**3 · Templates que faltan en el picker de Design.** Empaquetar como `.dc.html` + `ds-base.js` + `support.js` + `.thumbnail`:
+**2 · Plantillas que faltan en el picker de Design.** Empaquetar como `.dc.html` + `ds-base.js` + `support.js` + `.thumbnail`:
 - `flyer-ig` (1080×1350, pieza única)
+- `web-pagina` (bloque Gutenberg)
 - `web-carrusel` (slider WordPress)
-- `a4-ficha` (verificar empaquetado)
-
-**4 · Commitear el `CLAUDE.md`** (línea de fuente única agregada el 25/06) — queda sin pushear.
-
----
-
-## 🧹 LIMPIEZA (para Code — un comando)
-
-**Borrar de `conocimiento/`.** Es un sistema de diseño **ALTERNATIVO** (granito/glaciar/brasa, Fraunces/Public Sans) — NO el de producción (tinta/papel/wine, Amatic/Book Antiqua/Letter Gothic). Revisado: **nada de código único rescatable**, los principios (3 niveles + no-salto + patrón de modo oscuro) ya viven en producción.
-- Borrar: `tokens.css`, `colors.dark.css`, `DESIGN-SYSTEM.md`, `demo.html`, `files.zip`, `.DS_Store`
-- Conservar: `README.md`, `como-funciona-claude-design.md`, `investigacion_2026-06_5-ejes.md`
 
 ---
 
 ## 🟢 OBRA GRANDE (cuando haya energía, sobre piso firme)
 
-**5 · Fuentes — Pista 1 (legal, necesita tu dato).** Confirmar si la licencia de **Book Antiqua** (Monotype/Microsoft) y **Letter Gothic Std** (Adobe) es *desktop* o *web*. Hoy `fonts.css` las sirve por `@font-face` (auto-hospedado) — uso que la licencia desktop NO cubre. Riesgo en sitio público.
-→ Solución recomendada: **doble pista**. Marca licenciada para PDF/print; OFL para web/email (sustitutos serif: EB Garamond / Gelasio / Spectral · mono: IBM Plex Mono / Roboto Mono). Amatic SC ya es OFL, libre.
+**3 · Fuentes — licencia (necesita tu dato).** Confirmar si la licencia de **Book Antiqua** (Monotype/Microsoft) y **Letter Gothic Std** (Adobe) es *desktop* o *web*. Hoy `tokens/fonts.css` las sirve por `@font-face` auto-hospedado — uso que la licencia desktop NO cubre. Riesgo en sitio público.
+→ Solución recomendada: **doble pista**. Marca licenciada para PDF/print; OFL para web/email (sustitutos serif: EB Garamond / Gelasio / Spectral · mono: IBM Plex Mono / Roboto Mono). Amatic SC ya es OFL.
 
-**6 · Linter a `error`.** Pasar oxlint de `warn` a `error` (gate real) y agregar regla **no-salto** (prohibir primitivos directos en componentes; solo semánticos).
+**4 · Regla no-salto en el linter.** El oxlint ya corre en `error`, pero falta la regla que prohíba primitivos directos (`--ink-*`, `--wine-*`…) en componentes. Los componentes ya cumplen (auditado 2026-08-02); falta el gate automático.
 
-**7 · Fase WordPress.** `theme.json` como gobierno de tokens, CPT + ACF para encuentros/novedades/cursos, carruseles con CSS scroll-snap. (Auto-alojado dentro del tema, no headless.)
+**5 · Unificar las paletas paralelas.** `listmonk/listmonk_public_pages_nfcd.css` (tokens `--nf-*`) y los emails (hex crudo) duplican la paleta con 2 divergencias reales (`--nf-ink-soft`, `--nf-border`). Idea: generar el bloque `--nf-*` y una tabla hex-para-email desde `tokens/colors.css` en `_compile.js`.
 
-**8 · Limpieza cosmética del manifiesto.** `--text-*` de color tag-eados como `kind:"font"`; `--img-graphite-blend` como `"color"`. Y `themes:[]` vacío (el oscuro anda por CSS pero no está registrado como tema formal).
+**6 · Fase WordPress.** `theme.json` como gobierno de tokens, CPT + ACF para encuentros/novedades/cursos, carruseles con CSS scroll-snap. (Pipeline v1 embed ya probado — ver `conocimiento/pipeline-wordpress-embed.md`.)
 
-**9 · DTCG (opcional, NO urgente).** Migrar el árbol de tokens al estándar DTCG 2025.10 (mejora la comprensión de la IA vía `$description`/`$type`). Decisión, no obligación.
+**7 · DTCG (opcional, NO urgente).** Migrar el árbol de tokens al estándar DTCG 2025.10. Decisión, no obligación.
 
----
-
-## ⚫ CERRADO / DECIDIDO NO HACER
-
-- **Reestructura `foundations/work/index`.** Decidida **NO** el 25/06: agrega profundidad de rutas (más `../..`) sin ganar simplicidad, justo en el sistema que sufría por confusión de rutas. Rompía la hipérbola. El orden real se logró fijando la **fuente única**, no moviendo carpetas.
-- **Carpeta duplicada en `~/Documents/Claude/Projects/`.** Quedó atrás tras la mudanza a ATANANAHANNA. Fuente única fijada en memoria y en `CLAUDE.md`.
+**8 · Copia obsoleta en ATANANAHANNA.** `~/ATANANAHANNA/Projects · Durga Bartolina/Desyn System NFCD/DS-NFCD-GitHub/` quedó congelada al 2026-06-25 y contradice la fuente única. Decidir si se borra (vive dentro del repo ATANANAHANNA, no de este).
 
 ---
 
-## REGLAS QUE NACIERON DE LOS ERRORES DE HOY
+## ⚫ CERRADO / RESUELTO
 
-- **Aplicar-y-commitear en el mismo gesto.** Nunca "lo documento ahora, lo aplico después" — ahí se cayó el carrusel.
-- **Una sola mano por tarea.** Chat = pensar · Design = diseñar/ver · Code = tocar disco y sincronizar. No repartir el mismo trabajo en varias manos.
-- **Una sola fuente de verdad.** ATANANAHANNA. Sin copias paralelas.
+- **Saneamiento 2026-08-02** (rama `saneamiento-2026-08`): contraste AA en claro y oscuro, tema oscuro activable (anti-FOUC + toggle), ley de no-salto aplicada, escala `--font-size-*` adoptada en componentes, clasificador del manifest corregido, reorganización en español kebab-case, root limpio, duplicados borrados, docs sincronizadas.
+- **Carrusel IG horizontal** — aplicado al `.dc.html`.
+- **CLAUDE.md commiteado** — y reescrito 2026-08-02.
+- **Limpieza de `conocimiento/`** — el DS alternativo se borró.
+- **Manifest** — `themes` registra el oscuro; `--text-*` de color ya son `kind:"color"`.
+- **a4-ficha empaquetada** · **social-poster empaquetada y documentada en SKILL.md**.
+- **Reestructura `foundations/work/index`** — decidido NO (2026-06-25): rompía la hipérbola.
+
+---
+
+## REGLAS
+
+- **Aplicar-y-commitear en el mismo gesto.**
+- **Una sola mano por tarea.** Chat = pensar · Design = diseñar/ver · Code = tocar disco y sincronizar.
+- **Una sola fuente de verdad.** Este repo. Sin copias paralelas.
 
 *(Pendientes de toda la asociación, fuera del design system → `ATANANAHANNA/BACKLOG/`.)*

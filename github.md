@@ -1,19 +1,21 @@
 repo: Facundo-bot-dream/nfcd-design-system
-branch: main
+branch: main (trabajo en rama `saneamiento-2026-08`, pendiente de merge + push)
 
 ## Last sync
-date: 2026-07-31T14:27:17Z
-commit: 588429e68fc6
+date: 2026-08-02
+commit: ver `git log` — saneamiento integral (legibilidad, escala, reorganización en español)
 
-### Updated in this project
-- Traído: _compile.js, PATTERNS.md, componente MobileCarousel + card, .prompt.md de componentes existentes.
-- Traído: templates/Carrusel-Móvil.dc.html, templates/email-listmonk/.
-- Traído: ui_kits/website/ completo (AboutBlock, EncuentrosGrid, Hero, SiteFooter, SiteHeader, index.html, README).
-- Traído: assets/brand/ (intervenciones.html, roxana-acrylic-marks.png, marks/*).
+### Estructura vigente tras el saneamiento
+- `componentes/` `kits-ui/` `lineamientos/` `plantillas/` `recursos/` `tokens/` — matriz del sistema
+- `producciones/` — piezas terminadas · `listmonk/` — páginas públicas · `prompts/` `conocimiento/` — pipeline y saberes
 
 ## Screen map
 | Screen | Repo files |
 |---|---|
-| Website ui_kit | ui_kits/website/*.jsx, ui_kits/website/index.html |
-| Editorial ui_kit | ui_kits/editorial/index.html |
-| Carrusel móvil | components/content/MobileCarousel.jsx, templates/Carrusel-Móvil.dc.html |
+| Website ui_kit | kits-ui/website/*.jsx, kits-ui/website/index.html |
+| Editorial ui_kit | kits-ui/editorial/index.html |
+| Carrusel IG | plantillas/carrusel-ig/CarruselIG_modelo_2026-08.dc.html |
+| Social poster | plantillas/social-poster/SocialPoster.dc.html |
+| Email newsletter | plantillas/email-nfcd-newsletter/EmailNFCDNewsletter.dc.html |
+| A4 ficha | plantillas/a4-ficha/A4_encuentro-profundizacion_2026-07.dc.html |
+| Carrusel móvil (componente) | componentes/content/MobileCarousel.jsx |
