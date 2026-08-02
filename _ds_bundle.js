@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"NFCDDesignSystem_1d3b67","components":[{"name":"Accordion","sourcePath":"components/content/Accordion.jsx"},{"name":"Badge","sourcePath":"components/content/Badge.jsx"},{"name":"Card","sourcePath":"components/content/Card.jsx"},{"name":"MobileCarousel","sourcePath":"components/content/MobileCarousel.jsx"},{"name":"Tag","sourcePath":"components/content/Tag.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Eyebrow","sourcePath":"components/core/Eyebrow.jsx"},{"name":"Rule","sourcePath":"components/core/Rule.jsx"},{"name":"Field","sourcePath":"components/forms/Field.jsx"}],"sourceHashes":{"components/content/Accordion.jsx":"93418999c6da","components/content/Badge.jsx":"39746424992c","components/content/Card.jsx":"789f6f7520ac","components/content/MobileCarousel.jsx":"b17fd0a74469","components/content/Tag.jsx":"f6d0ec616779","components/core/Button.jsx":"3f3b20d3e302","components/core/Eyebrow.jsx":"369fa897efde","components/core/Rule.jsx":"54ed6df28e17","components/forms/Field.jsx":"1fd43c14df8e","listmonk_public_es.js":"a99eb0c124e2","ui_kits/website/AboutBlock.jsx":"a9a77cac94ee","ui_kits/website/EncuentrosGrid.jsx":"8b042c3310da","ui_kits/website/Hero.jsx":"3f1bee1f9ab2","ui_kits/website/SiteFooter.jsx":"f27807a0857a","ui_kits/website/SiteHeader.jsx":"74a170b8de3e"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"NFCDDesignSystem_1d3b67","components":[{"name":"Accordion","sourcePath":"components/content/Accordion.jsx"},{"name":"Badge","sourcePath":"components/content/Badge.jsx"},{"name":"Card","sourcePath":"components/content/Card.jsx"},{"name":"MobileCarousel","sourcePath":"components/content/MobileCarousel.jsx"},{"name":"Tag","sourcePath":"components/content/Tag.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Eyebrow","sourcePath":"components/core/Eyebrow.jsx"},{"name":"Rule","sourcePath":"components/core/Rule.jsx"},{"name":"Field","sourcePath":"components/forms/Field.jsx"}],"sourceHashes":{"components/content/Accordion.jsx":"fb4a76408d2f","components/content/Badge.jsx":"e8751cd51b88","components/content/Card.jsx":"9de87f712f64","components/content/MobileCarousel.jsx":"b17fd0a74469","components/content/Tag.jsx":"d175648a3f80","components/core/Button.jsx":"1b0fb38fd926","components/core/Eyebrow.jsx":"904d06811361","components/core/Rule.jsx":"54ed6df28e17","components/forms/Field.jsx":"ae16893b8816","listmonk_public_es.js":"a99eb0c124e2","ui_kits/website/AboutBlock.jsx":"7a2a3b911f51","ui_kits/website/EncuentrosGrid.jsx":"4871f815ea2c","ui_kits/website/Hero.jsx":"9ac0bcce0090","ui_kits/website/SiteFooter.jsx":"9837817961b5","ui_kits/website/SiteHeader.jsx":"3af38c26c23e"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -107,12 +107,12 @@ var __mod = (() => {
           border: "none",
           cursor: "pointer",
           padding: "var(--space-4) 0",
-          fontFamily: "var(--font-mono)",
-          fontSize: "13px",
-          fontWeight: 700,
+          fontFamily: "var(--font-label)",
+          fontSize: "var(--font-size-sm)",
+          fontWeight: "var(--weight-bold)",
           letterSpacing: "0.08em",
           textTransform: "uppercase",
-          color: hover && !open ? "var(--sage-700)" : "var(--brand)",
+          color: hover && !open ? "var(--chip-sage-text)" : "var(--brand)",
           lineHeight: 1,
           transition: "color var(--dur-base) var(--ease-quiet)"
         }
@@ -218,9 +218,9 @@ var __mod = (() => {
         style: {
           display: "inline-flex",
           alignItems: "center",
-          fontFamily: "var(--font-mono)",
+          fontFamily: "var(--font-label)",
           fontSize: "10px",
-          fontWeight: 700,
+          fontWeight: "var(--weight-bold)",
           letterSpacing: "0.14em",
           textTransform: "uppercase",
           padding: "3px 8px",
@@ -293,8 +293,8 @@ var __mod = (() => {
       {
         style: {
           background: raised ? "var(--surface-raised)" : "var(--surface-card)",
-          border: "1px solid var(--border-soft)",
-          borderTop: accent ? "3px solid var(--brand)" : "1px solid var(--border-soft)",
+          border: "var(--border-thin) solid var(--border-soft)",
+          borderTop: accent ? "3px solid var(--brand)" : "var(--border-thin) solid var(--border-soft)",
           borderRadius: "var(--radius-sm)",
           boxShadow: raised ? "var(--shadow-md)" : "var(--shadow-none)",
           padding: "var(--space-5)",
@@ -587,11 +587,11 @@ var __mod = (() => {
         style: {
           display: "inline-flex",
           alignItems: "center",
-          fontFamily: "var(--font-mono)",
-          fontSize: "11px",
+          fontFamily: "var(--font-label)",
+          fontSize: "var(--font-size-2xs)",
           letterSpacing: "0.1em",
           textTransform: "uppercase",
-          padding: "4px 12px",
+          padding: "var(--space-1) var(--space-3)",
           borderRadius: "var(--radius-pill)",
           ...tones[tone],
           ...style
@@ -666,20 +666,20 @@ var __mod = (() => {
     ...rest
   }) {
     const sizes = {
-      sm: { fontSize: "11px", padding: "7px 14px", letterSpacing: "0.14em" },
-      md: { fontSize: "12px", padding: "11px 22px", letterSpacing: "0.16em" },
-      lg: { fontSize: "13px", padding: "15px 30px", letterSpacing: "0.18em" }
+      sm: { fontSize: "var(--font-size-2xs)", padding: "7px 14px", letterSpacing: "0.14em" },
+      md: { fontSize: "var(--font-size-xs)", padding: "11px 22px", letterSpacing: "0.16em" },
+      lg: { fontSize: "var(--font-size-sm)", padding: "15px 30px", letterSpacing: "0.18em" }
     };
     const base = {
-      fontFamily: "var(--font-mono)",
+      fontFamily: "var(--font-label)",
       textTransform: "uppercase",
-      fontWeight: 700,
+      fontWeight: "var(--weight-bold)",
       lineHeight: 1,
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
       gap: "8px",
-      border: "1.5px solid transparent",
+      border: "var(--border-med) solid transparent",
       borderRadius: "var(--radius-sm)",
       cursor: disabled ? "not-allowed" : "pointer",
       opacity: disabled ? 0.45 : 1,
@@ -698,7 +698,7 @@ var __mod = (() => {
         borderColor: "transparent",
         borderRadius: 0,
         padding: "2px 0",
-        borderBottom: "1.5px solid var(--text-accent)"
+        borderBottom: "var(--border-med) solid var(--text-accent)"
       }
     };
     const [hover, setHover] = import_react.default.useState(false);
@@ -788,10 +788,10 @@ var __mod = (() => {
       Tag,
       {
         style: {
-          fontFamily: "var(--font-mono)",
-          fontSize: "12px",
-          fontWeight: 700,
-          letterSpacing: "0.22em",
+          fontFamily: "var(--font-label)",
+          fontSize: "var(--font-size-xs)",
+          fontWeight: "var(--weight-bold)",
+          letterSpacing: "var(--tracking-wordmark)",
           textTransform: "uppercase",
           color: tones[tone] || tones.wine,
           ...style
@@ -937,11 +937,11 @@ var __mod = (() => {
     const control = {
       width: "100%",
       boxSizing: "border-box",
-      fontFamily: "var(--font-serif)",
-      fontSize: "16px",
+      fontFamily: "var(--font-body)",
+      fontSize: "var(--font-size-md)",
       color: "var(--text-strong)",
       background: "var(--surface-card)",
-      border: "1px solid " + (focus ? "var(--focus-ring)" : "var(--border-soft)"),
+      border: "var(--border-thin) solid " + (focus ? "var(--focus-ring)" : "var(--border-soft)"),
       borderRadius: "var(--radius-sm)",
       padding: "10px 12px",
       outline: "none",
@@ -950,8 +950,8 @@ var __mod = (() => {
       resize: multiline ? "vertical" : void 0
     };
     return /* @__PURE__ */ import_react.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "6px", ...style } }, label && /* @__PURE__ */ import_react.default.createElement("label", { htmlFor: fieldId, style: {
-      fontFamily: "var(--font-mono)",
-      fontSize: "11px",
+      fontFamily: "var(--font-label)",
+      fontSize: "var(--font-size-2xs)",
       letterSpacing: "0.16em",
       textTransform: "uppercase",
       color: "var(--text-muted)"
@@ -981,7 +981,7 @@ var __mod = (() => {
         style: control,
         ...rest
       }
-    ), hint && /* @__PURE__ */ import_react.default.createElement("span", { style: { fontFamily: "var(--font-mono)", fontSize: "11px", color: "var(--text-faint)" } }, hint));
+    ), hint && /* @__PURE__ */ import_react.default.createElement("span", { style: { fontFamily: "var(--font-label)", fontSize: "var(--font-size-2xs)", color: "var(--text-faint)" } }, hint));
   }
   return __toCommonJS(Field_exports);
 })();
@@ -1089,7 +1089,7 @@ function AboutBlock() {
       alt: "Naturaleza de la Fuerza",
       style: { maxWidth: "100%", maxHeight: 380, position: "absolute", inset: 0, margin: "auto" }
     }
-  )), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, null, "La pr\xE1ctica"), /* @__PURE__ */ React.createElement("div", { style: { height: 12 } }), /* @__PURE__ */ React.createElement(Rule, { tone: "wine" }), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 34, lineHeight: 1.2, color: "var(--text-strong)", margin: "20px 0 0" } }, "Hueso y vuelo: el cuerpo como campo de conocimiento"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-serif)", fontSize: 17, lineHeight: 1.65, color: "var(--text-body)", margin: "18px 0 0", maxWidth: "58ch" } }, "La danza no ilustra una idea: la produce. Cada pr\xE1ctica abre el cuerpo a las fuerzas que lo atraviesan, y en ese suceso aparece un saber que no pasa primero por las palabras. Dirigido por ", /* @__PURE__ */ React.createElement("strong", null, "Roxana Galand"), ", el sistema tiene su primera sede en Campo Arroyo del Medio, Bariloche, Patagonia."), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 28 } }, /* @__PURE__ */ React.createElement(Button, { variant: "solid" }, "Conocer la investigaci\xF3n"))));
+  )), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, null, "La pr\xE1ctica"), /* @__PURE__ */ React.createElement("div", { style: { height: 12 } }), /* @__PURE__ */ React.createElement(Rule, { tone: "wine" }), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--font-body)", fontWeight: "var(--weight-bold)", fontSize: "var(--font-size-2xl)", lineHeight: "var(--leading-snug)", color: "var(--text-strong)", margin: "20px 0 0" } }, "Hueso y vuelo: el cuerpo como campo de conocimiento"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-body)", fontSize: "var(--font-size-md)", lineHeight: "var(--leading-relaxed)", color: "var(--text-body)", margin: "18px 0 0", maxWidth: "58ch" } }, "La danza no ilustra una idea: la produce. Cada pr\xE1ctica abre el cuerpo a las fuerzas que lo atraviesan, y en ese suceso aparece un saber que no pasa primero por las palabras. Dirigido por ", /* @__PURE__ */ React.createElement("strong", null, "Roxana Galand"), ", el sistema tiene su primera sede en Campo Arroyo del Medio, Bariloche, Patagonia."), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 28 } }, /* @__PURE__ */ React.createElement(Button, { variant: "solid" }, "Conocer la investigaci\xF3n"))));
 }
 window.AboutBlock = AboutBlock;
 
@@ -1126,7 +1126,7 @@ const ENCUENTROS = [
   }
 ];
 function EncuentrosGrid() {
-  return /* @__PURE__ */ React.createElement("section", { style: { background: "var(--surface-raised)", borderTop: "1px solid var(--border-soft)", borderBottom: "1px solid var(--border-soft)" } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 1280, margin: "0 auto", padding: "64px 48px" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 36 } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, null, "Pr\xF3ximos encuentros"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 36, color: "var(--text-strong)", margin: "10px 0 0" } }, "Programa 2026")), /* @__PURE__ */ React.createElement(Button, { variant: "link", href: "#" }, "Calendario completo")), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 } }, ENCUENTROS.map((e) => /* @__PURE__ */ React.createElement(Card, { key: e.title, accent: true, style: { display: "flex", flexDirection: "column" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, marginBottom: 14 } }, /* @__PURE__ */ React.createElement(Badge, { tone: e.format === "Online" ? "sage" : "ink" }, e.format), /* @__PURE__ */ React.createElement(Badge, null, e.hours)), /* @__PURE__ */ React.createElement(Eyebrow, { tone: "muted" }, e.season), /* @__PURE__ */ React.createElement("h3", { style: { fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 23, color: "var(--text-strong)", margin: "8px 0 8px" } }, e.title), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-serif)", fontSize: 15, lineHeight: 1.5, color: "var(--text-body)", margin: 0, flex: 1 } }, e.desc), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, margin: "16px 0" } }, e.tags.map((t, i) => /* @__PURE__ */ React.createElement(Tag, { key: t, tone: i === 1 ? "sage" : "wine" }, t))), /* @__PURE__ */ React.createElement(Button, { variant: "outline", size: "sm" }, "Ver ficha"))))));
+  return /* @__PURE__ */ React.createElement("section", { style: { background: "var(--surface-raised)", borderTop: "1px solid var(--border-soft)", borderBottom: "1px solid var(--border-soft)" } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 1280, margin: "0 auto", padding: "64px 48px" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 36 } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, null, "Pr\xF3ximos encuentros"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--font-body)", fontWeight: "var(--weight-bold)", fontSize: "var(--font-size-2xl)", color: "var(--text-strong)", margin: "10px 0 0" } }, "Programa 2026")), /* @__PURE__ */ React.createElement(Button, { variant: "link", href: "#" }, "Calendario completo")), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 } }, ENCUENTROS.map((e) => /* @__PURE__ */ React.createElement(Card, { key: e.title, accent: true, style: { display: "flex", flexDirection: "column" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, marginBottom: 14 } }, /* @__PURE__ */ React.createElement(Badge, { tone: e.format === "Online" ? "sage" : "ink" }, e.format), /* @__PURE__ */ React.createElement(Badge, null, e.hours)), /* @__PURE__ */ React.createElement(Eyebrow, { tone: "muted" }, e.season), /* @__PURE__ */ React.createElement("h3", { style: { fontFamily: "var(--font-body)", fontWeight: "var(--weight-bold)", fontSize: "var(--font-size-xl)", color: "var(--text-strong)", margin: "8px 0 8px" } }, e.title), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-body)", fontSize: "var(--font-size-sm)", lineHeight: "var(--leading-normal)", color: "var(--text-body)", margin: 0, flex: 1 } }, e.desc), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, margin: "16px 0" } }, e.tags.map((t, i) => /* @__PURE__ */ React.createElement(Tag, { key: t, tone: i === 1 ? "sage" : "wine" }, t))), /* @__PURE__ */ React.createElement(Button, { variant: "outline", size: "sm" }, "Ver ficha"))))));
 }
 window.EncuentrosGrid = EncuentrosGrid;
 
@@ -1146,18 +1146,18 @@ function Hero() {
     maxWidth: 1280,
     margin: "0 auto"
   } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, null, "Sistema de pr\xE1cticas e investigaci\xF3n"), /* @__PURE__ */ React.createElement("div", { style: { height: 14 } }), /* @__PURE__ */ React.createElement(Rule, { tone: "wine" }), /* @__PURE__ */ React.createElement("h1", { style: {
-    fontFamily: "var(--font-display)",
-    fontWeight: 700,
-    fontSize: 92,
+    fontFamily: "var(--font-title)",
+    fontWeight: "var(--weight-bold)",
+    fontSize: "var(--font-size-5xl)",
     lineHeight: 0.92,
-    letterSpacing: "0.03em",
+    letterSpacing: "var(--tracking-display)",
     textTransform: "uppercase",
     color: "var(--text-strong)",
     margin: "22px 0 0"
   } }, "Naturaleza", /* @__PURE__ */ React.createElement("br", null), "de la fuerza"), /* @__PURE__ */ React.createElement("p", { style: {
-    fontFamily: "var(--font-serif)",
-    fontSize: 19,
-    lineHeight: 1.55,
+    fontFamily: "var(--font-body)",
+    fontSize: "var(--font-size-lg)",
+    lineHeight: "var(--leading-normal)",
     color: "var(--text-body)",
     maxWidth: "42ch",
     margin: "22px 0 0"
@@ -1179,7 +1179,7 @@ window.Hero = Hero;
 try { (() => {
 const { Eyebrow, Field, Button } = window.NFCDDesignSystem_1d3b67;
 function SiteFooter() {
-  return /* @__PURE__ */ React.createElement("footer", { style: { background: "var(--surface-ink)", color: "var(--text-on-ink)" } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 1280, margin: "0 auto", padding: "64px 48px 40px", display: "grid", gridTemplateColumns: "1.2fr 1fr 1fr", gap: 48 } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("img", { src: "../../assets/logos/nfcd_isologov2_blanco_fondotrasparente.png", alt: "NFCD", style: { height: 64, marginBottom: 18 } }), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-serif)", fontSize: 15, lineHeight: 1.6, color: "var(--text-on-ink-muted)", maxWidth: "34ch", margin: 0 } }, "Naturaleza de la fuerza en el cuerpo y la danza. Pr\xE1cticas e investigaci\xF3n hacia una conciencia planetaria.")), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, { tone: "onInk" }, "Sede"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-mono)", fontSize: 13, lineHeight: 1.8, color: "var(--text-on-ink-muted)", marginTop: 14 } }, "Campo Arroyo del Medio", /* @__PURE__ */ React.createElement("br", null), "Bariloche \xB7 Patagonia", /* @__PURE__ */ React.createElement("br", null), "Argentina"), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 18 } }, /* @__PURE__ */ React.createElement(Eyebrow, { tone: "onInk" }, "Direcci\xF3n"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--text-on-ink-muted)", marginTop: 12 } }, "Roxana Galand"))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, { tone: "onInk" }, "Bolet\xEDn"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-serif)", fontSize: 14, color: "var(--text-on-ink-muted)", margin: "12px 0 14px" } }, "Encuentros, publicaciones y notas del Campo."), /* @__PURE__ */ React.createElement(Field, { placeholder: "tu@correo.com", type: "email" }), /* @__PURE__ */ React.createElement("div", { style: { height: 12 } }), /* @__PURE__ */ React.createElement(Button, { variant: "solid", size: "sm" }, "Suscribirme"))), /* @__PURE__ */ React.createElement("div", { style: { borderTop: "1px solid rgba(255,255,255,0.12)", padding: "20px 48px", maxWidth: 1280, margin: "0 auto", display: "flex", justifyContent: "space-between" } }, /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", color: "var(--text-on-ink-faint)" } }, "\xA9 2026 NFCD"), /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", color: "var(--text-on-ink-faint)" } }, "Instagram \xB7 Contacto")));
+  return /* @__PURE__ */ React.createElement("footer", { style: { background: "var(--surface-ink)", color: "var(--text-on-ink)" } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 1280, margin: "0 auto", padding: "64px 48px 40px", display: "grid", gridTemplateColumns: "1.2fr 1fr 1fr", gap: 48 } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("img", { src: "../../assets/logos/nfcd_isologov2_blanco_fondotrasparente.png", alt: "NFCD", style: { height: 64, marginBottom: 18 } }), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-body)", fontSize: "var(--font-size-sm)", lineHeight: "var(--leading-normal)", color: "var(--text-on-ink-muted)", maxWidth: "34ch", margin: 0 } }, "Naturaleza de la fuerza en el cuerpo y la danza. Pr\xE1cticas e investigaci\xF3n hacia una conciencia planetaria.")), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, { tone: "onInk" }, "Sede"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-label)", fontSize: "var(--font-size-sm)", lineHeight: "var(--leading-relaxed)", color: "var(--text-on-ink-muted)", marginTop: 14 } }, "Campo Arroyo del Medio", /* @__PURE__ */ React.createElement("br", null), "Bariloche \xB7 Patagonia", /* @__PURE__ */ React.createElement("br", null), "Argentina"), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 18 } }, /* @__PURE__ */ React.createElement(Eyebrow, { tone: "onInk" }, "Direcci\xF3n"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-label)", fontSize: "var(--font-size-sm)", color: "var(--text-on-ink-muted)", marginTop: 12 } }, "Roxana Galand"))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, { tone: "onInk" }, "Bolet\xEDn"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-body)", fontSize: "var(--font-size-sm)", color: "var(--text-on-ink-muted)", margin: "12px 0 14px" } }, "Encuentros, publicaciones y notas del Campo."), /* @__PURE__ */ React.createElement(Field, { placeholder: "tu@correo.com", type: "email" }), /* @__PURE__ */ React.createElement("div", { style: { height: 12 } }), /* @__PURE__ */ React.createElement(Button, { variant: "solid", size: "sm" }, "Suscribirme"))), /* @__PURE__ */ React.createElement("div", { style: { borderTop: "1px solid rgba(255,255,255,0.12)", padding: "20px 48px", maxWidth: 1280, margin: "0 auto", display: "flex", justifyContent: "space-between" } }, /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--font-label)", fontSize: "var(--font-size-2xs)", letterSpacing: "0.1em", color: "var(--text-on-ink-faint)" } }, "\xA9 2026 NFCD"), /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--font-label)", fontSize: "var(--font-size-2xs)", letterSpacing: "0.1em", color: "var(--text-on-ink-faint)" } }, "Instagram \xB7 Contacto")));
 }
 window.SiteFooter = SiteFooter;
 
@@ -1205,8 +1205,8 @@ function SiteHeader({ onNav }) {
     e.preventDefault();
     onNav && onNav("home");
   }, style: { display: "flex", alignItems: "center", position: "relative", height: 46 } }, /* @__PURE__ */ React.createElement("img", { className: "nfcd-logo-light", src: "../../assets/logos/nfcd_isologov2_color_fondotrasparente.png", alt: "NFCD", style: { height: 46 } }), /* @__PURE__ */ React.createElement("img", { className: "nfcd-logo-dark", src: "../../assets/logos/nfcd_isologov2_blanco_fondotrasparente.png", alt: "NFCD", style: { height: 46 } })), /* @__PURE__ */ React.createElement("nav", { style: { display: "flex", alignItems: "center", gap: 30 } }, links.map((l) => /* @__PURE__ */ React.createElement("a", { key: l, href: "#", onClick: (e) => e.preventDefault(), style: {
-    fontFamily: "var(--font-mono)",
-    fontSize: 12,
+    fontFamily: "var(--font-label)",
+    fontSize: "var(--font-size-xs)",
     letterSpacing: "0.14em",
     textTransform: "uppercase",
     color: "var(--text-body)",

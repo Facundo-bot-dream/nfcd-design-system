@@ -16,10 +16,10 @@ export function Eyebrow({ children, tone = "wine", as = "div", style, ...rest })
   return (
     <Tag
       style={{
-        fontFamily: "var(--font-mono)",
-        fontSize: "12px",
-        fontWeight: 700,
-        letterSpacing: "0.22em",
+        fontFamily: "var(--font-label)",
+        fontSize: "var(--font-size-xs)",
+        fontWeight: "var(--weight-bold)",
+        letterSpacing: "var(--tracking-wordmark)",
         textTransform: "uppercase",
         color: tones[tone] || tones.wine,
         ...style,

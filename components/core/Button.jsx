@@ -17,21 +17,21 @@ export function Button({
   ...rest
 }) {
   const sizes = {
-    sm: { fontSize: "11px", padding: "7px 14px", letterSpacing: "0.14em" },
-    md: { fontSize: "12px", padding: "11px 22px", letterSpacing: "0.16em" },
-    lg: { fontSize: "13px", padding: "15px 30px", letterSpacing: "0.18em" },
+    sm: { fontSize: "var(--font-size-2xs)", padding: "7px 14px", letterSpacing: "0.14em" },
+    md: { fontSize: "var(--font-size-xs)", padding: "11px 22px", letterSpacing: "0.16em" },
+    lg: { fontSize: "var(--font-size-sm)", padding: "15px 30px", letterSpacing: "0.18em" },
   };
 
   const base = {
-    fontFamily: "var(--font-mono)",
+    fontFamily: "var(--font-label)",
     textTransform: "uppercase",
-    fontWeight: 700,
+    fontWeight: "var(--weight-bold)",
     lineHeight: 1,
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
     gap: "8px",
-    border: "1.5px solid transparent",
+    border: "var(--border-med) solid transparent",
     borderRadius: "var(--radius-sm)",
     cursor: disabled ? "not-allowed" : "pointer",
     opacity: disabled ? 0.45 : 1,
@@ -52,7 +52,7 @@ export function Button({
       borderColor: "transparent",
       borderRadius: 0,
       padding: "2px 0",
-      borderBottom: "1.5px solid var(--text-accent)",
+      borderBottom: "var(--border-med) solid var(--text-accent)",
     },
   };
 

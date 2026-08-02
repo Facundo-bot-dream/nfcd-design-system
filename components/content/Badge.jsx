@@ -20,9 +20,9 @@ export function Badge({ children, variant = "soft", tone = "wine", style, ...res
       style={{
         display: "inline-flex",
         alignItems: "center",
-        fontFamily: "var(--font-mono)",
+        fontFamily: "var(--font-label)",
         fontSize: "10px",
-        fontWeight: 700,
+        fontWeight: "var(--weight-bold)",
         letterSpacing: "0.14em",
         textTransform: "uppercase",
         padding: "3px 8px",

@@ -23,11 +23,11 @@ export function Field({
   const control = {
     width: "100%",
     boxSizing: "border-box",
-    fontFamily: "var(--font-serif)",
-    fontSize: "16px",
+    fontFamily: "var(--font-body)",
+    fontSize: "var(--font-size-md)",
     color: "var(--text-strong)",
     background: "var(--surface-card)",
-    border: "1px solid " + (focus ? "var(--focus-ring)" : "var(--border-soft)"),
+    border: "var(--border-thin) solid " + (focus ? "var(--focus-ring)" : "var(--border-soft)"),
     borderRadius: "var(--radius-sm)",
     padding: "10px 12px",
     outline: "none",
@@ -40,8 +40,8 @@ export function Field({
     <div style={{ display: "flex", flexDirection: "column", gap: "6px", ...style }}>
       {label && (
         <label htmlFor={fieldId} style={{
-          fontFamily: "var(--font-mono)",
-          fontSize: "11px",
+          fontFamily: "var(--font-label)",
+          fontSize: "var(--font-size-2xs)",
           letterSpacing: "0.16em",
           textTransform: "uppercase",
           color: "var(--text-muted)",
@@ -55,7 +55,7 @@ export function Field({
           onFocus={() => setFocus(true)} onBlur={() => setFocus(false)} style={control} {...rest} />
       )}
       {hint && (
-        <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "var(--text-faint)" }}>{hint}</span>
+        <span style={{ fontFamily: "var(--font-label)", fontSize: "var(--font-size-2xs)", color: "var(--text-faint)" }}>{hint}</span>
       )}
     </div>
   );

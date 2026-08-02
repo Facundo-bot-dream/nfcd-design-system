@@ -10,8 +10,8 @@ export function Card({ children, accent = false, raised = false, as = "div", sty
     <Tag
       style={{
         background: raised ? "var(--surface-raised)" : "var(--surface-card)",
-        border: "1px solid var(--border-soft)",
-        borderTop: accent ? "3px solid var(--brand)" : "1px solid var(--border-soft)",
+        border: "var(--border-thin) solid var(--border-soft)",
+        borderTop: accent ? "3px solid var(--brand)" : "var(--border-thin) solid var(--border-soft)",
         borderRadius: "var(--radius-sm)",
         boxShadow: raised ? "var(--shadow-md)" : "var(--shadow-none)",
         padding: "var(--space-5)",

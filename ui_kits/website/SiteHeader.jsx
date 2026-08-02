@@ -15,7 +15,7 @@ function SiteHeader({ onNav }) {
       <nav style={{ display: "flex", alignItems: "center", gap: 30 }}>
         {links.map((l) => (
           <a key={l} href="#" onClick={(e)=>e.preventDefault()} style={{
-            fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.14em",
+            fontFamily: "var(--font-label)", fontSize: "var(--font-size-xs)", letterSpacing: "0.14em",
             textTransform: "uppercase", color: "var(--text-body)", textDecoration: "none",
           }}>{l}</a>
         ))}

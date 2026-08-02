@@ -11,14 +11,14 @@ function Hero() {
         <div style={{ height: 14 }} />
         <Rule tone="wine" />
         <h1 style={{
-          fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 92,
-          lineHeight: 0.92, letterSpacing: "0.03em", textTransform: "uppercase",
+          fontFamily: "var(--font-title)", fontWeight: "var(--weight-bold)", fontSize: "var(--font-size-5xl)",
+          lineHeight: 0.92, letterSpacing: "var(--tracking-display)", textTransform: "uppercase",
           color: "var(--text-strong)", margin: "22px 0 0",
         }}>
           Naturaleza<br />de la fuerza
         </h1>
         <p style={{
-          fontFamily: "var(--font-serif)", fontSize: 19, lineHeight: 1.55,
+          fontFamily: "var(--font-body)", fontSize: "var(--font-size-lg)", lineHeight: "var(--leading-normal)",
           color: "var(--text-body)", maxWidth: "42ch", margin: "22px 0 0",
         }}>
           Una práctica que se involucra en los sucesos del cuerpo, las fuerzas y la

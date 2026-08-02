@@ -15,17 +15,17 @@
   --font-label:   var(--font-mono);
 
   /* ---- Type scale (rem, 16px base) ---- */
-  --text-2xs: 0.6875rem;  /* 11px — fine print / mono captions */
-  --text-xs:  0.75rem;    /* 12px */
-  --text-sm:  0.875rem;   /* 14px */
-  --text-md:  1rem;       /* 16px — base body */
-  --text-lg:  1.1875rem;  /* 19px — lead serif */
-  --text-xl:  1.5rem;     /* 24px */
-  --text-2xl: 2rem;       /* 32px */
-  --text-3xl: 2.75rem;    /* 44px */
-  --text-4xl: 3.75rem;    /* 60px — display */
-  --text-5xl: 5.5rem;     /* 88px — poster display */
-  --text-6xl: 8rem;       /* 128px — hero display */
+  --font-size-2xs: 0.6875rem;  /* 11px — fine print / mono captions */
+  --font-size-xs:  0.75rem;    /* 12px */
+  --font-size-sm:  0.875rem;   /* 14px */
+  --font-size-md:  1rem;       /* 16px — base body */
+  --font-size-lg:  1.1875rem;  /* 19px — lead serif */
+  --font-size-xl:  1.5rem;     /* 24px */
+  --font-size-2xl: 2rem;       /* 32px */
+  --font-size-3xl: 2.75rem;    /* 44px */
+  --font-size-4xl: 3.75rem;    /* 60px — display */
+  --font-size-5xl: 5.5rem;     /* 88px — poster display */
+  --font-size-6xl: 8rem;       /* 128px — hero display */
 
   /* ---- Weights ---- */
   --weight-regular: 400;

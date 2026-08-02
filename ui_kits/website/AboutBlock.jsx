@@ -13,10 +13,10 @@ function AboutBlock() {
         <Eyebrow>La práctica</Eyebrow>
         <div style={{ height: 12 }} />
         <Rule tone="wine" />
-        <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 34, lineHeight: 1.2, color: "var(--text-strong)", margin: "20px 0 0" }}>
+        <h2 style={{ fontFamily: "var(--font-body)", fontWeight: "var(--weight-bold)", fontSize: "var(--font-size-2xl)", lineHeight: "var(--leading-snug)", color: "var(--text-strong)", margin: "20px 0 0" }}>
           Hueso y vuelo: el cuerpo como campo de conocimiento
         </h2>
-        <p style={{ fontFamily: "var(--font-serif)", fontSize: 17, lineHeight: 1.65, color: "var(--text-body)", margin: "18px 0 0", maxWidth: "58ch" }}>
+        <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--font-size-md)", lineHeight: "var(--leading-relaxed)", color: "var(--text-body)", margin: "18px 0 0", maxWidth: "58ch" }}>
           La danza no ilustra una idea: la produce. Cada práctica abre el cuerpo a las
           fuerzas que lo atraviesan, y en ese suceso aparece un saber que no pasa primero
           por las palabras. Dirigido por <strong>Roxana Galand</strong>, el sistema tiene su
