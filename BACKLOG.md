@@ -18,7 +18,9 @@ El disco quedó saneado el 2026-08-02 (tema oscuro usable, escala adoptada, carp
 
 ## 🟡 PENDIENTES DE PRODUCCIÓN
 
-**2 · Plantillas que faltan en el picker de Design.** Empaquetar como `.dc.html` + `ds-base.js` + `support.js` + `.thumbnail`:
+**2 · Website móvil.** El kit website es solo escritorio (grid de 3 columnas, paddings fijos). Falta la variante responsive/móvil para completar la matriz móvil/escritorio × claro/oscuro del panel (hoy: escritorio claro ✓, escritorio oscuro ✓, móvil solo como patrones y MobileCarousel).
+
+**3 · Plantillas que faltan en el picker de Design.** Empaquetar como `.dc.html` + `ds-base.js` + `support.js` + `.thumbnail`:
 - `flyer-ig` (1080×1350, pieza única)
 - `web-pagina` (bloque Gutenberg)
 - `web-carrusel` (slider WordPress)
