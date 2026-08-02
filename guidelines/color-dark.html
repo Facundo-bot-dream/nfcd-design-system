@@ -1,0 +1,45 @@
+<!-- @dsCard group="Colors" viewport="700x230" name="Tema oscuro" subtitle="data-theme=dark en html: superficies, texto y chips viran por indirección semántica." -->
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--surface-page); font-family: var(--font-mono); padding: 22px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .tile { border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+  .tile.card { background: var(--surface-card); }
+  .tile.raised { background: var(--surface-raised); }
+  .name { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+  .demo { font-family: var(--font-serif); font-size: 15px; }
+  .strong { color: var(--text-strong); }
+  .muted { color: var(--text-muted); }
+  .accent { color: var(--text-accent); }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip { display: inline-block; padding: 3px 10px; border-radius: var(--radius-pill); font-size: 11px; letter-spacing: 0.08em; }
+  .chip.wine { background: var(--chip-wine-bg); color: var(--chip-wine-text); border: 1px solid var(--chip-wine-line); }
+  .chip.ink  { background: var(--chip-ink-bg);  color: var(--chip-ink-text);  border: 1px solid var(--chip-ink-line); }
+  .chip.sage { background: var(--chip-sage-bg); color: var(--chip-sage-text); border: 1px solid var(--chip-sage-line); }
+  .note { font-size: 10px; letter-spacing: 0.08em; color: var(--text-faint); margin-top: 12px; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="tile card">
+      <div class="name">surface-card · dark</div>
+      <div class="demo strong">Texto fuerte sobre tinta</div>
+      <div class="demo muted">Texto atenuado — secundario</div>
+      <div class="demo accent">Enlace / acento en vino</div>
+    </div>
+    <div class="tile raised">
+      <div class="name">surface-raised · chips</div>
+      <div class="chips">
+        <span class="chip wine">Somática</span>
+        <span class="chip ink">Presencial</span>
+        <span class="chip sage">Naturaleza</span>
+      </div>
+    </div>
+  </div>
+  <div class="note">Se activa con data-theme="dark" en &lt;html&gt; — ver PATTERNS.md § Activación del tema oscuro.</div>
+</body>
+</html>

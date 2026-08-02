@@ -10,7 +10,7 @@ export function Eyebrow({ children, tone = "wine", as = "div", style, ...rest })
     wine: "var(--text-accent)",
     ink: "var(--text-body)",
     muted: "var(--text-muted)",
-    onInk: "var(--ink-400)",
+    onInk: "var(--text-on-ink-muted)",
   };
   const Tag = as;
   return (

@@ -34,7 +34,7 @@ function EncuentrosGrid() {
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 36 }}>
           <div>
             <Eyebrow>Próximos encuentros</Eyebrow>
-            <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 36, color: "var(--ink-900)", margin: "10px 0 0" }}>
+            <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 36, color: "var(--text-strong)", margin: "10px 0 0" }}>
               Programa 2026
             </h2>
           </div>
@@ -48,7 +48,7 @@ function EncuentrosGrid() {
                 <Badge>{e.hours}</Badge>
               </div>
               <Eyebrow tone="muted">{e.season}</Eyebrow>
-              <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 23, color: "var(--ink-900)", margin: "8px 0 8px" }}>{e.title}</h3>
+              <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 23, color: "var(--text-strong)", margin: "8px 0 8px" }}>{e.title}</h3>
               <p style={{ fontFamily: "var(--font-serif)", fontSize: 15, lineHeight: 1.5, color: "var(--text-body)", margin: 0, flex: 1 }}>{e.desc}</p>
               <div style={{ display: "flex", gap: 8, margin: "16px 0" }}>
                 {e.tags.map((t, i) => <Tag key={t} tone={i === 1 ? "sage" : "wine"}>{t}</Tag>)}

@@ -274,12 +274,12 @@ async function buildBundle(namespace, sources) {
 // 5) Tokens CSS — con kind, definedIn y scope
 // ================================================================
 // Clasificación heurística calibrada contra el corpus real de tokens:
-// el nombre manda (shadow/radius/motion/text), después el archivo.
+// el nombre manda (shadow/radius/motion), después el archivo. Los --text-*
+// de colors.css son COLORES; los tamaños viven en typography.css.
 function classifyToken(name, fileName) {
   if (/shadow/.test(name)) return { kind: 'shadow' };
   if (/radius/.test(name)) return { kind: 'radius' };
   if (/--(ease|dur)-|blend/.test(name)) return { kind: 'other', annotation: 'other' };
-  if (/text/.test(name)) return { kind: 'font' };
   if (fileName === 'typography.css') return { kind: 'font' };
   if (fileName === 'spacing.css') return { kind: 'spacing' };
   return { kind: 'color' };

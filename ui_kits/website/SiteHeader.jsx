@@ -10,7 +10,7 @@ function SiteHeader({ onNav }) {
     }}>
       <a href="#" onClick={(e)=>{e.preventDefault(); onNav&&onNav("home");}} style={{ display: "flex", alignItems: "center", position: "relative", height: 46 }}>
         <img className="nfcd-logo-light" src="../../assets/logos/nfcd_isologov2_color_fondotrasparente.png" alt="NFCD" style={{ height: 46 }} />
-        <img className="nfcd-logo-dark" src="../../assets/logos/nfcd_isologov2_blanco_fondotrasparente.png" alt="NFCD" style={{ height: 46, position: "absolute", left: 0, top: 0 }} />
+        <img className="nfcd-logo-dark" src="../../assets/logos/nfcd_isologov2_blanco_fondotrasparente.png" alt="NFCD" style={{ height: 46 }} />
       </a>
       <nav style={{ display: "flex", alignItems: "center", gap: 30 }}>
         {links.map((l) => (

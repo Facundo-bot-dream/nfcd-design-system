@@ -22,6 +22,7 @@
   --ink-950: #100d0c;   /* profundidad de fondo en modo oscuro */
   --ink-900: #1a1614;   /* near-black, warm */
   --ink-800: #2c2724;
+  --ink-750: #37312c;   /* paso intermedio — superficies elevadas en oscuro */
   --ink-700: #423b36;
   --ink-600: #5c534c;
   --ink-500: #786d64;
@@ -56,6 +57,7 @@
   --surface-raised:  var(--paper-100);
   --surface-sunk:    var(--paper-200);
   --surface-ink:     var(--ink-900);   /* panel tinta permanente (footer/CTA) */
+  --surface-desk:    var(--paper-300); /* mesa/fondo de canvas en templates (fuera de la pieza) */
 
   /* Imaginería de grafito: blend según el tema (vira en colors.dark.css) */
   --img-graphite-blend: multiply; /* @kind other */
@@ -63,11 +65,18 @@
   /* Texto */
   --text-strong:     var(--ink-900);
   --text-body:       var(--ink-800);
-  --text-muted:      var(--ink-500);
-  --text-faint:      var(--ink-400);
+  --text-muted:      var(--ink-600);   /* AA sobre las 4 superficies claras */
+  --text-faint:      var(--ink-500);   /* AA sobre page/card; evitar sobre raised/sunk */
   --text-on-ink:     var(--paper-000);
   --text-on-wine:    var(--paper-000);
   --text-accent:     var(--wine-600);
+  --text-accent-hover: var(--wine-800);
+
+  /* Texto sobre panel tinta permanente (--surface-ink); igual en ambos temas */
+  --text-on-ink-muted: var(--ink-300);
+  --text-on-ink-faint: var(--ink-400);
+  --text-on-ink-accent: var(--wine-300);
+  --text-on-wine-muted: var(--wine-100); /* texto secundario sobre panel wine */
 
   /* Líneas y bordes */
   --border-hair:     var(--ink-100);

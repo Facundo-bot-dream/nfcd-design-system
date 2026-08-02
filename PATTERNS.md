@@ -346,20 +346,45 @@ La marca usa imagería en grafito (blanco y negro) que se integra con el fondo p
 img[data-graphite] {
   mix-blend-mode: var(--img-graphite-blend);
 }
-
-/* En light: */
-:root[data-theme="light"] {
-  --img-graphite-blend: multiply;
-}
-
-/* En dark: */
-:root[data-theme="dark"] {
-  --img-graphite-blend: screen;
-}
 ```
+
+El token ya está definido en los tokens del sistema — **no redefinirlo en las piezas**:
+el claro vive en `:root` (`tokens/colors.css` → `multiply`) y el oscuro en
+`:root[data-theme="dark"]` (`tokens/colors.dark.css` → `screen`). No existe ningún
+selector `[data-theme="light"]`: la ausencia del atributo (o cualquier valor ≠ `dark`) es el tema claro.
 
 - **Light:** `multiply` hace que los negros del PNG se oscurezcan sobre papel blanco.
 - **Dark:** `screen` hace que los negros se aclaren sobre fondo tinta, mejorando el contraste.
+
+---
+
+## Activación del tema oscuro
+
+El tema oscuro se activa con `data-theme="dark"` en `<html>`. Patrón canónico para
+páginas web (elección guardada > preferencia del SO), inline en `<head>` **antes**
+del CSS para evitar el flash del tema incorrecto:
+
+```html
+<script>
+  (function () {
+    var t = localStorage.getItem("nfcd-theme");
+    if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.dataset.theme = t;
+  })();
+</script>
+```
+
+Un toggle persiste la elección con:
+
+```js
+var next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+document.documentElement.dataset.theme = next;
+localStorage.setItem("nfcd-theme", next);
+```
+
+Las piezas de lienzo fijo (carruseles, A4, posters) **no** usan tema: se exportan
+siempre en claro, salvo sus paneles fijos (`--surface-ink`, `--brand`) que son
+oscuros/wine en ambos temas por definición.
 
 ---
 

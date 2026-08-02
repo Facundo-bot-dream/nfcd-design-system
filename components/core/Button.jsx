@@ -60,8 +60,8 @@ export function Button({
   const hoverStyles = !disabled && hover ? {
     solid: { background: "var(--brand-hover)", borderColor: "var(--brand-hover)" },
     outline: { background: "var(--text-strong)", color: "var(--surface-page)" },
-    ghost: { background: "var(--surface-sunk)" },
-    link: { color: "var(--brand-press)", borderColor: "var(--brand)" },
+    ghost: { background: "var(--surface-raised)" },
+    link: { color: "var(--text-accent-hover)", borderColor: "var(--brand)" },
   }[variant] : {};
 
   const Tag = href ? "a" : "button";

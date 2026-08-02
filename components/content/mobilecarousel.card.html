@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="../../styles.css">
-<style>body{margin:0;background:var(--paper-100);padding:24px;font-family:var(--font-mono);display:flex;flex-direction:column;align-items:center;gap:14px}.wrap{width:280px}.note{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);text-align:center}</style>
+<style>body{margin:0;background:var(--surface-raised);padding:24px;font-family:var(--font-mono);display:flex;flex-direction:column;align-items:center;gap:14px}.wrap{width:280px}.note{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);text-align:center}</style>
 </head>
 <body>
 <div class="wrap"><div id="root"></div></div>
@@ -15,23 +15,23 @@
 <script src="../../_ds_bundle.js"></script>
 <script type="text/babel">
   const { MobileCarousel, Eyebrow } = window.NFCDDesignSystem_1d3b67;
-  const slideStyle = (bg) => ({height:"100%",display:"flex",flexDirection:"column",justifyContent:"center",gap:8,padding:"0 34px",background:bg,color:"var(--paper-000)",boxSizing:"border-box"});
+  const slideStyle = (bg) => ({height:"100%",display:"flex",flexDirection:"column",justifyContent:"center",gap:8,padding:"0 34px",background:bg,color:"var(--text-on-ink)",boxSizing:"border-box"});
   function Slide({ n, bg, title, body }) {
     return (
       <div style={slideStyle(bg)}>
         <div style={{fontFamily:"var(--font-mono)",fontSize:16,opacity:.7}}>{n}</div>
         <div style={{fontFamily:"var(--font-display)",fontSize:28,lineHeight:1.05}}>{title}</div>
         <div style={{fontFamily:"var(--font-serif)",fontSize:18,lineHeight:1.4,opacity:.92}}>{body}</div>
-        <Eyebrow style={{color:"var(--paper-000)",opacity:.75,fontSize:14}}>Encuentro · Otoño 2026</Eyebrow>
+        <Eyebrow style={{color:"var(--text-on-ink)",opacity:.75,fontSize:14}}>Encuentro · Otoño 2026</Eyebrow>
       </div>
     );
   }
   function Demo() {
     return (
       <MobileCarousel>
-        <Slide n="01" bg="var(--wine-700)" title="El cuerpo que escucha" body="Tres encuentros en Campo Arroyo del Medio." />
-        <Slide n="02" bg="var(--ink-800)" title="La médula participante" body="Prácticas somáticas al aire libre." />
-        <Slide n="03" bg="var(--sage-700)" title="Naturaleza de la fuerza" body="Cuerpo, danza y territorio." />
+        <Slide n="01" bg="var(--chip-wine-solid)" title="El cuerpo que escucha" body="Tres encuentros en Campo Arroyo del Medio." />
+        <Slide n="02" bg="var(--surface-ink)" title="La médula participante" body="Prácticas somáticas al aire libre." />
+        <Slide n="03" bg="var(--chip-sage-solid)" title="Naturaleza de la fuerza" body="Cuerpo, danza y territorio." />
       </MobileCarousel>
     );
   }
