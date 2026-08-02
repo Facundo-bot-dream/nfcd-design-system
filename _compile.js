@@ -6,8 +6,8 @@
  *
  *   node _compile.js
  *
- * Regenera, a partir de las fuentes (components/, tokens/, ui_kits/,
- * guidelines/, templates/):
+ * Regenera, a partir de las fuentes (componentes/, tokens/, kits-ui/,
+ * lineamientos/, plantillas/):
  *   - _ds_bundle.js            componentes React transpilados para el browser
  *   - _ds_manifest.json        metadata del DS en el schema que consume
  *                              Claude Design (cards, templates, startingPoints,
@@ -26,11 +26,11 @@ const os = require('os');
 const crypto = require('crypto');
 
 const ROOT = __dirname;
-const COMPONENTS_DIR = path.join(ROOT, 'components');
+const COMPONENTS_DIR = path.join(ROOT, 'componentes');
 const TOKENS_DIR = path.join(ROOT, 'tokens');
-const UI_KITS_DIR = path.join(ROOT, 'ui_kits');
-const GUIDELINES_DIR = path.join(ROOT, 'guidelines');
-const TEMPLATES_DIR = path.join(ROOT, 'templates');
+const UI_KITS_DIR = path.join(ROOT, 'kits-ui');
+const GUIDELINES_DIR = path.join(ROOT, 'lineamientos');
+const TEMPLATES_DIR = path.join(ROOT, 'plantillas');
 const COMPONENT_GROUPS = ['core', 'content', 'forms'];
 
 const BUNDLE_OUT = path.join(ROOT, '_ds_bundle.js');
@@ -100,8 +100,8 @@ function resolveNamespace() {
 // 2) Descubrimiento de fuentes del bundle
 // ================================================================
 // Tres clases de fuente, cada una con su tratamiento:
-//   component — components/{core,content,forms}: exporta al namespace
-//   uikit     — ui_kits/website/*.jsx: composiciones, se cuelgan de window.<Nombre>
+//   component — componentes/{core,content,forms}: exporta al namespace
+//   uikit     — kits-ui/website/*.jsx: composiciones, se cuelgan de window.<Nombre>
 //   verbatim  — listmonk_public_es.js: JS plano, se incluye tal cual
 function findBundleSources() {
   const sources = [];
@@ -112,7 +112,7 @@ function findBundleSources() {
       if (/\.(jsx|tsx)$/.test(entry)) sources.push({ kind: 'component', abs: path.join(dir, entry) });
     }
   }
-  const listmonk = path.join(ROOT, 'listmonk_public_es.js');
+  const listmonk = path.join(ROOT, 'listmonk', 'listmonk_public_es.js');
   if (exists(listmonk)) sources.push({ kind: 'verbatim', abs: listmonk });
   const websiteDir = path.join(UI_KITS_DIR, 'website');
   if (exists(websiteDir)) {
@@ -373,7 +373,7 @@ function buildBrandFonts(fonts, typographyTokens) {
 // cards: <!-- @dsCard group="..." viewport="..." name="..." subtitle="..." -->
 function buildCards() {
   const searchDirs = [
-    path.join(ROOT, 'assets', 'brand'),
+    path.join(ROOT, 'recursos', 'brand'),
     GUIDELINES_DIR,
     ...COMPONENT_GROUPS.map((g) => path.join(COMPONENTS_DIR, g)),
     ...(exists(UI_KITS_DIR)
@@ -562,10 +562,10 @@ function buildOxlintConfig(fonts, allTokens, componentNames, dtsInfoByName, bund
   }
 
   const importGroups = [
-    ...COMPONENT_GROUPS.map((g) => `components/${g}/**`),
+    ...COMPONENT_GROUPS.map((g) => `componentes/${g}/**`),
     ...bundleSources.filter((s) => s.kind !== 'component').map((s) => (s.kind === 'uikit' ? null : relPath(s.abs))),
   ].filter(Boolean);
-  if (bundleSources.some((s) => s.kind === 'uikit')) importGroups.push('ui_kits/website/**');
+  if (bundleSources.some((s) => s.kind === 'uikit')) importGroups.push('kits-ui/website/**');
 
   return {
     plugins: ['react', 'import'],
@@ -603,7 +603,7 @@ async function main() {
   const namespace = resolveNamespace();
   const sources = findBundleSources();
   if (!sources.some((s) => s.kind === 'component')) {
-    console.warn('⚠️  No se encontraron componentes en components/{core,content,forms}.');
+    console.warn('⚠️  No se encontraron componentes en componentes/{core,content,forms}.');
   }
 
   const manifestComponents = await buildBundle(namespace, sources);

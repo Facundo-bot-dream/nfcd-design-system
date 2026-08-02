@@ -16,11 +16,11 @@
         "patterns": [
           {
             "group": [
-              "components/core/**",
-              "components/content/**",
-              "components/forms/**",
-              "listmonk_public_es.js",
-              "ui_kits/website/**"
+              "componentes/core/**",
+              "componentes/content/**",
+              "componentes/forms/**",
+              "listmonk/listmonk_public_es.js",
+              "kits-ui/website/**"
             ],
             "message": "Import design-system components from 'index.js', not component internals."
           }

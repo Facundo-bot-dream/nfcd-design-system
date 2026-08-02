@@ -85,7 +85,7 @@ img.nfcd-logo-dark { display: none; }
 
 /* ============================================================
    NOTAS DE ACOPLAMIENTO
-   Tus ui_kits usan estilos inline (no clases CSS), así que el blend
+   Tus kits-ui usan estilos inline (no clases CSS), así que el blend
    y el swap de logo se manejan en el JSX, no acá:
    · Blend de imágenes → token --img-graphite-blend (ya aplicado en Hero).
    · Swap de logo claro/oscuro → PENDIENTE: header y about usan el logo

@@ -12,14 +12,14 @@
 /* ---- Amatic SC (OFL, open) ---- */
 @font-face {
   font-family: "Amatic SC";
-  src: url("../assets/fonts/AmaticSC-Regular.ttf") format("truetype");
+  src: url("../recursos/fonts/AmaticSC-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Amatic SC";
-  src: url("../assets/fonts/AmaticSC-Bold.ttf") format("truetype");
+  src: url("../recursos/fonts/AmaticSC-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -28,14 +28,14 @@
 /* ---- Book Antiqua (commercial — supplied by brand) ---- */
 @font-face {
   font-family: "Book Antiqua";
-  src: url("../assets/fonts/BookAntiqua-Regular.ttf") format("truetype");
+  src: url("../recursos/fonts/BookAntiqua-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Book Antiqua";
-  src: url("../assets/fonts/BookAntiqua-Bold.ttf") format("truetype");
+  src: url("../recursos/fonts/BookAntiqua-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -44,28 +44,28 @@
 /* ---- Letter Gothic Std (commercial — supplied by brand) ---- */
 @font-face {
   font-family: "Letter Gothic Std";
-  src: url("../assets/fonts/LetterGothicStd.otf") format("opentype");
+  src: url("../recursos/fonts/LetterGothicStd.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Letter Gothic Std";
-  src: url("../assets/fonts/LetterGothicStd-Bold.otf") format("opentype");
+  src: url("../recursos/fonts/LetterGothicStd-Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Letter Gothic Std";
-  src: url("../assets/fonts/LetterGothicStd-Slanted.otf") format("opentype");
+  src: url("../recursos/fonts/LetterGothicStd-Slanted.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Letter Gothic Std";
-  src: url("../assets/fonts/LetterGothicStd-BoldSlanted.otf") format("opentype");
+  src: url("../recursos/fonts/LetterGothicStd-BoldSlanted.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;

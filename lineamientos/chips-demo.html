@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Chips · wine · ink · sage — soft & solid</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  html, body { margin: 0; }
+  body {
+    background: var(--paper-200);
+    font-family: var(--font-mono);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: stretch;
+  }
+  .panel {
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md, 8px);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    background: var(--surface-card);
+  }
+  .panel header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-hair);
+    background: var(--surface-raised);
+  }
+  .panel header .name {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-strong);
+  }
+  .panel header .meta {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  iframe { display: block; width: 100%; border: 0; background: transparent; }
+  .caption {
+    max-width: 720px;
+    font-family: var(--font-serif);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-800);
+  }
+</style>
+</head>
+<body>
+<p class="caption">Badge en sus dos variantes (<strong>soft</strong> · <strong>solid</strong>) para los tres tonos semánticos. El mismo bloque aparece abajo bajo <code>data-theme="dark"</code> — los chip-tokens viran sin tocar el componente.</p>
+
+<div class="panel">
+  <header><span class="name">Light</span><span class="meta">:root</span></header>
+  <iframe src="chips-demo-frame.html" title="Chips — light"></iframe>
+</div>
+
+<div class="panel">
+  <header><span class="name">Dark</span><span class="meta">data-theme="dark"</span></header>
+  <iframe src="chips-demo-frame.html?theme=dark" title="Chips — dark"></iframe>
+</div>
+
+<script>
+  // Ajustar alto de cada iframe a su contenido
+  function fit(f) {
+    try {
+      const h = f.contentDocument.body.scrollHeight;
+      f.style.height = h + "px";
+    } catch (e) {}
+  }
+  document.querySelectorAll("iframe").forEach((f) => {
+    f.addEventListener("load", () => { fit(f); setTimeout(() => fit(f), 300); });
+  });
+</script>
+</body>
+</html>

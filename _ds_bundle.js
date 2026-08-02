@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"NFCDDesignSystem_1d3b67","components":[{"name":"Accordion","sourcePath":"components/content/Accordion.jsx"},{"name":"Badge","sourcePath":"components/content/Badge.jsx"},{"name":"Card","sourcePath":"components/content/Card.jsx"},{"name":"MobileCarousel","sourcePath":"components/content/MobileCarousel.jsx"},{"name":"Tag","sourcePath":"components/content/Tag.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Eyebrow","sourcePath":"components/core/Eyebrow.jsx"},{"name":"Rule","sourcePath":"components/core/Rule.jsx"},{"name":"Field","sourcePath":"components/forms/Field.jsx"}],"sourceHashes":{"components/content/Accordion.jsx":"fb4a76408d2f","components/content/Badge.jsx":"e8751cd51b88","components/content/Card.jsx":"9de87f712f64","components/content/MobileCarousel.jsx":"b17fd0a74469","components/content/Tag.jsx":"d175648a3f80","components/core/Button.jsx":"1b0fb38fd926","components/core/Eyebrow.jsx":"904d06811361","components/core/Rule.jsx":"54ed6df28e17","components/forms/Field.jsx":"ae16893b8816","listmonk_public_es.js":"a99eb0c124e2","ui_kits/website/AboutBlock.jsx":"7a2a3b911f51","ui_kits/website/EncuentrosGrid.jsx":"4871f815ea2c","ui_kits/website/Hero.jsx":"9ac0bcce0090","ui_kits/website/SiteFooter.jsx":"9837817961b5","ui_kits/website/SiteHeader.jsx":"3af38c26c23e"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"NFCDDesignSystem_1d3b67","components":[{"name":"Accordion","sourcePath":"componentes/content/Accordion.jsx"},{"name":"Badge","sourcePath":"componentes/content/Badge.jsx"},{"name":"Card","sourcePath":"componentes/content/Card.jsx"},{"name":"MobileCarousel","sourcePath":"componentes/content/MobileCarousel.jsx"},{"name":"Tag","sourcePath":"componentes/content/Tag.jsx"},{"name":"Button","sourcePath":"componentes/core/Button.jsx"},{"name":"Eyebrow","sourcePath":"componentes/core/Eyebrow.jsx"},{"name":"Rule","sourcePath":"componentes/core/Rule.jsx"},{"name":"Field","sourcePath":"componentes/forms/Field.jsx"}],"sourceHashes":{"componentes/content/Accordion.jsx":"fb4a76408d2f","componentes/content/Badge.jsx":"e8751cd51b88","componentes/content/Card.jsx":"9de87f712f64","componentes/content/MobileCarousel.jsx":"b17fd0a74469","componentes/content/Tag.jsx":"d175648a3f80","componentes/core/Button.jsx":"1b0fb38fd926","componentes/core/Eyebrow.jsx":"904d06811361","componentes/core/Rule.jsx":"54ed6df28e17","componentes/forms/Field.jsx":"ae16893b8816","kits-ui/website/AboutBlock.jsx":"aa79e1ebd81e","kits-ui/website/EncuentrosGrid.jsx":"4871f815ea2c","kits-ui/website/Hero.jsx":"aaae8d001c7f","kits-ui/website/SiteFooter.jsx":"42a9b6e57488","kits-ui/website/SiteHeader.jsx":"a4b9f36d757e","listmonk/listmonk_public_es.js":"a99eb0c124e2"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -8,7 +8,7 @@ const __ds_scope = {};
 
 (__ds_ns.__errors = __ds_ns.__errors || []);
 
-// components/content/Accordion.jsx
+// componentes/content/Accordion.jsx
 try { (() => {
 var __mod = (() => {
   var __create = Object.create;
@@ -49,7 +49,7 @@ var __mod = (() => {
     }
   });
 
-  // components/content/Accordion.jsx
+  // componentes/content/Accordion.jsx
   var Accordion_exports = {};
   __export(Accordion_exports, {
     Accordion: () => Accordion,
@@ -156,9 +156,9 @@ var __mod = (() => {
 })();
 
 Object.assign(__ds_scope, __mod);
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/content/Accordion.jsx", error: String((e && e.message) || e) }); }
+})(); } catch (e) { __ds_ns.__errors.push({ path: "componentes/content/Accordion.jsx", error: String((e && e.message) || e) }); }
 
-// components/content/Badge.jsx
+// componentes/content/Badge.jsx
 try { (() => {
 var __mod = (() => {
   var __create = Object.create;
@@ -199,7 +199,7 @@ var __mod = (() => {
     }
   });
 
-  // components/content/Badge.jsx
+  // componentes/content/Badge.jsx
   var Badge_exports = {};
   __export(Badge_exports, {
     Badge: () => Badge
@@ -237,9 +237,9 @@ var __mod = (() => {
 })();
 
 Object.assign(__ds_scope, __mod);
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/content/Badge.jsx", error: String((e && e.message) || e) }); }
+})(); } catch (e) { __ds_ns.__errors.push({ path: "componentes/content/Badge.jsx", error: String((e && e.message) || e) }); }
 
-// components/content/Card.jsx
+// componentes/content/Card.jsx
 try { (() => {
 var __mod = (() => {
   var __create = Object.create;
@@ -280,7 +280,7 @@ var __mod = (() => {
     }
   });
 
-  // components/content/Card.jsx
+  // componentes/content/Card.jsx
   var Card_exports = {};
   __export(Card_exports, {
     Card: () => Card
@@ -310,9 +310,9 @@ var __mod = (() => {
 })();
 
 Object.assign(__ds_scope, __mod);
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/content/Card.jsx", error: String((e && e.message) || e) }); }
+})(); } catch (e) { __ds_ns.__errors.push({ path: "componentes/content/Card.jsx", error: String((e && e.message) || e) }); }
 
-// components/content/MobileCarousel.jsx
+// componentes/content/MobileCarousel.jsx
 try { (() => {
 var __mod = (() => {
   var __create = Object.create;
@@ -353,7 +353,7 @@ var __mod = (() => {
     }
   });
 
-  // components/content/MobileCarousel.jsx
+  // componentes/content/MobileCarousel.jsx
   var MobileCarousel_exports = {};
   __export(MobileCarousel_exports, {
     MobileCarousel: () => MobileCarousel,
@@ -526,9 +526,9 @@ var __mod = (() => {
 })();
 
 Object.assign(__ds_scope, __mod);
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/content/MobileCarousel.jsx", error: String((e && e.message) || e) }); }
+})(); } catch (e) { __ds_ns.__errors.push({ path: "componentes/content/MobileCarousel.jsx", error: String((e && e.message) || e) }); }
 
-// components/content/Tag.jsx
+// componentes/content/Tag.jsx
 try { (() => {
 var __mod = (() => {
   var __create = Object.create;
@@ -569,7 +569,7 @@ var __mod = (() => {
     }
   });
 
-  // components/content/Tag.jsx
+  // componentes/content/Tag.jsx
   var Tag_exports = {};
   __export(Tag_exports, {
     Tag: () => Tag
@@ -605,9 +605,9 @@ var __mod = (() => {
 })();
 
 Object.assign(__ds_scope, __mod);
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/content/Tag.jsx", error: String((e && e.message) || e) }); }
+})(); } catch (e) { __ds_ns.__errors.push({ path: "componentes/content/Tag.jsx", error: String((e && e.message) || e) }); }
 
-// components/core/Button.jsx
+// componentes/core/Button.jsx
 try { (() => {
 var __mod = (() => {
   var __create = Object.create;
@@ -648,7 +648,7 @@ var __mod = (() => {
     }
   });
 
-  // components/core/Button.jsx
+  // componentes/core/Button.jsx
   var Button_exports = {};
   __export(Button_exports, {
     Button: () => Button
@@ -727,9 +727,9 @@ var __mod = (() => {
 })();
 
 Object.assign(__ds_scope, __mod);
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/Button.jsx", error: String((e && e.message) || e) }); }
+})(); } catch (e) { __ds_ns.__errors.push({ path: "componentes/core/Button.jsx", error: String((e && e.message) || e) }); }
 
-// components/core/Eyebrow.jsx
+// componentes/core/Eyebrow.jsx
 try { (() => {
 var __mod = (() => {
   var __create = Object.create;
@@ -770,7 +770,7 @@ var __mod = (() => {
     }
   });
 
-  // components/core/Eyebrow.jsx
+  // componentes/core/Eyebrow.jsx
   var Eyebrow_exports = {};
   __export(Eyebrow_exports, {
     Eyebrow: () => Eyebrow
@@ -805,9 +805,9 @@ var __mod = (() => {
 })();
 
 Object.assign(__ds_scope, __mod);
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/Eyebrow.jsx", error: String((e && e.message) || e) }); }
+})(); } catch (e) { __ds_ns.__errors.push({ path: "componentes/core/Eyebrow.jsx", error: String((e && e.message) || e) }); }
 
-// components/core/Rule.jsx
+// componentes/core/Rule.jsx
 try { (() => {
 var __mod = (() => {
   var __create = Object.create;
@@ -848,7 +848,7 @@ var __mod = (() => {
     }
   });
 
-  // components/core/Rule.jsx
+  // componentes/core/Rule.jsx
   var Rule_exports = {};
   __export(Rule_exports, {
     Rule: () => Rule
@@ -870,9 +870,9 @@ var __mod = (() => {
 })();
 
 Object.assign(__ds_scope, __mod);
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/Rule.jsx", error: String((e && e.message) || e) }); }
+})(); } catch (e) { __ds_ns.__errors.push({ path: "componentes/core/Rule.jsx", error: String((e && e.message) || e) }); }
 
-// components/forms/Field.jsx
+// componentes/forms/Field.jsx
 try { (() => {
 var __mod = (() => {
   var __create = Object.create;
@@ -913,7 +913,7 @@ var __mod = (() => {
     }
   });
 
-  // components/forms/Field.jsx
+  // componentes/forms/Field.jsx
   var Field_exports = {};
   __export(Field_exports, {
     Field: () => Field
@@ -987,7 +987,7 @@ var __mod = (() => {
 })();
 
 Object.assign(__ds_scope, __mod);
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/forms/Field.jsx", error: String((e && e.message) || e) }); }
+})(); } catch (e) { __ds_ns.__errors.push({ path: "componentes/forms/Field.jsx", error: String((e && e.message) || e) }); }
 
 __ds_ns.Accordion = __ds_scope.Accordion;
 
@@ -1007,7 +1007,156 @@ __ds_ns.Rule = __ds_scope.Rule;
 
 __ds_ns.Field = __ds_scope.Field;
 
-// listmonk_public_es.js
+// kits-ui/website/AboutBlock.jsx
+try { (() => {
+const { Eyebrow, Rule, Button } = window.NFCDDesignSystem_1d3b67;
+function AboutBlock() {
+  return /* @__PURE__ */ React.createElement("section", { style: { maxWidth: 1280, margin: "0 auto", padding: "76px 48px", display: "grid", gridTemplateColumns: "0.85fr 1.15fr", gap: 52, alignItems: "center" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "center", position: "relative" } }, /* @__PURE__ */ React.createElement(
+    "img",
+    {
+      className: "nfcd-logo-light",
+      src: "../../recursos/logos/nfcd_isologov1_color_fondotrasparente.png",
+      alt: "Naturaleza de la Fuerza",
+      style: { maxWidth: "100%", maxHeight: 380 }
+    }
+  ), /* @__PURE__ */ React.createElement(
+    "img",
+    {
+      className: "nfcd-logo-dark",
+      src: "../../recursos/logos/nfcd_isologov1_blanco_fondotrasparente.png",
+      alt: "Naturaleza de la Fuerza",
+      style: { maxWidth: "100%", maxHeight: 380, position: "absolute", inset: 0, margin: "auto" }
+    }
+  )), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, null, "La pr\xE1ctica"), /* @__PURE__ */ React.createElement("div", { style: { height: 12 } }), /* @__PURE__ */ React.createElement(Rule, { tone: "wine" }), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--font-body)", fontWeight: "var(--weight-bold)", fontSize: "var(--font-size-2xl)", lineHeight: "var(--leading-snug)", color: "var(--text-strong)", margin: "20px 0 0" } }, "Hueso y vuelo: el cuerpo como campo de conocimiento"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-body)", fontSize: "var(--font-size-md)", lineHeight: "var(--leading-relaxed)", color: "var(--text-body)", margin: "18px 0 0", maxWidth: "58ch" } }, "La danza no ilustra una idea: la produce. Cada pr\xE1ctica abre el cuerpo a las fuerzas que lo atraviesan, y en ese suceso aparece un saber que no pasa primero por las palabras. Dirigido por ", /* @__PURE__ */ React.createElement("strong", null, "Roxana Galand"), ", el sistema tiene su primera sede en Campo Arroyo del Medio, Bariloche, Patagonia."), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 28 } }, /* @__PURE__ */ React.createElement(Button, { variant: "solid" }, "Conocer la investigaci\xF3n"))));
+}
+window.AboutBlock = AboutBlock;
+
+window.AboutBlock = AboutBlock;
+})(); } catch (e) { __ds_ns.__errors.push({ path: "kits-ui/website/AboutBlock.jsx", error: String((e && e.message) || e) }); }
+
+// kits-ui/website/EncuentrosGrid.jsx
+try { (() => {
+const { Card, Tag, Badge, Eyebrow, Button } = window.NFCDDesignSystem_1d3b67;
+const ENCUENTROS = [
+  {
+    season: "Oto\xF1o 2026",
+    title: "El cuerpo que escucha",
+    desc: "Tres encuentros de pr\xE1ctica som\xE1tica y danza en contacto con el paisaje del Campo.",
+    tags: ["Som\xE1tica", "Naturaleza"],
+    format: "Presencial",
+    hours: "12 h"
+  },
+  {
+    season: "Oto\xF1o 2026",
+    title: "Fuerzas y vuelo",
+    desc: "Estudio del peso, el impulso y la transformaci\xF3n del gesto a partir del registro anat\xF3mico.",
+    tags: ["Danza", "Anatom\xEDa"],
+    format: "Presencial",
+    hours: "18 h"
+  },
+  {
+    season: "Invierno 2026",
+    title: "Conciencia planetaria",
+    desc: "Seminario de investigaci\xF3n sobre cuerpo, fuerza y mundo. Lecturas, pr\xE1ctica y escritura.",
+    tags: ["Investigaci\xF3n"],
+    format: "Online",
+    hours: "8 h"
+  }
+];
+function EncuentrosGrid() {
+  return /* @__PURE__ */ React.createElement("section", { style: { background: "var(--surface-raised)", borderTop: "1px solid var(--border-soft)", borderBottom: "1px solid var(--border-soft)" } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 1280, margin: "0 auto", padding: "64px 48px" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 36 } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, null, "Pr\xF3ximos encuentros"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--font-body)", fontWeight: "var(--weight-bold)", fontSize: "var(--font-size-2xl)", color: "var(--text-strong)", margin: "10px 0 0" } }, "Programa 2026")), /* @__PURE__ */ React.createElement(Button, { variant: "link", href: "#" }, "Calendario completo")), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 } }, ENCUENTROS.map((e) => /* @__PURE__ */ React.createElement(Card, { key: e.title, accent: true, style: { display: "flex", flexDirection: "column" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, marginBottom: 14 } }, /* @__PURE__ */ React.createElement(Badge, { tone: e.format === "Online" ? "sage" : "ink" }, e.format), /* @__PURE__ */ React.createElement(Badge, null, e.hours)), /* @__PURE__ */ React.createElement(Eyebrow, { tone: "muted" }, e.season), /* @__PURE__ */ React.createElement("h3", { style: { fontFamily: "var(--font-body)", fontWeight: "var(--weight-bold)", fontSize: "var(--font-size-xl)", color: "var(--text-strong)", margin: "8px 0 8px" } }, e.title), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-body)", fontSize: "var(--font-size-sm)", lineHeight: "var(--leading-normal)", color: "var(--text-body)", margin: 0, flex: 1 } }, e.desc), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, margin: "16px 0" } }, e.tags.map((t, i) => /* @__PURE__ */ React.createElement(Tag, { key: t, tone: i === 1 ? "sage" : "wine" }, t))), /* @__PURE__ */ React.createElement(Button, { variant: "outline", size: "sm" }, "Ver ficha"))))));
+}
+window.EncuentrosGrid = EncuentrosGrid;
+
+window.EncuentrosGrid = EncuentrosGrid;
+})(); } catch (e) { __ds_ns.__errors.push({ path: "kits-ui/website/EncuentrosGrid.jsx", error: String((e && e.message) || e) }); }
+
+// kits-ui/website/Hero.jsx
+try { (() => {
+const { Button, Eyebrow, Rule } = window.NFCDDesignSystem_1d3b67;
+function Hero() {
+  return /* @__PURE__ */ React.createElement("section", { style: {
+    display: "grid",
+    gridTemplateColumns: "1.05fr 0.95fr",
+    alignItems: "center",
+    gap: 40,
+    padding: "76px 48px 64px",
+    maxWidth: 1280,
+    margin: "0 auto"
+  } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, null, "Sistema de pr\xE1cticas e investigaci\xF3n"), /* @__PURE__ */ React.createElement("div", { style: { height: 14 } }), /* @__PURE__ */ React.createElement(Rule, { tone: "wine" }), /* @__PURE__ */ React.createElement("h1", { style: {
+    fontFamily: "var(--font-title)",
+    fontWeight: "var(--weight-bold)",
+    fontSize: "var(--font-size-5xl)",
+    lineHeight: 0.92,
+    letterSpacing: "var(--tracking-display)",
+    textTransform: "uppercase",
+    color: "var(--text-strong)",
+    margin: "22px 0 0"
+  } }, "Naturaleza", /* @__PURE__ */ React.createElement("br", null), "de la fuerza"), /* @__PURE__ */ React.createElement("p", { style: {
+    fontFamily: "var(--font-body)",
+    fontSize: "var(--font-size-lg)",
+    lineHeight: "var(--leading-normal)",
+    color: "var(--text-body)",
+    maxWidth: "42ch",
+    margin: "22px 0 0"
+  } }, "Una pr\xE1ctica que se involucra en los sucesos del cuerpo, las fuerzas y la danza como campos de acceso al conocimiento \u2014 hacia una conciencia planetaria."), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 14, marginTop: 30 } }, /* @__PURE__ */ React.createElement(Button, { variant: "solid", size: "lg" }, "Ver encuentros"), /* @__PURE__ */ React.createElement(Button, { variant: "outline", size: "lg" }, "La investigaci\xF3n"))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "center" } }, /* @__PURE__ */ React.createElement(
+    "img",
+    {
+      src: "../../recursos/logos/nfcd_logo_alpha_light.png",
+      alt: "Costillar y mariposa",
+      style: { maxWidth: "100%", maxHeight: 460, mixBlendMode: "var(--img-graphite-blend)" }
+    }
+  )));
+}
+window.Hero = Hero;
+
+window.Hero = Hero;
+})(); } catch (e) { __ds_ns.__errors.push({ path: "kits-ui/website/Hero.jsx", error: String((e && e.message) || e) }); }
+
+// kits-ui/website/SiteFooter.jsx
+try { (() => {
+const { Eyebrow, Field, Button } = window.NFCDDesignSystem_1d3b67;
+function SiteFooter() {
+  return /* @__PURE__ */ React.createElement("footer", { style: { background: "var(--surface-ink)", color: "var(--text-on-ink)" } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 1280, margin: "0 auto", padding: "64px 48px 40px", display: "grid", gridTemplateColumns: "1.2fr 1fr 1fr", gap: 48 } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("img", { src: "../../recursos/logos/nfcd_isologov2_blanco_fondotrasparente.png", alt: "NFCD", style: { height: 64, marginBottom: 18 } }), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-body)", fontSize: "var(--font-size-sm)", lineHeight: "var(--leading-normal)", color: "var(--text-on-ink-muted)", maxWidth: "34ch", margin: 0 } }, "Naturaleza de la fuerza en el cuerpo y la danza. Pr\xE1cticas e investigaci\xF3n hacia una conciencia planetaria.")), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, { tone: "onInk" }, "Sede"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-label)", fontSize: "var(--font-size-sm)", lineHeight: "var(--leading-relaxed)", color: "var(--text-on-ink-muted)", marginTop: 14 } }, "Campo Arroyo del Medio", /* @__PURE__ */ React.createElement("br", null), "Bariloche \xB7 Patagonia", /* @__PURE__ */ React.createElement("br", null), "Argentina"), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 18 } }, /* @__PURE__ */ React.createElement(Eyebrow, { tone: "onInk" }, "Direcci\xF3n"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-label)", fontSize: "var(--font-size-sm)", color: "var(--text-on-ink-muted)", marginTop: 12 } }, "Roxana Galand"))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, { tone: "onInk" }, "Bolet\xEDn"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-body)", fontSize: "var(--font-size-sm)", color: "var(--text-on-ink-muted)", margin: "12px 0 14px" } }, "Encuentros, publicaciones y notas del Campo."), /* @__PURE__ */ React.createElement(Field, { placeholder: "tu@correo.com", type: "email" }), /* @__PURE__ */ React.createElement("div", { style: { height: 12 } }), /* @__PURE__ */ React.createElement(Button, { variant: "solid", size: "sm" }, "Suscribirme"))), /* @__PURE__ */ React.createElement("div", { style: { borderTop: "1px solid rgba(255,255,255,0.12)", padding: "20px 48px", maxWidth: 1280, margin: "0 auto", display: "flex", justifyContent: "space-between" } }, /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--font-label)", fontSize: "var(--font-size-2xs)", letterSpacing: "0.1em", color: "var(--text-on-ink-faint)" } }, "\xA9 2026 NFCD"), /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--font-label)", fontSize: "var(--font-size-2xs)", letterSpacing: "0.1em", color: "var(--text-on-ink-faint)" } }, "Instagram \xB7 Contacto")));
+}
+window.SiteFooter = SiteFooter;
+
+window.SiteFooter = SiteFooter;
+})(); } catch (e) { __ds_ns.__errors.push({ path: "kits-ui/website/SiteFooter.jsx", error: String((e && e.message) || e) }); }
+
+// kits-ui/website/SiteHeader.jsx
+try { (() => {
+const { Button, Eyebrow } = window.NFCDDesignSystem_1d3b67;
+function SiteHeader({ onNav }) {
+  const links = ["Encuentros", "Investigaci\xF3n", "Publicaciones", "Sobre"];
+  return /* @__PURE__ */ React.createElement("header", { style: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: "20px 48px",
+    borderBottom: "1px solid var(--border-soft)",
+    background: "var(--surface-page)",
+    position: "sticky",
+    top: 0,
+    zIndex: 10
+  } }, /* @__PURE__ */ React.createElement("a", { href: "#", onClick: (e) => {
+    e.preventDefault();
+    onNav && onNav("home");
+  }, style: { display: "flex", alignItems: "center", position: "relative", height: 46 } }, /* @__PURE__ */ React.createElement("img", { className: "nfcd-logo-light", src: "../../recursos/logos/nfcd_isologov2_color_fondotrasparente.png", alt: "NFCD", style: { height: 46 } }), /* @__PURE__ */ React.createElement("img", { className: "nfcd-logo-dark", src: "../../recursos/logos/nfcd_isologov2_blanco_fondotrasparente.png", alt: "NFCD", style: { height: 46 } })), /* @__PURE__ */ React.createElement("nav", { style: { display: "flex", alignItems: "center", gap: 30 } }, links.map((l) => /* @__PURE__ */ React.createElement("a", { key: l, href: "#", onClick: (e) => e.preventDefault(), style: {
+    fontFamily: "var(--font-label)",
+    fontSize: "var(--font-size-xs)",
+    letterSpacing: "0.14em",
+    textTransform: "uppercase",
+    color: "var(--text-body)",
+    textDecoration: "none"
+  } }, l)), /* @__PURE__ */ React.createElement(Button, { size: "sm", variant: "solid" }, "Inscribirme")));
+}
+window.SiteHeader = SiteHeader;
+
+window.SiteHeader = SiteHeader;
+})(); } catch (e) { __ds_ns.__errors.push({ path: "kits-ui/website/SiteHeader.jsx", error: String((e && e.message) || e) }); }
+
+// listmonk/listmonk_public_es.js
 try { (() => {
 /* ============================================================
    NFCD · Listmonk — Español para PÁGINAS PÚBLICAS
@@ -1067,155 +1216,6 @@ try { (() => {
   else document.addEventListener("DOMContentLoaded", translate);
 })();
 
-})(); } catch (e) { __ds_ns.__errors.push({ path: "listmonk_public_es.js", error: String((e && e.message) || e) }); }
-
-// ui_kits/website/AboutBlock.jsx
-try { (() => {
-const { Eyebrow, Rule, Button } = window.NFCDDesignSystem_1d3b67;
-function AboutBlock() {
-  return /* @__PURE__ */ React.createElement("section", { style: { maxWidth: 1280, margin: "0 auto", padding: "76px 48px", display: "grid", gridTemplateColumns: "0.85fr 1.15fr", gap: 52, alignItems: "center" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "center", position: "relative" } }, /* @__PURE__ */ React.createElement(
-    "img",
-    {
-      className: "nfcd-logo-light",
-      src: "../../assets/logos/nfcd_isologov1_color_fondotrasparente.png",
-      alt: "Naturaleza de la Fuerza",
-      style: { maxWidth: "100%", maxHeight: 380 }
-    }
-  ), /* @__PURE__ */ React.createElement(
-    "img",
-    {
-      className: "nfcd-logo-dark",
-      src: "../../assets/logos/nfcd_isologov1_blanco_fondotrasparente.png",
-      alt: "Naturaleza de la Fuerza",
-      style: { maxWidth: "100%", maxHeight: 380, position: "absolute", inset: 0, margin: "auto" }
-    }
-  )), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, null, "La pr\xE1ctica"), /* @__PURE__ */ React.createElement("div", { style: { height: 12 } }), /* @__PURE__ */ React.createElement(Rule, { tone: "wine" }), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--font-body)", fontWeight: "var(--weight-bold)", fontSize: "var(--font-size-2xl)", lineHeight: "var(--leading-snug)", color: "var(--text-strong)", margin: "20px 0 0" } }, "Hueso y vuelo: el cuerpo como campo de conocimiento"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-body)", fontSize: "var(--font-size-md)", lineHeight: "var(--leading-relaxed)", color: "var(--text-body)", margin: "18px 0 0", maxWidth: "58ch" } }, "La danza no ilustra una idea: la produce. Cada pr\xE1ctica abre el cuerpo a las fuerzas que lo atraviesan, y en ese suceso aparece un saber que no pasa primero por las palabras. Dirigido por ", /* @__PURE__ */ React.createElement("strong", null, "Roxana Galand"), ", el sistema tiene su primera sede en Campo Arroyo del Medio, Bariloche, Patagonia."), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 28 } }, /* @__PURE__ */ React.createElement(Button, { variant: "solid" }, "Conocer la investigaci\xF3n"))));
-}
-window.AboutBlock = AboutBlock;
-
-window.AboutBlock = AboutBlock;
-})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/AboutBlock.jsx", error: String((e && e.message) || e) }); }
-
-// ui_kits/website/EncuentrosGrid.jsx
-try { (() => {
-const { Card, Tag, Badge, Eyebrow, Button } = window.NFCDDesignSystem_1d3b67;
-const ENCUENTROS = [
-  {
-    season: "Oto\xF1o 2026",
-    title: "El cuerpo que escucha",
-    desc: "Tres encuentros de pr\xE1ctica som\xE1tica y danza en contacto con el paisaje del Campo.",
-    tags: ["Som\xE1tica", "Naturaleza"],
-    format: "Presencial",
-    hours: "12 h"
-  },
-  {
-    season: "Oto\xF1o 2026",
-    title: "Fuerzas y vuelo",
-    desc: "Estudio del peso, el impulso y la transformaci\xF3n del gesto a partir del registro anat\xF3mico.",
-    tags: ["Danza", "Anatom\xEDa"],
-    format: "Presencial",
-    hours: "18 h"
-  },
-  {
-    season: "Invierno 2026",
-    title: "Conciencia planetaria",
-    desc: "Seminario de investigaci\xF3n sobre cuerpo, fuerza y mundo. Lecturas, pr\xE1ctica y escritura.",
-    tags: ["Investigaci\xF3n"],
-    format: "Online",
-    hours: "8 h"
-  }
-];
-function EncuentrosGrid() {
-  return /* @__PURE__ */ React.createElement("section", { style: { background: "var(--surface-raised)", borderTop: "1px solid var(--border-soft)", borderBottom: "1px solid var(--border-soft)" } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 1280, margin: "0 auto", padding: "64px 48px" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 36 } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, null, "Pr\xF3ximos encuentros"), /* @__PURE__ */ React.createElement("h2", { style: { fontFamily: "var(--font-body)", fontWeight: "var(--weight-bold)", fontSize: "var(--font-size-2xl)", color: "var(--text-strong)", margin: "10px 0 0" } }, "Programa 2026")), /* @__PURE__ */ React.createElement(Button, { variant: "link", href: "#" }, "Calendario completo")), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 } }, ENCUENTROS.map((e) => /* @__PURE__ */ React.createElement(Card, { key: e.title, accent: true, style: { display: "flex", flexDirection: "column" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, marginBottom: 14 } }, /* @__PURE__ */ React.createElement(Badge, { tone: e.format === "Online" ? "sage" : "ink" }, e.format), /* @__PURE__ */ React.createElement(Badge, null, e.hours)), /* @__PURE__ */ React.createElement(Eyebrow, { tone: "muted" }, e.season), /* @__PURE__ */ React.createElement("h3", { style: { fontFamily: "var(--font-body)", fontWeight: "var(--weight-bold)", fontSize: "var(--font-size-xl)", color: "var(--text-strong)", margin: "8px 0 8px" } }, e.title), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-body)", fontSize: "var(--font-size-sm)", lineHeight: "var(--leading-normal)", color: "var(--text-body)", margin: 0, flex: 1 } }, e.desc), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, margin: "16px 0" } }, e.tags.map((t, i) => /* @__PURE__ */ React.createElement(Tag, { key: t, tone: i === 1 ? "sage" : "wine" }, t))), /* @__PURE__ */ React.createElement(Button, { variant: "outline", size: "sm" }, "Ver ficha"))))));
-}
-window.EncuentrosGrid = EncuentrosGrid;
-
-window.EncuentrosGrid = EncuentrosGrid;
-})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/EncuentrosGrid.jsx", error: String((e && e.message) || e) }); }
-
-// ui_kits/website/Hero.jsx
-try { (() => {
-const { Button, Eyebrow, Rule } = window.NFCDDesignSystem_1d3b67;
-function Hero() {
-  return /* @__PURE__ */ React.createElement("section", { style: {
-    display: "grid",
-    gridTemplateColumns: "1.05fr 0.95fr",
-    alignItems: "center",
-    gap: 40,
-    padding: "76px 48px 64px",
-    maxWidth: 1280,
-    margin: "0 auto"
-  } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, null, "Sistema de pr\xE1cticas e investigaci\xF3n"), /* @__PURE__ */ React.createElement("div", { style: { height: 14 } }), /* @__PURE__ */ React.createElement(Rule, { tone: "wine" }), /* @__PURE__ */ React.createElement("h1", { style: {
-    fontFamily: "var(--font-title)",
-    fontWeight: "var(--weight-bold)",
-    fontSize: "var(--font-size-5xl)",
-    lineHeight: 0.92,
-    letterSpacing: "var(--tracking-display)",
-    textTransform: "uppercase",
-    color: "var(--text-strong)",
-    margin: "22px 0 0"
-  } }, "Naturaleza", /* @__PURE__ */ React.createElement("br", null), "de la fuerza"), /* @__PURE__ */ React.createElement("p", { style: {
-    fontFamily: "var(--font-body)",
-    fontSize: "var(--font-size-lg)",
-    lineHeight: "var(--leading-normal)",
-    color: "var(--text-body)",
-    maxWidth: "42ch",
-    margin: "22px 0 0"
-  } }, "Una pr\xE1ctica que se involucra en los sucesos del cuerpo, las fuerzas y la danza como campos de acceso al conocimiento \u2014 hacia una conciencia planetaria."), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 14, marginTop: 30 } }, /* @__PURE__ */ React.createElement(Button, { variant: "solid", size: "lg" }, "Ver encuentros"), /* @__PURE__ */ React.createElement(Button, { variant: "outline", size: "lg" }, "La investigaci\xF3n"))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "center" } }, /* @__PURE__ */ React.createElement(
-    "img",
-    {
-      src: "../../assets/logos/nfcd_logo_alpha_light.png",
-      alt: "Costillar y mariposa",
-      style: { maxWidth: "100%", maxHeight: 460, mixBlendMode: "var(--img-graphite-blend)" }
-    }
-  )));
-}
-window.Hero = Hero;
-
-window.Hero = Hero;
-})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/Hero.jsx", error: String((e && e.message) || e) }); }
-
-// ui_kits/website/SiteFooter.jsx
-try { (() => {
-const { Eyebrow, Field, Button } = window.NFCDDesignSystem_1d3b67;
-function SiteFooter() {
-  return /* @__PURE__ */ React.createElement("footer", { style: { background: "var(--surface-ink)", color: "var(--text-on-ink)" } }, /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 1280, margin: "0 auto", padding: "64px 48px 40px", display: "grid", gridTemplateColumns: "1.2fr 1fr 1fr", gap: 48 } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("img", { src: "../../assets/logos/nfcd_isologov2_blanco_fondotrasparente.png", alt: "NFCD", style: { height: 64, marginBottom: 18 } }), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-body)", fontSize: "var(--font-size-sm)", lineHeight: "var(--leading-normal)", color: "var(--text-on-ink-muted)", maxWidth: "34ch", margin: 0 } }, "Naturaleza de la fuerza en el cuerpo y la danza. Pr\xE1cticas e investigaci\xF3n hacia una conciencia planetaria.")), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, { tone: "onInk" }, "Sede"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-label)", fontSize: "var(--font-size-sm)", lineHeight: "var(--leading-relaxed)", color: "var(--text-on-ink-muted)", marginTop: 14 } }, "Campo Arroyo del Medio", /* @__PURE__ */ React.createElement("br", null), "Bariloche \xB7 Patagonia", /* @__PURE__ */ React.createElement("br", null), "Argentina"), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 18 } }, /* @__PURE__ */ React.createElement(Eyebrow, { tone: "onInk" }, "Direcci\xF3n"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-label)", fontSize: "var(--font-size-sm)", color: "var(--text-on-ink-muted)", marginTop: 12 } }, "Roxana Galand"))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Eyebrow, { tone: "onInk" }, "Bolet\xEDn"), /* @__PURE__ */ React.createElement("p", { style: { fontFamily: "var(--font-body)", fontSize: "var(--font-size-sm)", color: "var(--text-on-ink-muted)", margin: "12px 0 14px" } }, "Encuentros, publicaciones y notas del Campo."), /* @__PURE__ */ React.createElement(Field, { placeholder: "tu@correo.com", type: "email" }), /* @__PURE__ */ React.createElement("div", { style: { height: 12 } }), /* @__PURE__ */ React.createElement(Button, { variant: "solid", size: "sm" }, "Suscribirme"))), /* @__PURE__ */ React.createElement("div", { style: { borderTop: "1px solid rgba(255,255,255,0.12)", padding: "20px 48px", maxWidth: 1280, margin: "0 auto", display: "flex", justifyContent: "space-between" } }, /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--font-label)", fontSize: "var(--font-size-2xs)", letterSpacing: "0.1em", color: "var(--text-on-ink-faint)" } }, "\xA9 2026 NFCD"), /* @__PURE__ */ React.createElement("span", { style: { fontFamily: "var(--font-label)", fontSize: "var(--font-size-2xs)", letterSpacing: "0.1em", color: "var(--text-on-ink-faint)" } }, "Instagram \xB7 Contacto")));
-}
-window.SiteFooter = SiteFooter;
-
-window.SiteFooter = SiteFooter;
-})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/SiteFooter.jsx", error: String((e && e.message) || e) }); }
-
-// ui_kits/website/SiteHeader.jsx
-try { (() => {
-const { Button, Eyebrow } = window.NFCDDesignSystem_1d3b67;
-function SiteHeader({ onNav }) {
-  const links = ["Encuentros", "Investigaci\xF3n", "Publicaciones", "Sobre"];
-  return /* @__PURE__ */ React.createElement("header", { style: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: "20px 48px",
-    borderBottom: "1px solid var(--border-soft)",
-    background: "var(--surface-page)",
-    position: "sticky",
-    top: 0,
-    zIndex: 10
-  } }, /* @__PURE__ */ React.createElement("a", { href: "#", onClick: (e) => {
-    e.preventDefault();
-    onNav && onNav("home");
-  }, style: { display: "flex", alignItems: "center", position: "relative", height: 46 } }, /* @__PURE__ */ React.createElement("img", { className: "nfcd-logo-light", src: "../../assets/logos/nfcd_isologov2_color_fondotrasparente.png", alt: "NFCD", style: { height: 46 } }), /* @__PURE__ */ React.createElement("img", { className: "nfcd-logo-dark", src: "../../assets/logos/nfcd_isologov2_blanco_fondotrasparente.png", alt: "NFCD", style: { height: 46 } })), /* @__PURE__ */ React.createElement("nav", { style: { display: "flex", alignItems: "center", gap: 30 } }, links.map((l) => /* @__PURE__ */ React.createElement("a", { key: l, href: "#", onClick: (e) => e.preventDefault(), style: {
-    fontFamily: "var(--font-label)",
-    fontSize: "var(--font-size-xs)",
-    letterSpacing: "0.14em",
-    textTransform: "uppercase",
-    color: "var(--text-body)",
-    textDecoration: "none"
-  } }, l)), /* @__PURE__ */ React.createElement(Button, { size: "sm", variant: "solid" }, "Inscribirme")));
-}
-window.SiteHeader = SiteHeader;
-
-window.SiteHeader = SiteHeader;
-})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/website/SiteHeader.jsx", error: String((e && e.message) || e) }); }
+})(); } catch (e) { __ds_ns.__errors.push({ path: "listmonk/listmonk_public_es.js", error: String((e && e.message) || e) }); }
 
 })();
