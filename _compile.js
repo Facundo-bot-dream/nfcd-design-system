@@ -521,7 +521,7 @@ function buildOxlintConfig(fonts, allTokens, componentNames, dtsInfoByName, bund
   const familyAlt = families.map(escapeRe).join('|');
 
   const syntaxRules = [
-    'warn',
+    'error',
     {
       selector: 'Literal[value=/#[0-9a-fA-F]{3,8}\\b/]',
       message: 'Raw hex color — use a design-system color token via var().',
@@ -570,9 +570,9 @@ function buildOxlintConfig(fonts, allTokens, componentNames, dtsInfoByName, bund
   return {
     plugins: ['react', 'import'],
     rules: {
-      'react/forbid-elements': ['warn', { forbid: [] }],
+      'react/forbid-elements': ['error', { forbid: [] }],
       'no-restricted-imports': [
-        'warn',
+        'error',
         {
           patterns: [
             {

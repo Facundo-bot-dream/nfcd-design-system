@@ -74,6 +74,12 @@
 /* ::selection en oscuro */
 :root[data-theme="dark"] ::selection { background: var(--selection-bg); color: var(--paper-000); }
 
+/* Swap de logo claro/oscuro — pares de <img class="nfcd-logo-light/dark">
+   superpuestos; en claro se ve la versión color, en oscuro la blanca. */
+img.nfcd-logo-dark { display: none; }
+:root[data-theme="dark"] img.nfcd-logo-light { display: none; }
+:root[data-theme="dark"] img.nfcd-logo-dark { display: inline-block; }
+
 /* ============================================================
    NOTAS DE ACOPLAMIENTO
    Tus ui_kits usan estilos inline (no clases CSS), así que el blend

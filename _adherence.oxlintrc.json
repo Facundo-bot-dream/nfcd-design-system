@@ -16,8 +16,8 @@
         "patterns": [
           {
             "group": [
-              "components/core/**",
               "components/content/**",
+              "components/core/**",
               "components/forms/**",
               "listmonk_public_es.js",
               "ui_kits/website/**"
@@ -40,6 +40,10 @@
       {
         "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Amatic SC|Book Antiqua|Letter Gothic Std))/i]",
         "message": "Font not provided by the design system. Available: Amatic SC, Book Antiqua, Letter Gothic Std."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Accordion'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|labelOpen|defaultOpen|children|style|key|ref|className|style|children)$/]",
+        "message": "<Accordion> doesn't accept that prop. Declared props: label, labelOpen, defaultOpen, children, style."
       },
       {
         "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|tone|style|key|ref|className|style|children)$/]",
@@ -86,6 +90,10 @@
         "message": "<Field> doesn't accept that prop. Declared props: label, hint, value, onChange, placeholder, type, multiline, rows, id, style."
       },
       {
+        "selector": "JSXOpeningElement[name.name='MobileCarousel'] > JSXAttribute > JSXIdentifier[name!=/^(?:items|children|onSlideChange|showDots|showArrows|autoPlay|autoPlayInterval|aspectRatio|style|key|ref|className|style|children)$/]",
+        "message": "<MobileCarousel> doesn't accept that prop. Declared props: items, children, onSlideChange, showDots, showArrows, autoPlay, autoPlayInterval, aspectRatio, style."
+      },
+      {
         "selector": "JSXOpeningElement[name.name='Rule'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|vertical|tone|style|key|ref|className|style|children)$/]",
         "message": "<Rule> doesn't accept that prop. Declared props: variant, vertical, tone, style."
       },
@@ -119,6 +127,9 @@
   ],
   "x-omelette": {
     "components": {
+      "Accordion": {
+        "replaces": []
+      },
       "Badge": {
         "replaces": []
       },

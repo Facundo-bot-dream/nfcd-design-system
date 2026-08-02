@@ -84,44 +84,34 @@ Posicionadas superpuestas, pegadas al borde:
 
 Duración ~1.8s. El efecto se repite infinitamente para invitar al usuario a deslizar sin ser agresivo.
 
-### Dots de progreso con ripple expansivo
+### Dots de progreso "latido"
+
+El dot **nunca cambia de tamaño** — se mantiene fijo en 8px siempre. Toda la animación vive en el aura (dos ondas por `::before`/`::after`), nunca en el punto: si el punto también escala, llama demasiado la atención.
 
 ```css
-.mobile-carousel__dot {
-  width: 8px;
-  height: 8px;
+.dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(26, 22, 20, 0.3); }
+.dot--active { background: var(--brand); position: relative; }
+
+.dot--active::before, .dot--active::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 8px; height: 8px;
   border-radius: 50%;
-  background: rgba(26, 22, 20, 0.3);
+  background: var(--brand);
+  animation: ripple-wave 1.6s ease-out infinite;
 }
+.dot--active::after { animation-delay: .8s; } /* desfasada medio ciclo */
 
-.mobile-carousel__dot--active {
-  background: var(--brand); /* wine */
-  animation: ripple-expand 1.2s ease-out infinite;
-}
-
-@keyframes ripple-expand {
-  0% {
-    box-shadow: 0 0 0 0 rgba(167, 39, 76, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 6px rgba(167, 39, 76, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 6px rgba(167, 39, 76, 0);
-  }
+@keyframes ripple-wave {
+  0%   { transform: translate(-50%, -50%) scale(1); opacity: .55; }
+  100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
 }
 ```
 
-El dot activo emite una onda expansiva (ripple) que crece hasta ~3x su tamaño con desvanecimiento.
+El dot activo emite **dos ondas independientes**, mismo keyframe, desfasadas medio ciclo (`animation-delay` = mitad de la duración) — así siempre hay una onda visible, sin solaparse por completo.
 
-**Variación por ciclo:** en el componente React, la duración/delay/escala de ripple se ajustan levemente (±10-20%) para cada ciclo usando `Math.random()` — esto evita que se vea mecánico cuando hay múltiples carruseles en la página.
-
-```javascript
-// En MobileCarousel.jsx:
-const randomFactor = 0.8 + Math.random() * 0.4; // 0.8–1.2
-const duration = 1.2 * randomFactor;
-// Aplicar como CSS variable o inline style
-```
+**Duración fija — nunca `Math.random()`:** la duración/delay de cada onda es constante en el CSS, nunca recalculada por render con `Math.random()`. Recalcular en cada render hace que la animación se sienta mecánica o se acelere al reiniciar (el navegador reinicia el keyframe desde 0 con cada nuevo valor). Si hay varios carruseles en la página y se quiere evitar que laten en sincro perfecta, fijar un delay distinto por instancia una sola vez (al montar), no por render.
 
 ### Scroll-snap fallback: detección por scroll
 
@@ -167,6 +157,64 @@ Las escales de tipografía en slides móviles difieren de los specs de export pl
   .slide__meta {
     font-size: 14px;
   }
+}
+```
+
+---
+
+## Contenido largo → acordeón (`Accordion`)
+
+Cuando una sección combina datos duros (fecha, lugar, precio) con varios párrafos de condiciones o legales, no mezclar todo en un bloque de texto: separar **tarjetas de datos clave arriba** (siempre visibles) + **acordeón colapsable abajo** ("Ver detalles") para el resto.
+
+```css
+.accordion__panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--dur-slow) var(--ease-quiet);
+}
+.accordion__panel--open { max-height: var(--panel-measured-height); }
+
+.accordion__arrow {
+  transition: transform var(--dur-base) var(--ease-quiet);
+}
+.accordion__arrow--open { transform: rotate(180deg); }
+```
+
+`max-height` no puede animar a `auto` — hay que medir la altura real del contenido (`scrollHeight`) y animar hacia ese valor en px, no hacia un `999px` arbitrario (causa un salto perceptible si el contenido es corto). Componente del DS: `Accordion` (components/content) — ver card dedicada.
+
+---
+
+## Reveal progresivo de texto ("date punch")
+
+Para un dato que hay que remarcar (fecha, cifra): revelar la frase palabra por palabra, cada palabra entrando grande y encogiéndose hasta su tamaño y posición final dentro de la frase completa, construyéndola de izquierda a derecha.
+
+```css
+.punch-word {
+  display: inline-block;
+  transform: scale(2.2);
+  opacity: 0;
+  transition: transform .5s cubic-bezier(.16,.84,.44,1), opacity .3s ease-out;
+}
+.punch-word--in { transform: scale(1); opacity: 1; }
+```
+
+Encadenar con `transition-delay` o `setTimeout` escalonado por palabra (~90–120ms entre una y la siguiente). **Sin rebote/spring** — `cubic-bezier` de desaceleración pura, nunca `ease-elastic` ni `spring()`: el rebote no coincide con el tono de marca.
+
+---
+
+## Botón flotante invitacional
+
+Sobre imagen o motivo de fondo: semi-transparente con blur, pulso continuo (escala + sombra sutil) para invitar a explorar sin ser agresivo.
+
+```css
+.floating-cta {
+  background: color-mix(in oklab, var(--surface-ink) 70%, transparent);
+  backdrop-filter: blur(8px);
+  animation: floating-cta-pulse 2.4s ease-in-out infinite;
+}
+@keyframes floating-cta-pulse {
+  0%, 100% { transform: scale(1); box-shadow: var(--shadow-sm); }
+  50% { transform: scale(1.04); box-shadow: var(--shadow-md); }
 }
 ```
 
@@ -226,6 +274,21 @@ const reveal = (element) => {
   element.style.transform = 'translateY(0)';
 };
 ```
+
+---
+
+## `transform:scale()` y overlap durante transiciones de entrada
+
+`transform:scale()` y los overlays no reservan espacio de layout: un elemento agrandado se superpone visualmente con el texto vecino durante la transición, aunque "en reposo" no haya overlap.
+
+- Si el elemento vive pegado a otro texto (ej. numeral de sesión sobre un título), apuntar `transform-origin` hacia el espacio **vacío** disponible (ej. `left bottom` para crecer hacia arriba) y usar un factor moderado (**1.4–1.6x, no 2–3x**) que quepa en ese espacio real.
+- Si no hay espacio vacío cerca, animar solo `opacity` — nunca falla, nunca se superpone.
+
+## Typewriter / reveal letra por letra sobre texto centrado
+
+**Nunca** ir agregando caracteres al `textContent` uno por uno — recalcula el centrado/wrap en cada letra y todo salta. Renderizar el texto completo de una sola vez como spans por carácter, y animar solo la `opacity` de cada span en secuencia: el layout nunca se recalcula.
+
+Cuidado con `display:flex` en un contenedor con muchos `<span>` de una letra cada uno como hijos directos: cada span se vuelve ítem de flex y los espacios en blanco entre palabras se colapsan. Si hace falta centrar con flex, envolver el texto en un único hijo (span/div) que sea el ítem de flex, con el flujo de texto normal viviendo adentro de ese hijo.
 
 ---
 
@@ -297,6 +360,14 @@ img[data-graphite] {
 
 - **Light:** `multiply` hace que los negros del PNG se oscurezcan sobre papel blanco.
 - **Dark:** `screen` hace que los negros se aclaren sobre fondo tinta, mejorando el contraste.
+
+---
+
+## Deploy a WordPress (Gutenberg nativo, sin Beaver Builder)
+
+Exportar la página como HTML autocontenido (fuentes/imágenes/CSS/JS inlineados) y pegar en un bloque "HTML personalizado" — o separar en pestañas HTML/CSS/JS si el bloque las pide (orden: estilos primero, marcado, scripts al final, preservando el orden original de los `<script>`).
+
+Para producción: sacar cualquier UI de previsualización interna (ej. toggle Escritorio/Celular) — el responsive real es automático vía `@media (max-width:720px)`, no depende de ningún botón.
 
 ---
 

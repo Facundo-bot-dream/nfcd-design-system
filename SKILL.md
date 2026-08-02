@@ -60,6 +60,17 @@ Para editar: abrir Design → File → Open → seleccionar el `.dc.html` → mo
 - **Clases:** prefijo `.nfcd-` para no pisar estilos del tema
 - **Diseño en:** Claude Design para wireframe/look → Cowork para código producción
 - **Archivo Design:** `web-pagina/web_[descripcion]_[AAAA-MM].dc.html`
+- **Estructura del export final:** un solo archivo HTML+`<style>`+`<script>` pegado tal cual en un bloque "HTML personalizado" de Gutenberg — sin archivos separados, sin dependencias externas. Todo estilo scopeado bajo un `id` único del contenedor de la pieza (ej. `#nfcd-medula-2026`) para no filtrar al resto del sitio.
+- **Fuentes — el child theme WP usa nombres `font-family` literales, no los tokens del DS.** Cada peso/estilo es una familia separada (no `font-weight` sobre una sola familia). Mapear así en cualquier export a este WordPress:
+  - `--font-serif` → `'Book Antiqua'` (400 y 700 bajo el mismo nombre)
+  - `--font-display` bold → `'AMATICSC-BOLD'` / regular → `'AMATICSC-REGULAR'`
+  - `--font-mono` regular → `'LetterGothicStd'`, bold → `'LetterGothicStd-Bold'`, itálica → `'LetterGothicStd-Slanted'`, bold itálica → `'LetterGothicStd-BoldSlanted'`
+- **Full-bleed rompiendo el contenedor del theme:**
+  ```css
+  #wrapper { width:100vw; max-width:100vw; overflow-x:hidden; position:relative; left:50%; right:50%; margin-left:-50vw; margin-right:-50vw; }
+  ```
+  Las secciones internas mantienen su propio `max-width` + `padding` centrado como margen normal. Requiere plantilla WP "ancho completo / sin sidebar" — si no, el contenedor del theme igual limita.
+- **No trabajar sobre el HTML aplanado.** Editar siempre el `.dc.html` (editor visual); generar el HTML plano de WordPress solo como paso final de exportación — un archivo estático aplanado pierde la edición en vivo.
 
 ### 06 · Web · Slider home (`templates/web-carrusel/`)
 - **Output:** HTML + Swiper.js para el homepage de WordPress

@@ -1,0 +1,73 @@
+<!-- @dsCard group="Guidelines" viewport="900x1500" name="Spec: reel vertical 1080×1920" subtitle="Escala tipográfica de video, zona segura Reels/Stories, timing de disolución. Aprendido en el primer reel animado (Retiro NFCD)." -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;background:var(--paper-000);padding:36px 40px;font-family:var(--font-serif);color:var(--text-body);max-width:820px}
+  h1{font-family:var(--font-display);font-size:40px;color:var(--text-strong);margin:0 0 4px}
+  .lead{font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin:0 0 28px}
+  section{margin-bottom:30px;padding-bottom:26px;border-bottom:1px solid var(--border-hair)}
+  section:last-child{border-bottom:none}
+  h2{font-family:var(--font-mono);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);margin:0 0 10px;display:flex;align-items:baseline;gap:8px}
+  h2 .n{color:var(--text-faint)}
+  p{font-size:15px;line-height:1.55;margin:0 0 10px}
+  code{font-family:var(--font-mono);font-size:13px;background:var(--surface-sunk);padding:1px 5px;border-radius:3px}
+  ul{margin:8px 0 0;padding-left:20px}
+  li{font-size:14px;line-height:1.55;margin-bottom:6px}
+  .warn{color:var(--brand);font-weight:700}
+</style>
+</head>
+<body>
+<h1>Spec: reel vertical 1080×1920</h1>
+<p class="lead">Aprendido en el primer reel animado (evento Retiro NFCD) · complementa la spec de carrusel IG estático</p>
+
+<section>
+<h2><span class="n">1.</span> Escala tipográfica — video, no placa estática</h2>
+<p>Los tamaños pensados para post/carrusel IG son <span class="warn">demasiado chicos</span> en reel: poco tiempo de lectura por cuadro y pantalla en movimiento piden texto notablemente más grande.</p>
+<ul>
+<li>Ceja/label mono: <code>≥60px</code>, negrita — no el tamaño de leyenda editorial (~30px) de una placa.</li>
+<li>Título display: <code>100–190px</code> según cantidad de palabras. Preferir pocas palabras muy grandes antes que una frase completa en cuerpo mediano.</li>
+<li>Cuerpo: nunca bajo <code>40px</code>.</li>
+</ul>
+</section>
+
+<section>
+<h2><span class="n">2.</span> Zona segura Reels/Stories</h2>
+<p>Instagram superpone su UI (barra superior, iconos de acción, caption) sobre los bordes del video. Sobre un frame de 1080×1920, ningún texto ni logo debe tocar:</p>
+<ul>
+<li><code>~270px</code> arriba</li>
+<li><code>~480px</code> abajo</li>
+<li><code>~90px</code> a los costados</li>
+</ul>
+</section>
+
+<section>
+<h2><span class="n">3.</span> Motivo de grafito en movimiento</h2>
+<ul>
+<li>Nunca recortarlo contra el borde del cuadro — completo dentro del frame, no a sangre.</li>
+<li>Centrar el esternón del motivo hacia el centro óptico de la composición, no su bounding box completo.</li>
+<li>Cuando el isologo completo (con ala) aparece grande como protagonista de una escena (ej. apertura), <span class="warn">apagar el motivo de fondo</span> en esa escena — dos mariposas a distinta escala compiten entre sí.</li>
+</ul>
+</section>
+
+<section>
+<h2><span class="n">4.</span> Ritmo de entrada/salida</h2>
+<ul>
+<li>Cada bloque de información entra y sale (fade + leve desplazamiento vertical) — nunca toda la escena de golpe.</li>
+<li>Jerarquía de animación: el título entra primero y con mayor desplazamiento; subtítulos/datos secundarios entran después, más sutiles, con menor recorrido.</li>
+<li>Transición entre escenas: disolución de <code>~2s</code> a través del color de fondo — un corte seco se siente abrupto en video (aunque funciona bien en carrusel estático).</li>
+<li>Dentro de una escena con varios datos en secuencia rápida (ítems de programa), cada ítem tiene su propio tiempo de entrada/salida — nunca todos juntos.</li>
+</ul>
+</section>
+
+<section>
+<h2><span class="n">5.</span> Contenido — atención breve</h2>
+<ul>
+<li>Sin escena "hook" genérica (solo logo + texto de apertura) — arrancar directo con el título del evento.</li>
+<li>Cortar información con demasiados matices (ej. precio detallado) — simplifica la lectura en formato de atención breve.</li>
+</ul>
+</section>
+</body>
+</html>

@@ -3,9 +3,11 @@ const { Eyebrow, Rule, Button } = window.NFCDDesignSystem_1d3b67;
 function AboutBlock() {
   return (
     <section style={{ maxWidth: 1280, margin: "0 auto", padding: "76px 48px", display: "grid", gridTemplateColumns: "0.85fr 1.15fr", gap: 52, alignItems: "center" }}>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <img src="../../assets/logos/nfcd_isologov1_color_fondotrasparente.png" alt="Naturaleza de la Fuerza"
+      <div style={{ display: "flex", justifyContent: "center", position: "relative" }}>
+        <img className="nfcd-logo-light" src="../../assets/logos/nfcd_isologov1_color_fondotrasparente.png" alt="Naturaleza de la Fuerza"
           style={{ maxWidth: "100%", maxHeight: 380 }} />
+        <img className="nfcd-logo-dark" src="../../assets/logos/nfcd_isologov1_blanco_fondotrasparente.png" alt="Naturaleza de la Fuerza"
+          style={{ maxWidth: "100%", maxHeight: 380, position: "absolute", inset: 0, margin: "auto" }} />
       </div>
       <div>
         <Eyebrow>La práctica</Eyebrow>

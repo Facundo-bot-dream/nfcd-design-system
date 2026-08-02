@@ -2,7 +2,6 @@ import * as React from "react";
 
 /**
  * Paper-and-ink call to action, set in wide-tracked uppercase Letter Gothic.
- * @startingPoint section="Core" subtitle="Wine / outline / ghost / link button" viewport="700x150"
  */
 export interface ButtonProps {
   children: React.ReactNode;

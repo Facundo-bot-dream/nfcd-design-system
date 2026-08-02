@@ -1,0 +1,229 @@
+<style>
+/* ============================================================
+   NFCD · Novedad "¿En qué estamos?" — carrusel-revista
+   Bloque para módulo HTML de Beaver Builder. Todo scopeado bajo
+   #nfcd-novedad. Sin reglas globales ni reset de body/html.
+   Tokens y tipografías del Design System NFCD. Manchones de
+   pincel y acrílico (Roxana Galand) como elemento de arte.
+   NOTA: las imágenes apuntan a rutas relativas para la vista
+   previa; para WordPress se sirven desde la mediateca o embebidas.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+#nfcd-novedad{
+  /* tokens NFCD scopeados (prefijo nf-) */
+  --nf-wine:#a7274c; --nf-wine-700:#871f41; --nf-wine-400:#cd6884; --nf-wine-300:#df97ac; --nf-wine-200:#eec3d0; --nf-wine-100:#f7e3e9;
+  --nf-ink-900:#1a1614; --nf-ink-800:#2c2724; --nf-ink-700:#423b36; --nf-ink-500:#786d64; --nf-ink-300:#b8aca1; --nf-ink-200:#d6cdc3; --nf-ink-100:#e9e2da;
+  --nf-paper-000:#fbf9f5; --nf-paper-100:#f5f1ea; --nf-paper-200:#ece6db; --nf-cream:#f4efe6;
+  --nf-display:"Amatic SC","Comic Sans MS",cursive;
+  --nf-serif:"Book Antiqua","Palatino Linotype",Palatino,Georgia,serif;
+  --nf-mono:"Letter Gothic Std","Courier New",ui-monospace,monospace;
+  --nf-stage-h:clamp(540px,76vh,720px);
+
+  box-sizing:border-box;
+  max-width:1160px; margin:0 auto; padding:clamp(1.2rem,3vw,2.4rem) clamp(0.9rem,2.5vw,1.6rem);
+  background:transparent; font-family:var(--nf-serif); color:var(--nf-ink-800);
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+#nfcd-novedad *{ box-sizing:border-box; }
+#nfcd-novedad ::selection{ background:var(--nf-wine-100); color:var(--nf-ink-900); }
+
+/* ---- masthead ---- */
+#nfcd-novedad .nf-mast{ position:relative; margin-bottom:clamp(1.4rem,3vw,2.2rem); }
+#nfcd-novedad .nf-ey{ font-family:var(--nf-mono); font-size:.78rem; letter-spacing:.2em; text-transform:uppercase; color:var(--nf-wine); margin:0; }
+#nfcd-novedad .nf-title{ font-family:var(--nf-display); font-weight:700; font-size:clamp(3.2rem,2rem + 7vw,6rem); line-height:.86; letter-spacing:.02em; color:var(--nf-ink-900); margin:.35rem 0 0; }
+#nfcd-novedad .nf-q{ font-family:var(--nf-serif); font-weight:400; font-size:.66em; color:var(--nf-wine); }
+#nfcd-novedad .nf-mastfoot{ display:flex; align-items:center; gap:1.2rem; margin-top:1rem; flex-wrap:wrap; }
+#nfcd-novedad .nf-brush-rule{ height:26px; width:min(280px,46vw); object-fit:cover; object-position:left center; opacity:.5; }
+#nfcd-novedad .nf-sub{ font-family:var(--nf-mono); font-size:.76rem; letter-spacing:.06em; text-transform:uppercase; color:var(--nf-ink-500); }
+
+/* ---- stage / track ---- */
+#nfcd-novedad .nf-stage{ position:relative; overflow:hidden; background:var(--nf-paper-100); box-shadow:0 1px 0 var(--nf-ink-200), 0 24px 60px -28px rgba(26,22,20,.45); }
+#nfcd-novedad .nf-track{ display:flex; width:100%; transition:transform .62s cubic-bezier(.7,0,.2,1); }
+#nfcd-novedad .nf-panel{ flex:0 0 100%; display:grid; grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr); height:var(--nf-stage-h); }
+
+/* ---- art plate ---- */
+#nfcd-novedad .nf-plate{ position:relative; overflow:hidden; background:var(--nf-ink-900); display:flex; align-items:flex-end; padding:clamp(1.2rem,2.6vw,2.2rem); }
+#nfcd-novedad .nf-plate::before{ content:""; position:absolute; inset:0; background:radial-gradient(120% 92% at 58% 42%, var(--nf-glow), transparent 68%); }
+#nfcd-novedad .nf-plate::after{ content:""; position:absolute; inset:0; box-shadow:inset 0 0 120px 10px rgba(0,0,0,.45); pointer-events:none; }
+#nfcd-novedad .nf-num{ position:absolute; top:.06em; left:.12em; font-family:var(--nf-display); font-weight:700; font-size:clamp(8rem,17vw,13rem); line-height:.68; color:rgba(244,239,230,.10); z-index:1; letter-spacing:.01em; }
+#nfcd-novedad .nf-mark{ position:absolute; right:-8%; top:48%; transform:translateY(-50%); width:min(100%,440px); height:auto; object-fit:contain; z-index:2; filter:drop-shadow(0 10px 30px rgba(0,0,0,.5)); }
+#nfcd-novedad .nf-panel--i   .nf-mark{ width:min(120%,560px); right:-16%; top:44%; }
+#nfcd-novedad .nf-panel--ii  .nf-mark{ width:min(108%,500px); right:-10%; top:50%; }
+#nfcd-novedad .nf-panel--iii .nf-mark{ width:min(92%,400px); right:-2%; top:46%; }
+#nfcd-novedad .nf-verb{ position:relative; z-index:3; font-family:var(--nf-mono); font-size:.92rem; letter-spacing:.18em; text-transform:uppercase; color:var(--nf-cream); }
+#nfcd-novedad .nf-verb::before{ content:""; display:block; width:38px; height:2px; background:var(--nf-wine-400); margin-bottom:.8rem; }
+
+/* ---- reading column ---- */
+#nfcd-novedad .nf-read{ position:relative; background:var(--nf-paper-100); display:flex; flex-direction:column; min-height:0; padding:clamp(1.4rem,2.8vw,2.4rem) clamp(1.3rem,2.6vw,2.2rem) 0; }
+#nfcd-novedad .nf-read::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:54px; background:linear-gradient(transparent, var(--nf-paper-100)); pointer-events:none; }
+#nfcd-novedad .nf-kick2{ font-family:var(--nf-mono); font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--nf-wine); margin:0 0 .5rem; }
+#nfcd-novedad .nf-head{ font-family:var(--nf-display); font-weight:700; font-size:clamp(2.1rem,1.4rem + 2.8vw,3.1rem); line-height:.94; letter-spacing:.02em; color:var(--nf-ink-900); margin:0 0 1.1rem; flex:0 0 auto; }
+#nfcd-novedad .nf-scroll{ overflow-y:auto; min-height:0; flex:1 1 auto; padding-right:.9rem; padding-bottom:3rem; font-size:clamp(1.04rem,0.9rem + 0.5vw,1.18rem); line-height:1.74; }
+#nfcd-novedad .nf-scroll p{ margin:0 0 1.15rem; }
+#nfcd-novedad .nf-scroll .nf-lead{ font-size:1.08em; color:var(--nf-ink-900); }
+#nfcd-novedad .nf-scroll .nf-lead::first-letter{ font-family:var(--nf-serif); font-weight:700; font-size:3.5em; line-height:.72; float:left; color:var(--nf-wine); margin:.06em .12em -.04em 0; }
+#nfcd-novedad .nf-scroll em{ font-style:italic; color:var(--nf-ink-900); }
+#nfcd-novedad .nf-scroll::-webkit-scrollbar{ width:6px; }
+#nfcd-novedad .nf-scroll::-webkit-scrollbar-thumb{ background:var(--nf-ink-200); border-radius:3px; }
+#nfcd-novedad .nf-scroll::-webkit-scrollbar-thumb:hover{ background:var(--nf-wine-300); }
+#nfcd-novedad .nf-scroll{ scrollbar-width:thin; scrollbar-color:var(--nf-ink-200) transparent; }
+
+/* ---- nav ---- */
+#nfcd-novedad .nf-nav{ display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-top:1.1rem; }
+#nfcd-novedad .nf-arrow{ font-family:var(--nf-serif); font-size:1.4rem; line-height:1; width:48px; height:48px; border:1px solid var(--nf-ink-200); background:var(--nf-paper-000); color:var(--nf-ink-800); cursor:pointer; transition:.18s ease; display:flex; align-items:center; justify-content:center; }
+#nfcd-novedad .nf-arrow:hover{ border-color:var(--nf-wine); color:var(--nf-wine); }
+#nfcd-novedad .nf-arrow:disabled{ opacity:.32; cursor:default; border-color:var(--nf-ink-100); color:var(--nf-ink-300); }
+#nfcd-novedad .nf-spine{ display:flex; align-items:baseline; gap:1.1rem; }
+#nfcd-novedad .nf-dot{ font-family:var(--nf-display); font-weight:700; font-size:1.9rem; line-height:1; color:var(--nf-ink-300); background:none; border:0; cursor:pointer; padding:0 .1em .25rem; border-bottom:2px solid transparent; transition:.18s ease; letter-spacing:.04em; }
+#nfcd-novedad .nf-dot:hover{ color:var(--nf-ink-700); }
+#nfcd-novedad .nf-dot[aria-current="true"]{ color:var(--nf-wine); border-bottom-color:var(--nf-wine); }
+#nfcd-novedad .nf-count{ font-family:var(--nf-mono); font-size:.82rem; letter-spacing:.08em; color:var(--nf-ink-500); }
+
+/* ---- entrance (only active panel, motion-safe) ---- */
+#nfcd-novedad .nf-panel .nf-verb,
+#nfcd-novedad .nf-panel .nf-head,
+#nfcd-novedad .nf-panel .nf-mark{ transition:opacity .6s ease, transform .6s ease; }
+@media (prefers-reduced-motion:no-preference){
+  #nfcd-novedad .nf-panel:not([data-active]) .nf-mark{ opacity:0; transform:translateY(-50%) scale(.96); }
+  #nfcd-novedad .nf-panel:not([data-active]) .nf-head{ opacity:0; transform:translateY(8px); }
+}
+
+/* ---- responsive ---- */
+@media (max-width:780px){
+  #nfcd-novedad{ --nf-stage-h:clamp(580px,86vh,760px); }
+  #nfcd-novedad .nf-panel{ grid-template-columns:1fr; grid-template-rows:188px minmax(0,1fr); }
+  #nfcd-novedad .nf-num{ font-size:6.5rem; }
+  #nfcd-novedad .nf-mark{ width:min(78%,300px); right:-4%; top:50%; }
+  #nfcd-novedad .nf-panel--i .nf-mark{ width:min(92%,330px); right:-8%; }
+  #nfcd-novedad .nf-plate{ align-items:flex-end; }
+}
+</style>
+
+<div id="nfcd-novedad">
+  <div class="nf-mast">
+    <p class="nf-ey">Novedades · NFCD</p>
+    <h1 class="nf-title"><span class="nf-q">¿</span>En qué estamos<span class="nf-q">?</span></h1>
+    <div class="nf-mastfoot">
+      <img class="nf-brush-rule" src="../assets/brand/marks/grey-waves.png" alt="">
+      <span class="nf-sub">Tres movimientos · un mismo cuerpo</span>
+    </div>
+  </div>
+
+  <div class="nf-stage">
+    <div class="nf-track" data-track>
+
+      <!-- ─────────── Movimiento I ─────────── -->
+      <article class="nf-panel nf-panel--i" style="--nf-glow:rgba(167,39,76,.32)" data-active>
+        <div class="nf-plate">
+          <span class="nf-num">I</span>
+          <img class="nf-mark" src="../assets/brand/marks/red-swirl.png" alt="Remolino de pincel y acrílico, obra de Roxana Galand">
+          <span class="nf-verb">Venimos de</span>
+        </div>
+        <div class="nf-read">
+          <p class="nf-kick2">Movimiento I</p>
+          <h2 class="nf-head">De dónde venimos</h2>
+          <div class="nf-scroll">
+            <p class="nf-lead">Venimos de miles de años de historia. Venimos de libros, encuentros, poesías y mil danzas. Venimos de años de recopilación y sistematización de Naturaleza de la Fuerza en el Cuerpo y la Danza; venimos de centros culturales, encuentros, festivales, ciclos formativos y festejos. Venimos de un apoyo del Fondo Metropolitano para las Ciencias y las Artes para imprimir la primera tirada de 2.000 libros, que hoy reposan en diversas bibliotecas y altares.</p>
+            <p>Venimos, desde 2023, de la ardua labor de armar el proceso de certificación para docentes e investigadores del sistema NFCD; venimos de intentos, de laboratorios, de preguntarnos en grupo por nuestra participación a nivel individual, social y planetario. Venimos de saber que la danza salvará el mundo, y de descubrir la militancia de la mariposa: una rebelión blandita pero persistente contra los modos colonizadores establecidos.</p>
+            <p>Venimos de construir CasaMadre, que funciona como hogar y escuela para la comunidad de estudiantes de NFCD, y como hogar de una comunidad en emergencia en el Territorio del Campo, Arroyo del Medio. Venimos de inaugurar la sala-templo —la <em>Crisálida</em>— para realizar procesos de transformación y aprendizaje con la curaduría de NFCD. Venimos de un año en el que nos arriesgamos a sostener cuatro clases por semana con cuatro docentes del sistema.</p>
+            <p>Venimos de filmar cursos en alta calidad —aún en producción— para difundir la práctica medular del sistema NFCD, la Alineación, entrenamiento interior de las fuerzas: un espacio que NFCD gesta y habita, con la perspectiva y la infraestructura de una sede virtual donde el conocimiento colectivo circula y se difunde a nivel global.</p>
+            <p>Venimos de trabajar arduo en el armado inteligente de la gestión y el desarrollo institucional, incorporando herramientas digitales; venimos de sostener un sistema de diseño, comunicación e identidad, con secretaría y administración. Venimos de una gran comunidad de estudiantes que participan con mayor o menor frecuencia, pero a la que se siente presente. Venimos de compartir nuestras íntimas vivencias para el desarrollo del documental <em>Lo inédito que brota</em>, que se viene filmando hace varios años aquí, en nuestro hogar y escuela en la Patagonia Argentina.</p>
+            <p>Venimos de muchos festejos, encuentros y preguntas; y de la labor de construir la asociación bajo la reglamentación de la IGPJ en Argentina, con el propósito de coordinar nuevos horizontes de acción y tejer alianzas entre personas, entidades, disciplinas y artes. La asociación civil se llama <em>El Retorno del Mundo</em>, y parte del equipo de Naturaleza de la Fuerza es cofundadora. Venimos de danzar y de preguntarnos cómo colaborar, con nuestra participación, en un devenir vital y alegre del ser humano y de las generaciones que siguen.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ─────────── Movimiento II ─────────── -->
+      <article class="nf-panel nf-panel--ii" style="--nf-glow:rgba(214,176,60,.26)">
+        <div class="nf-plate">
+          <span class="nf-num">II</span>
+          <img class="nf-mark" src="../assets/brand/marks/yellow-splash.png" alt="Manchón amarillo de acrílico aguado, obra de Roxana Galand">
+          <span class="nf-verb">Estamos</span>
+        </div>
+        <div class="nf-read">
+          <p class="nf-kick2">Movimiento II</p>
+          <h2 class="nf-head">Dónde estamos hoy</h2>
+          <div class="nf-scroll">
+            <p class="nf-lead">Estamos trabajando para que NFCD pueda organizar su estructura institucional, como resultado de muchos años de crecimiento; y para eso se necesita ayuda. Pero todavía estamos en una etapa previa a invertir en un equipo interno contratado: aún no terminamos de construir la estructura mínima que nos permita coordinar, delegar y repartir tareas —es decir, incorporar personas de manera sostenible para proyectos de mediano y largo plazo—. Eso es justamente lo que estamos trabajando ahora: armando las bases para abrir el equipo más adelante. Vamos en ese rumbo.</p>
+            <p>Estamos terminando de filmar el curso de <em>Alineación, Asuntos</em>; llevamos un aproximado de 50 horas de clase filmadas, que ahora entran en su proceso de edición. Estamos configurando la página web para mejorar los procesos de inscripción y de administración de la institución. Estamos armando los flujos de trabajo en secretaría, administración, comunicación y manejo de plataformas virtuales y sociales para, llegado el momento, ampliar el equipo interno.</p>
+            <p>A la par, estamos por realizar la primera asamblea de socios de la asociación <em>El Retorno del Mundo</em>: venimos de varios años tejiéndola, despacio pero con pasos firmes en su propósito y en su grupo interno.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ─────────── Movimiento III ─────────── -->
+      <article class="nf-panel nf-panel--iii" style="--nf-glow:rgba(216,110,70,.28)">
+        <div class="nf-plate">
+          <span class="nf-num">III</span>
+          <img class="nf-mark" src="../assets/brand/marks/orange-strokes.png" alt="Trazos naranjas de pincel, obra de Roxana Galand">
+          <span class="nf-verb">Se viene</span>
+        </div>
+        <div class="nf-read">
+          <p class="nf-kick2">Movimiento III</p>
+          <h2 class="nf-head">Hacia dónde vamos</h2>
+          <div class="nf-scroll">
+            <p class="nf-lead">Buscamos tener bien organizada la institución de NFCD para sumar personas, tanto en las áreas de desarrollo institucional como en la formación y difusión pedagógica y en el desarrollo de la <em>grieta</em> de la compañía artística del sistema.</p>
+            <p>Se viene más producción de materiales de texto y editorial: cuadernillos para estudiantes, para procesos de formación docente, para difusión abierta al público, y la recopilación de testimonios. Se viene la línea de salud de NFCD, para trabajar específicamente los asuntos de la vitalidad, la alegría y la postura del vivir. Se viene la implementación de la nueva modalidad de certificación, con la intención de iniciar en 2028 los seminarios formativos. Se viene la consolidación del equipo de diseño gráfico y audiovisual, con planes anuales de difusión y una estética artística para mostrar la práctica, las ramas de NFCD y sus eventos, abrir el acceso a los materiales y fomentar la inscripción de estudiantes y la promulgación de la práctica.</p>
+            <p>En paralelo, en rumbo hacia la asociación y el Campo como territorio del colectivo transdisciplinario, se busca abrir el ingreso de nuevos socios que quieran sumarse a la comunidad: a colaborar con el desarrollo, a estudiar NFCD, a convivir y/o a presentar proyectos pensados desde lo transdisciplinario, donde NFCD participa como parte del paisaje, brindando cobijo. Se viene también expandir la convivencia en comunidad en el Campo, con otros proyectos y otras formas de arte, expresión, investigación, trabajo y generación de recursos que los socios deseen traer y desarrollar. Deseamos unir fuerzas para potenciar —desde el arte, la ciencia y la espiritualidad— el vivir pleno, feliz y natural del ser humano, y recrear entornos vitales.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <div class="nf-nav">
+    <button class="nf-arrow nf-prev" type="button" aria-label="Movimiento anterior">←</button>
+    <div class="nf-spine" role="tablist">
+      <button class="nf-dot" type="button" data-go="0" aria-current="true">I</button>
+      <button class="nf-dot" type="button" data-go="1">II</button>
+      <button class="nf-dot" type="button" data-go="2">III</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <span class="nf-count" data-count>01 / 03</span>
+      <button class="nf-arrow nf-next" type="button" aria-label="Movimiento siguiente">→</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.getElementById('nfcd-novedad');
+  if(!root || root.dataset.bound) return; root.dataset.bound = '1';
+  var track = root.querySelector('[data-track]');
+  var panels = Array.prototype.slice.call(root.querySelectorAll('.nf-panel'));
+  var dots = Array.prototype.slice.call(root.querySelectorAll('.nf-dot'));
+  var prev = root.querySelector('.nf-prev');
+  var next = root.querySelector('.nf-next');
+  var count = root.querySelector('[data-count]');
+  var i = 0, n = panels.length;
+  function pad(x){ return (x<10?'0':'')+x; }
+  function render(){
+    var w = panels[0].getBoundingClientRect().width;
+    track.style.transform = 'translateX(' + (-i*w) + 'px)';
+    panels.forEach(function(p,k){ if(k===i) p.setAttribute('data-active',''); else p.removeAttribute('data-active'); });
+    dots.forEach(function(d,k){ d.setAttribute('aria-current', k===i ? 'true':'false'); });
+    prev.disabled = (i===0); next.disabled = (i===n-1);
+    count.textContent = pad(i+1) + ' / ' + pad(n);
+    var sc = panels[i].querySelector('.nf-scroll'); if(sc) sc.scrollTop = 0;
+  }
+  function go(x){ i = Math.max(0, Math.min(n-1, x)); render(); }
+  prev.addEventListener('click', function(){ go(i-1); });
+  next.addEventListener('click', function(){ go(i+1); });
+  dots.forEach(function(d){ d.addEventListener('click', function(){ go(+d.dataset.go); }); });
+  root.addEventListener('keydown', function(e){
+    if(e.key==='ArrowLeft'){ go(i-1); } else if(e.key==='ArrowRight'){ go(i+1); }
+  });
+  var rt; window.addEventListener('resize', function(){ clearTimeout(rt); rt=setTimeout(function(){ var prevT=track.style.transition; track.style.transition='none'; render(); track.offsetWidth; track.style.transition=prevT; }, 120); });
+  // swipe (touch), ignora gestos verticales para no robar el scroll de lectura
+  var x0=null,y0=null;
+  track.addEventListener('touchstart', function(e){ x0=e.touches[0].clientX; y0=e.touches[0].clientY; }, {passive:true});
+  track.addEventListener('touchend', function(e){
+    if(x0===null) return; var dx=e.changedTouches[0].clientX-x0, dy=e.changedTouches[0].clientY-y0;
+    if(Math.abs(dx)>54 && Math.abs(dx)>Math.abs(dy)*1.4){ go(i + (dx<0?1:-1)); }
+    x0=y0=null;
+  }, {passive:true});
+  render();
+})();
+</script>
