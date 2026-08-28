@@ -116,7 +116,7 @@ Los logos están en `recursos/logos/` (PNG). La fuente vectorial editable es `de
 - `website/` — página institucional (header, hero, encuentros, about, footer). Trae el patrón de activación del tema (toggle + `prefers-color-scheme`).
 - `editorial/` — ficha de curso / programa A4.
 
-**`plantillas/`** — carpetas con un `.dc.html` anotado `@template` (editables inline en Design)
+**`templates/`** — carpetas con un `.dc.html` anotado `@template` (editables inline en Design). El nombre queda en inglés a propósito: el proyecto de Claude Design lee las plantillas por ese path — no castellanizar.
 
 - `carrusel-ig/` — carrusel 1080×1350 para Instagram (9 piezas).
 - `a4-ficha/` — fichas de curso y programas A4.
@@ -155,7 +155,7 @@ flyer_encuentros-invierno_2026-07.dc.html
 
 `styles.css` · `SKILL.md` · `_ds_bundle.js` · `_ds_manifest.json` · `_adherence.oxlintrc.json` · `support.js` · `listmonk/`
 
-Cada carpeta de `plantillas/` lleva su copia de `support.js` y `ds-base.js` (runtime de Claude Design). Existen dos versiones divergentes de cada uno entre plantillas — los gestiona Claude Design, no unificarlos a mano.
+Cada carpeta de `templates/` lleva su copia de `support.js` y `ds-base.js` (runtime de Claude Design). Existen dos versiones divergentes de cada uno entre plantillas — los gestiona Claude Design, no unificarlos a mano.
 
 ### Sustituciones y aclaraciones
 

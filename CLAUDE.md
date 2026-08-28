@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Recompilar el design system
 
-Cuando cambien archivos en `componentes/`, `kits-ui/`, `tokens/`, `lineamientos/` o `plantillas/`, regenerar los tres artefactos derivados **y commitearlos en el mismo gesto**:
+Cuando cambien archivos en `componentes/`, `kits-ui/`, `tokens/`, `lineamientos/` o `templates/`, regenerar los tres artefactos derivados **y commitearlos en el mismo gesto**:
 
 ```bash
 node _compile.js
@@ -38,8 +38,9 @@ kits-ui/         ← composiciones React (consumen window.NFCDDesignSystem_*)
   website/       Hero · SiteHeader · SiteFooter · EncuentrosGrid · AboutBlock (+ toggle de tema)
   editorial/     index.html A4 (HTML puro, sin React)
 
-plantillas/      ← carpetas con .dc.html anotado @template, editables en Claude Design
+templates/       ← carpetas con .dc.html anotado @template, editables en Claude Design
                    carrusel-ig · a4-ficha · email-nfcd-newsletter · social-poster
+                   (nombre en inglés a propósito: lo gobierna Claude Design — no castellanizar)
 lineamientos/    ← preview cards HTML (Brand, Colors —incl. tema oscuro—, Type, Spacing, Guidelines)
 recursos/        ← logos PNG, fuentes, manchones de pintura Roxana
 producciones/    ← piezas terminadas (encuentros-2026, novedades, carrusel-ig-encuentros, emails)
@@ -77,3 +78,4 @@ El namespace se conserva entre builds (el compilador relee el manifest previo).
 - Editar fuentes → `node _compile.js` → commit — todo en el mismo gesto.
 - El push a GitHub **no** actualiza Claude Design: correr `/design-sync` desde Claude Code.
 - `support.js` / `ds-base.js` por plantilla: los gestiona Claude Design; hay versiones divergentes entre plantillas — no unificar a mano.
+- La carpeta `templates/` conserva su nombre en inglés porque el proyecto de Claude Design la lee por ese path (su manifest apunta a `templates/...`). Renombrarla rompe las plantillas en la nube.

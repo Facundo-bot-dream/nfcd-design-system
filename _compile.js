@@ -7,7 +7,7 @@
  *   node _compile.js
  *
  * Regenera, a partir de las fuentes (componentes/, tokens/, kits-ui/,
- * lineamientos/, plantillas/):
+ * lineamientos/, templates/):
  *   - _ds_bundle.js            componentes React transpilados para el browser
  *   - _ds_manifest.json        metadata del DS en el schema que consume
  *                              Claude Design (cards, templates, startingPoints,
@@ -30,7 +30,8 @@ const COMPONENTS_DIR = path.join(ROOT, 'componentes');
 const TOKENS_DIR = path.join(ROOT, 'tokens');
 const UI_KITS_DIR = path.join(ROOT, 'kits-ui');
 const GUIDELINES_DIR = path.join(ROOT, 'lineamientos');
-const TEMPLATES_DIR = path.join(ROOT, 'plantillas');
+// 'templates' es el nombre que gobierna Claude Design — no castellanizar
+const TEMPLATES_DIR = path.join(ROOT, 'templates');
 const COMPONENT_GROUPS = ['core', 'content', 'forms'];
 
 const BUNDLE_OUT = path.join(ROOT, '_ds_bundle.js');

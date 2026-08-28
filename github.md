@@ -6,7 +6,7 @@ date: 2026-08-02
 commit: ver `git log` — saneamiento integral (legibilidad, escala, reorganización en español)
 
 ### Estructura vigente tras el saneamiento
-- `componentes/` `kits-ui/` `lineamientos/` `plantillas/` `recursos/` `tokens/` — matriz del sistema
+- `componentes/` `kits-ui/` `lineamientos/` `templates/` `recursos/` `tokens/` — matriz del sistema
 - `producciones/` — piezas terminadas · `listmonk/` — páginas públicas · `prompts/` `conocimiento/` — pipeline y saberes
 
 ## Screen map
@@ -14,8 +14,8 @@ commit: ver `git log` — saneamiento integral (legibilidad, escala, reorganizac
 |---|---|
 | Website ui_kit | kits-ui/website/*.jsx, kits-ui/website/index.html |
 | Editorial ui_kit | kits-ui/editorial/index.html |
-| Carrusel IG | plantillas/carrusel-ig/CarruselIG_modelo_2026-08.dc.html |
-| Social poster | plantillas/social-poster/SocialPoster.dc.html |
-| Email newsletter | plantillas/email-nfcd-newsletter/EmailNFCDNewsletter.dc.html |
-| A4 ficha | plantillas/a4-ficha/A4_encuentro-profundizacion_2026-07.dc.html |
+| Carrusel IG | templates/carrusel-ig/CarruselIG_modelo_2026-08.dc.html |
+| Social poster | templates/social-poster/SocialPoster.dc.html |
+| Email newsletter | templates/email-nfcd-newsletter/EmailNFCDNewsletter.dc.html |
+| A4 ficha | templates/a4-ficha/A4_encuentro-profundizacion_2026-07.dc.html |
 | Carrusel móvil (componente) | componentes/content/MobileCarousel.jsx |

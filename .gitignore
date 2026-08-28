@@ -6,9 +6,9 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-# .thumbnail de Mac — ignorar en general, EXCEPTO los de plantillas/ (los necesita Claude Design)
+# .thumbnail de Mac — ignorar en general, EXCEPTO los de templates/ (los necesita Claude Design)
 .thumbnail
-!plantillas/**/.thumbnail
+!templates/**/.thumbnail
 
 # Descartes y experimentos — no van al repo
 scraps/
@@ -17,7 +17,7 @@ scraps/
 uploads/
 
 # Resultados finales — van a tu carpeta local, no al repo
-plantillas/carrusel-ig/exports/
+templates/carrusel-ig/exports/
 
 # Fuentes comerciales — licencia no permite distribución pública
 recursos/fonts/BookAntiqua/

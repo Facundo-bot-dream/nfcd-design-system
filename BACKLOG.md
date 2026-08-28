@@ -10,9 +10,9 @@
 **1 · Sincronizar Claude Design (la nube) con el estado actual.**
 El disco quedó saneado el 2026-08-02 (tema oscuro usable, escala adoptada, carpetas en español). El **proyecto de Claude Design quedó viejo** — cuando vas a *generar* una pieza, usa lo anterior.
 - Se hace con `/design-sync` **real** desde **Claude Code** (requiere `/design-login` antes).
-- ⚠️ El sync saltea `plantillas/` — pedir explícitamente que la incluya.
+- ⚠️ El sync saltea `templates/` — pedir explícitamente que la incluya.
 - Dirección: EMPUJAR local → Design. Nunca dejar que baje y pise lo local.
-- ⚠️ Tras el renombre de carpetas (componentes/, plantillas/, lineamientos/, recursos/, kits-ui/), verificar que Design no conserve las carpetas viejas duplicadas.
+- ⚠️ Tras el renombre de carpetas (componentes/, templates/, lineamientos/, recursos/, kits-ui/), verificar que Design no conserve las carpetas viejas duplicadas.
 
 ---
 
